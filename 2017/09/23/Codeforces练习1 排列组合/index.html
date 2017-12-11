@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            Codeforces练习1 排列组合 | 
+        
+        slongle
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="slongle">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",算法竞赛-数学">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png">
+    <link rel="icon" sizes="192x192" href="http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png">
+    <link rel="apple-touch-icon" href="http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="slongle">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Codeforces练习1 排列组合 | slongle">
+    <meta property="og:image" content="http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="算法竞赛-数学"> 
+
+    
+        <meta property="article:published_time" content="9月 23, 2017" />
+        <meta property="article:modified_time" content="12月 05, 2017" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Codeforces练习1 排列组合 | slongle">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2017/09/23/Codeforces练习1 排列组合/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "slongle",
+        "logo": "http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "slongle",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "Codeforces练习1 排列组合",
+    "url": "http://yoursite.com/2017/09/23/Codeforces练习1 排列组合/index.html",
+    "datePublished": "9月 23, 2017",
+    "dateModified": "12月 05, 2017",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    .footer-sns-zhihu {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzYuOCA3OC44Yy04LjYgMi44LTI0IDEyLjQtMzMuNiAyMS04LjYgNy44LTIxLjQgMjcuOC0yNC40IDM3LjgtNC4yIDE0LTQgNzIzLjQgMCA3MzMuNCA4LjYgMjAuNiAzNi44IDQ4LjYgNTYgNTUuNiA5IDMuNCA3NDcuNCAzLjQgNzU2LjQgMCAxOS44LTcuMiA0OS0zNi42IDU2LTU2LjIgMi4yLTYgMi42LTc1LjYgMi44LTM2Ni40IDAtMjMzLjgtLjYtMzYxLjQtMi0zNjYtMS4yLTMuOC02LjYtMTMuOC0xMi4yLTIyLjItOC4yLTEyLjItMTMuNC0xNy40LTI1LjgtMjUuNi04LjQtNS44LTE5LTExLjQtMjMuMi0xMi4yLTQuNi0xLjItMTYzLjItMS44LTM3NC44LTEuOC0yOTMgMC0zNjguNi42LTM3NS4yIDIuNnptMTkwIDE0NS42YzUuNCA3LjYgNCAxNy40LTQuOCAzMS42LTkuOCAxNi0xMC44IDI3LjQtMyAzNSAyLjYgMi44IDYuNCA1IDguNCA1czM3LjguNCA3OS42LjZjNjggLjQgNzYuNi44IDgyLjQgMy44IDkuMiA1IDEyLjYgMTEgMTIuNiAyMiAwIDctMS4yIDEwLjgtNC44IDE1bC00LjggNS40LTM4IC4yYy01My44IDAtNTMuOCAwLTU1LjQgNTEuMi0uNiAxOC0xLjYgNDIuOC0yLjIgNTUtMS4yIDIyLjguNiAzMS42IDcuNiAzNi4yIDEuNC44IDIyLjIgMiA0NiAyLjZsNDMuMiAxIDguOCA2YzE1LjQgMTAuOCAxNy44IDI5LjIgNSAzNy01LjggMy42LTEwLjIgNC01MS44IDQtMzEgMC00NyAuOC01MC42IDIuNC03IDMuMi0xNC4yIDE3LjYtMTcuMiAzNC40LTMuMiAxNi42LTEgMjEuOCA5LjYgMjUuMiAxMy40IDQuMiAyMS44IDExLjIgNDkgNDEuNCAzNSAzOC44IDM2LjYgNDEgNDEuOCA1OC44IDcgMjMuOCAyLjIgNDEuOC0xMS40IDQxLjgtNy42IDAtMTItMy0yMS0xNC42LTEzLjgtMTcuNC01NC40LTY1LjgtNjItNzMuOC0xNS4yLTE2LTI5LjQtNS44LTM4LjggMjcuNC0xLjggNi42LTguOCAyMy4yLTE1LjYgMzctMTAuOCAyMi0xNCAyNi44LTI3LjQgMzkuNi0xOS42IDE5LjItMjYuNCAyMy01My42IDI5LjYtMjcuMiA2LjQtMzcgNS42LTM4LTMuNi0xLTguNCA0LjQtMTYuNCAyMC0yOSAxNi0xMyAzNi44LTM2LjYgNDUuMi01MS40IDMtNS4yIDguMi0xMy44IDExLjYtMTkgMy40LTUgMTEuOC0yMC40IDE4LjYtMzQuMiAxMC0yMCAxMy42LTI5LjQgMTcuMi00NyAyLjYtMTIuMiA2LjItMjUuNCA3LjgtMjkuNCA0LTkuNCA0LTIxLjQuMi0yNy01LjItNy40LTE2LTguOC02Mi42LTguNC01MC40LjQtNTUuMi0uOC01Ny42LTEzLjItMS44LTEwLjQgNS44LTI0LjQgMTYuMi0yOS44IDcuNC0zLjggMTEuOC00LjIgNTYuMi00LjhsNDguNC0uOCA0LjYtNWM0LjgtNSA0LjgtNSA1LTYxLjYgMC0zNS4yLS44LTU5LjItMi02My4yLTMuOC0xMS4yLTExLTE0LjgtMzAuMi0xNC44cy0yMS40IDEuNC0zMS4yIDE4LjJjLTguMiAxNC40LTIwLjYgMjguOC0zMy4yIDM4LjgtMTMuMiAxMC40LTIxLjYgMTMtMjggOS04LjQtNS42LTUuMi0yMy4yIDguMi00My4yIDQtNi40IDkuMi0xOC42IDEyLjItMjkuNiAzLTEwLjIgNy40LTIzLjIgMTAtMjkgMi40LTUuNiA2LTE2LjggOC0yNC42IDUuNi0yMy42IDI0LTUwLjggMzkuNC01OC40IDExLjItNS40IDE4LjYtNS40IDIyLjQuMnptNDUyIDY4LjJjMTEuOCA3LjggMTEuNC0uOCAxMC44IDIxNi0uNiAxODEtLjggMTk4LjgtNCAyMDMtNy42IDEwLjgtOS44IDExLjQtNTMuNiAxMi40bC00MSAxLTE0IDcuOGMtNy42IDQuMi0yMS4yIDEzLTI5LjggMTkuNC0yNS44IDE5LjItMzUgMTkuOC00My40IDMuMi0xMS44LTIzLjItMjMuNi0zMy4yLTM5LjQtMzMuNC04LjggMC0xMy42LTIuOC0xNy4yLTkuOC0yLjYtNC44LTMtMzMuOC0yLjYtMjA4LjguNC0xOTkuOC40LTIwMyA0LjQtMjA3LjQgMi4yLTIuNCA1LjgtNS4yIDgtNi4yIDIuMi0uOCA1MS44LTEuNCAxMTAtMS4yIDk5IC40IDEwNi42LjYgMTExLjggNHoiLz48cGF0aCBkPSJNNjA2LjggMzM3LjRjLTIuNC40LTYuNCAzLTkgNS44bC00LjggNS4yLS42IDE1Ni40LS40IDE1Ni40IDYuNCA5LjRjMy42IDUuMiA5LjggMTUuMiAxMy42IDIxLjggOCAxNC4yIDE2LjggMjAuNiAyNS42IDE4LjYgMy4yLS42IDEzLjgtNyAyMy42LTE0LjIgMjMtMTcgMjcuOC0xOSA1MC4yLTIwLjIgMTYuNC0xIDE5LjItMS44IDIzLjYtNi4yIDIuOC0yLjggNS02LjQgNS4yLTguMlY1MDUuNmMwLTExNi0uNi0xNTQuNC0yLjYtMTU4LjYtNC44LTEwLjQtOC40LTExLTcwLTEwLjgtMzEuMi4yLTU4LjYuOC02MC44IDEuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.</span> <span class="post-toc-text"><br>        <font color="#ff0000"><span style="font-size: 36px;">27/64</span></font><br>    </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CF478B"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text"><a href="#CF478B" class="headerlink" title="CF478B"></a><a href="http://codeforces.com/problemset/problem/478/B" target="_blank" rel="noopener">CF478B</a></span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Codeforces练习1 排列组合
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://7xs2ho.com1.z0.glb.clouddn.com/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>slongle</strong>
+        <span>9月 23, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/算法竞赛-数学/">算法竞赛-数学</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Codeforces练习1 排列组合&url=http://yoursite.com/2017/09/23/Codeforces练习1 排列组合/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Codeforces练习1 排列组合&url=http://yoursite.com/2017/09/23/Codeforces练习1 排列组合/index.html&via=slongle" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=slongle&title=Codeforces练习1 排列组合&summary=&pics=http://yoursite.comhttp://7xs2ho.com1.z0.glb.clouddn.com/favicon.png&url=http://yoursite.com/2017/09/23/Codeforces练习1 排列组合/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><div><br>    <h1 style="text-align: center;"><br>        <font color="#ff0000"><span style="font-size: 36px;">27/64</span></font><br>    </h1><br></div></p>
+<h3 id="CF478B"><a href="#CF478B" class="headerlink" title="CF478B"></a><a href="http://codeforces.com/problemset/problem/478/B" target="_blank" rel="noopener">CF478B</a></h3><p>题目:$n$个人分配到$m$个队伍里,每个队至少$1$个人,每个队的价值是$C_{人数}^{2}$,询问最小大价值和以及最大价值和<br>题解:最大价值是每个队放$1$个剩下的人都放$1$个队里,最小价值是尽可能均分放$\frac{n}{m}$个<br><a href="http://codeforces.com/contest/478/submission/30628212" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/584/B" target="_blank" rel="noopener">CF584B</a><br>题意:给$3n$个位置分配数字$1/2/3$,使得存在$x<em>i+x</em>{i+n}+x_{i+2n}\neq6$,询问方案数<br>题解:容斥,所有方案-都不等于$6$的方案<br><a href="http://codeforces.com/contest/584/submission/30693923" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/621/B" target="_blank" rel="noopener">CF621B</a><br>坐标系中点$(x,y)$,所在的对角线的指标是$x-y$,和$x+y$<br><a href="http://codeforces.com/contest/621/submission/30628905" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/840/A" target="_blank" rel="noopener">CF840A</a><br>题意:定义函数$f(n,k)$为在集合${1..n}$中取$k$的元素的最小值的期望,现在给出两个长为$m$的数组A,B,其中$A_i\ge B<em>j(1\le i,j\le m)$,现在对$A$重新排序使得$\sum</em>{i=1}^{m}f(A’_i,B_i)$最大,输出$A’<em>i$<br>题解:$$f(n,k)=\frac{\sum</em>{j=1}^{n-k+1}j\cdot C<em>{n-j}^{k-1}}{C^{k}</em>{n}}$$<br>我们尝试着化简这个式子<br>先看分子<br>令$g(n-1)=1C<em>{n-1}^{k-1}+2C</em>{n-2}^{k-1}+\cdots=(C<em>{n-1}^{k-1}+C</em>{n-2}^{k-1}+\cdots+C_{k-1}^{k-1})+g(n-2)$<br>根据<a href="http://artofproblemsolving.com/wiki/index.php?title=Combinatorial_identity#Vandermonde.27s_Identity" target="_blank" rel="noopener">Hockey-Stick Identity</a>$\sum<em>{i=n}^{m}C</em>{i}^{n}=C<em>{m+1}^{n+1}$<br>$g(n-1)=g(n-2)+C</em>{n}^{k},g(n-1)=\sum<em>{i=k}^{n}C</em>{i}^{k}=C<em>{n+1}^{k+1}$<br>所以$f(n,k)=\frac{C</em>{n+1}^{k+1}}{C_{n}^{k}}=\frac{n+1}{k+1}$<br>要最大化的化,就要将A的最大值与B的最小值对应起来<br><a href="http://codeforces.com/contest/840/submission/30696031" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/553/A" target="_blank" rel="noopener">CF553A</a><br>题意:给定$n$种颜色,及每种颜色的球的个数$x_i$,要求第$i$种颜色的球必须在第$i+1$的前面询问方案数(同种颜色的球看做相同)<br>题解:把$x_i-1$个球放进去,剩一个球放在最后即可满足条件,问题变为$sum+x_i-1$个球的分配方法,递推求解<br><a href="http://codeforces.com/contest/553/submission/30697181" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/322/B" target="_blank" rel="noopener">CF322B</a><br>题意:给定$3$种颜色的花数,一组花可由$3$支颜色相同的花或$3$支颜色完全不同的花组成,询问最多能分成几组<br>题解:性质:混合花色的组合数为$0,1,2$,因为有三组的话就可以拆开记为一组了,所以枚举混合组数,取最大值即可<br><a href="http://codeforces.com/contest/322/submission/30740351" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/459/C" target="_blank" rel="noopener">CF459C</a><br>题意:给定$n$个学生,$d$天的旅行,每天旅行有$k$个车可以乘坐,现在构造一个方案,使得不存在有任意$2$个学生$d$天都乘坐相同的车<br>题解:希望尽可能分配平均减少冲突,所以我们第一天等份数分配,后面几点只要把第一天做同一个车的像第一天一样拆开即可<br><a href="http://codeforces.com/contest/459/submission/31237561" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/711/D" target="_blank" rel="noopener">CF711D</a><br>题意:给定一个$n$个点,$n$条边的有向图,找到一个边集,使集合中所有边翻转,得到的新图没有环,询问这样的边集数量<br>题解:首先我们发现边的方向无所谓,因为翻转把两种情况都覆盖了,所以只是找到图中的环即可,$n$个点,$n$条边只有$1$个环,剩下公式就很显然了<br><a href="http://codeforces.com/contest/711/submission/31415124" target="_blank" rel="noopener">CODE</a>   </p>
+<p>###<a href="http://codeforces.com/problemset/problem/610/A" target="_blank" rel="noopener">CF610A</a><br><a href="http://codeforces.com/contest/610/submission/30628325" target="_blank" rel="noopener">CODE</a>      </p>
+<p>###<a href="http://codeforces.com/problemset/problem/476/B" target="_blank" rel="noopener">CF476B</a><br><a href="http://codeforces.com/contest/476/submission/30628420" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/617/B" target="_blank" rel="noopener">CF617B</a><br>爆了一发int<br><a href="http://codeforces.com/contest/617/submission/30628497" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/414/B" target="_blank" rel="noopener">CF414B</a><br><a href="http://codeforces.com/contest/414/submission/30628630" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/630/C" target="_blank" rel="noopener">CF630C</a><br><a href="http://codeforces.com/contest/630/submission/30667310" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/251/A" target="_blank" rel="noopener">CF251A</a><br><a href="http://codeforces.com/contest/251/submission/30696653" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/131/C" target="_blank" rel="noopener">CF131C</a><br><a href="http://codeforces.com/contest/131/submission/30697371" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/152/C" target="_blank" rel="noopener">CF152C</a><br><a href="http://codeforces.com/contest/152/submission/30744071" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/577/B" target="_blank" rel="noopener">CF577B</a><br>MDcin<br><a href="http://codeforces.com/contest/577/submission/30753884" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/608/B" target="_blank" rel="noopener">CF608B</a><br><a href="http://codeforces.com/contest/608/submission/30765810" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/844/B" target="_blank" rel="noopener">CF844B</a><br><a href="http://codeforces.com/contest/844/submission/30765922" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/489/D" target="_blank" rel="noopener">CF489D</a><br><a href="http://codeforces.com/contest/489/submission/30766289" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/518/D" target="_blank" rel="noopener">CF518D</a><br><a href="http://codeforces.com/contest/518/submission/30768343" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/630/F" target="_blank" rel="noopener">CF630F</a><br><a href="http://codeforces.com/contest/630/submission/30795222" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/204/A" target="_blank" rel="noopener">CF204A</a><br><a href="http://codeforces.com/contest/204/submission/31238304" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/552/D" target="_blank" rel="noopener">CF552D</a><br><a href="http://codeforces.com/contest/552/submission/31384040" target="_blank" rel="noopener">CODE</a>  </p>
+<p>###<a href="http://codeforces.com/problemset/problem/364/A" target="_blank" rel="noopener">CF364A</a><br>特别要注意0和相等的情况<br><a href="http://codeforces.com/contest/364/submission/31383553" target="_blank" rel="noopener">CODE</a></p>
+<p>###<a href="http://codeforces.com/problemset/problem/817/B" target="_blank" rel="noopener">CF817B</a><br><a href="http://codeforces.com/contest/817/submission/27907571" target="_blank" rel="noopener">CODE</a>   </p>
+<p>###<a href="http://codeforces.com/problemset/problem/300/C" target="_blank" rel="noopener">CF300C</a><br><a href="http://codeforces.com/contest/300/submission/31415024" target="_blank" rel="noopener">CODE</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/340/C" target="_blank" rel="noopener">CF340C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/500/D" target="_blank" rel="noopener">CF500D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/559/C" target="_blank" rel="noopener">CF559C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/327/C" target="_blank" rel="noopener">CF327C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/288/B" target="_blank" rel="noopener">CF288B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/171/B" target="_blank" rel="noopener">CF171B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/630/H" target="_blank" rel="noopener">CF630H</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/150/B" target="_blank" rel="noopener">CF150B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/374/B" target="_blank" rel="noopener">CF374B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/626/D" target="_blank" rel="noopener">CF626D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/319/A" target="_blank" rel="noopener">CF319A</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/124/B" target="_blank" rel="noopener">CF124B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/272/D" target="_blank" rel="noopener">CF272D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/353/B" target="_blank" rel="noopener">CF353B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/553/B" target="_blank" rel="noopener">CF553B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/568/B" target="_blank" rel="noopener">CF568B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/107/B" target="_blank" rel="noopener">CF107B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/401/D" target="_blank" rel="noopener">CF401D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/294/C" target="_blank" rel="noopener">CF294C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/557/D" target="_blank" rel="noopener">CF557D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/351/B" target="_blank" rel="noopener">CF351B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/571/A" target="_blank" rel="noopener">CF571A</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/788/B" target="_blank" rel="noopener">CF788B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/839/D" target="_blank" rel="noopener">CF839D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/340/E" target="_blank" rel="noopener">CF340E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/696/C" target="_blank" rel="noopener">CF696C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/785/D" target="_blank" rel="noopener">CF785D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/630/G" target="_blank" rel="noopener">CF630G</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/414/C" target="_blank" rel="noopener">CF414C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/575/H" target="_blank" rel="noopener">CF575H</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/431/D" target="_blank" rel="noopener">CF431D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/466/D" target="_blank" rel="noopener">CF466D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/156/C" target="_blank" rel="noopener">CF156C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/229/C" target="_blank" rel="noopener">CF229C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/128/C" target="_blank" rel="noopener">CF128C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/551/D" target="_blank" rel="noopener">CF551D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/9/D" target="_blank" rel="noopener">CF9D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/258/B" target="_blank" rel="noopener">CF258B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/285/D" target="_blank" rel="noopener">CF285D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/489/F" target="_blank" rel="noopener">CF489F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/520/E" target="_blank" rel="noopener">CF520E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/452/C" target="_blank" rel="noopener">CF452C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/213/B" target="_blank" rel="noopener">CF213B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/712/D" target="_blank" rel="noopener">CF712D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/570/E" target="_blank" rel="noopener">CF570E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/630/I" target="_blank" rel="noopener">CF630I</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/145/C" target="_blank" rel="noopener">CF145C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/295/C" target="_blank" rel="noopener">CF295C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/449/D" target="_blank" rel="noopener">CF449D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/451/E" target="_blank" rel="noopener">CF451E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/258/C" target="_blank" rel="noopener">CF258C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/356/C" target="_blank" rel="noopener">CF356C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/223/C" target="_blank" rel="noopener">CF223C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/232/B" target="_blank" rel="noopener">CF232B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/121/C" target="_blank" rel="noopener">CF121C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/689/E" target="_blank" rel="noopener">CF689E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/296/B" target="_blank" rel="noopener">CF296B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/52/B" target="_blank" rel="noopener">CF52B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/57/C" target="_blank" rel="noopener">CF57C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/690/D" target="_blank" rel="noopener">CF690D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/272/E" target="_blank" rel="noopener">CF272E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/396/A" target="_blank" rel="noopener">CF396A</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/859/E" target="_blank" rel="noopener">CF859E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/439/E" target="_blank" rel="noopener">CF439E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/659/G" target="_blank" rel="noopener">CF659G</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/336/D" target="_blank" rel="noopener">CF336D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/327/E" target="_blank" rel="noopener">CF327E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/403/D" target="_blank" rel="noopener">CF403D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/768/F" target="_blank" rel="noopener">CF768F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/803/F" target="_blank" rel="noopener">CF803F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/91/C" target="_blank" rel="noopener">CF91C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/757/E" target="_blank" rel="noopener">CF757E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/612/E" target="_blank" rel="noopener">CF612E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/501/E" target="_blank" rel="noopener">CF501E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/756/D" target="_blank" rel="noopener">CF756D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/360/C" target="_blank" rel="noopener">CF360C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/26/C" target="_blank" rel="noopener">CF26C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/288/D" target="_blank" rel="noopener">CF288D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/840/C" target="_blank" rel="noopener">CF840C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/28/C" target="_blank" rel="noopener">CF28C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/666/C" target="_blank" rel="noopener">CF666C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/156/D" target="_blank" rel="noopener">CF156D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/383/E" target="_blank" rel="noopener">CF383E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/305/D" target="_blank" rel="noopener">CF305D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/660/E" target="_blank" rel="noopener">CF660E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/323/A" target="_blank" rel="noopener">CF323A</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/295/D" target="_blank" rel="noopener">CF295D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/176/C" target="_blank" rel="noopener">CF176C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/809/C" target="_blank" rel="noopener">CF809C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/123/C" target="_blank" rel="noopener">CF123C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/645/F" target="_blank" rel="noopener">CF645F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/111/D" target="_blank" rel="noopener">CF111D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/215/E" target="_blank" rel="noopener">CF215E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/852/F" target="_blank" rel="noopener">CF852F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/293/B" target="_blank" rel="noopener">CF293B</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/229/E" target="_blank" rel="noopener">CF229E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/26/D" target="_blank" rel="noopener">CF26D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/380/D" target="_blank" rel="noopener">CF380D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/285/E" target="_blank" rel="noopener">CF285E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/837/F" target="_blank" rel="noopener">CF837F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/235/E" target="_blank" rel="noopener">CF235E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/140/E" target="_blank" rel="noopener">CF140E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/15/E" target="_blank" rel="noopener">CF15E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/283/E" target="_blank" rel="noopener">CF283E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/518/F" target="_blank" rel="noopener">CF518F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/585/E" target="_blank" rel="noopener">CF585E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/40/E" target="_blank" rel="noopener">CF40E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/325/E" target="_blank" rel="noopener">CF325E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/814/E" target="_blank" rel="noopener">CF814E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/306/C" target="_blank" rel="noopener">CF306C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/722/E" target="_blank" rel="noopener">CF722E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/392/C" target="_blank" rel="noopener">CF392C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/830/D" target="_blank" rel="noopener">CF830D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/438/E" target="_blank" rel="noopener">CF438E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/396/D" target="_blank" rel="noopener">CF396D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/37/D" target="_blank" rel="noopener">CF37D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/559/D" target="_blank" rel="noopener">CF559D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/201/E" target="_blank" rel="noopener">CF201E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/482/D" target="_blank" rel="noopener">CF482D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/815/D" target="_blank" rel="noopener">CF815D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/747/F" target="_blank" rel="noopener">CF747F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/51/E" target="_blank" rel="noopener">CF51E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/776/G" target="_blank" rel="noopener">CF776G</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/145/D" target="_blank" rel="noopener">CF145D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/382/E" target="_blank" rel="noopener">CF382E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/217/D" target="_blank" rel="noopener">CF217D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/856/C" target="_blank" rel="noopener">CF856C</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/653/G" target="_blank" rel="noopener">CF653G</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/44/I" target="_blank" rel="noopener">CF44I</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/135/E" target="_blank" rel="noopener">CF135E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/623/E" target="_blank" rel="noopener">CF623E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/755/G" target="_blank" rel="noopener">CF755G</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/750/G" target="_blank" rel="noopener">CF750G</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/724/F" target="_blank" rel="noopener">CF724F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/457/D" target="_blank" rel="noopener">CF457D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/372/E" target="_blank" rel="noopener">CF372E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/698/F" target="_blank" rel="noopener">CF698F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/506/E" target="_blank" rel="noopener">CF506E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/336/E" target="_blank" rel="noopener">CF336E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/756/E" target="_blank" rel="noopener">CF756E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/848/D" target="_blank" rel="noopener">CF848D</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/113/E" target="_blank" rel="noopener">CF113E</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/762/F" target="_blank" rel="noopener">CF762F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/794/G" target="_blank" rel="noopener">CF794G</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/773/F" target="_blank" rel="noopener">CF773F</a>    </p>
+<p>###<a href="http://codeforces.com/problemset/problem/848/E" target="_blank" rel="noopener">CF848E</a>    </p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2017/09/23/Codeforces练习1 排列组合/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2017/09/23/Codeforces练习1 排列组合/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//slongle.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/09/25/DP练习1/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="http://7xs2ho.com1.z0.glb.clouddn.com/avatar.jpg" alt="slongle's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        slongle@foxmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/slongle" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/slongle/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>slongle
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//slongle.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
