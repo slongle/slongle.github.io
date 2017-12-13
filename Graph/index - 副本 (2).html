@@ -358,9 +358,11 @@
         var y=x.split('\n');
         for(var i=0;i<y.length;i++){
             var z=y[i].split(/\s+/g);
+            var lab="";
+            if (z.length==3) lab=z[2];
             vist[parseInt(z[0])]=1;
             vist[parseInt(z[1])]=1;
-            edges[i]={from: parseInt(z[0]), to:parseInt(z[1]), arrows: arrow};
+            edges[i]={from: parseInt(z[0]), to:parseInt(z[1]), arrows: arrow, label: lab};
             mx=Math.max(mx,parseInt(z[0]));
             mx=Math.max(mx,parseInt(z[1]));
         }
