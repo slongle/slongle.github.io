@@ -12,7 +12,7 @@
     
     <title>
         
-            DP练习1 | 
+            timeline | 
         
         slongle
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="slongle">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",算法竞赛-动态规划">
+    <meta name="keywords" content="">
 
     <!-- Site Verification -->
     
@@ -65,18 +65,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="DP练习1 | slongle">
+    <meta property="og:title" content="timeline | slongle">
     <meta property="og:image" content="http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="算法竞赛-动态规划"> 
-
     
-        <meta property="article:published_time" content="9月 25, 2017" />
-        <meta property="article:modified_time" content="12月 11, 2017" />
+
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="DP练习1 | slongle">
+    <meta name="twitter:title" content="timeline | slongle">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,43 +81,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/09/25/DP练习1/index.html" />
+        <link rel="canonical" href="http://yoursite.com/timeline/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "publisher": {
-        "@type": "Organization",
-        "name": "slongle",
-        "logo": "http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png"
-    },
-    "author": {
-        "@type": "Person",
-        "name": "slongle",
-        "image": {
-            "@type": "ImageObject",
-            "url": "http://7xs2ho.com1.z0.glb.clouddn.com/favicon.png"
-        },
-        "description": "Hi, nice to meet you"
-    },
-    "headline": "DP练习1",
-    "url": "http://yoursite.com/2017/09/25/DP练习1/index.html",
-    "datePublished": "9月 25, 2017",
-    "dateModified": "12月 11, 2017",
-    "description": "",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://yoursite.com"
-    }
-}
-</script>
 
 
     
@@ -310,262 +277,551 @@
 
                     <!-- Post TOC -->
 
-    
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
-
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.</span> <span class="post-toc-text">
-        <font color="#ff0000"><span style="font-size: 36px;">7/10</span></font>
-    </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-11584-Partitioning-by-Palindromes"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"><a href="#UVa-11584-Partitioning-by-Palindromes" class="headerlink" title="UVa 11584 - Partitioning by Palindromes"></a><a href="https://cn.vjudge.net/problem/UVA-11584" target="_blank" rel="noopener">UVa 11584 - Partitioning by Palindromes</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-1424-Salesmen"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"><a href="#UVa-1424-Salesmen" class="headerlink" title="UVa 1424 - Salesmen"></a><a href="https://cn.vjudge.net/problem/UVA-1424" target="_blank" rel="noopener">UVa 1424 - Salesmen</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-10534-Wavio-Sequence"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"><a href="#UVa-10534-Wavio-Sequence" class="headerlink" title="UVa 10534 - Wavio Sequence"></a><a href="https://cn.vjudge.net/problem/UVA-10534" target="_blank" rel="noopener">UVa 10534 - Wavio Sequence</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-11552-Fewest-Flops"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"><a href="#UVa-11552-Fewest-Flops" class="headerlink" title="UVa 11552 - Fewest Flops"></a><a href="https://cn.vjudge.net/problem/UVA-11552" target="_blank" rel="noopener">UVa 11552 - Fewest Flops</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-11404-Palindromic-Subsequence"><span class="post-toc-number">1.5.</span> <span class="post-toc-text"><a href="#UVa-11404-Palindromic-Subsequence" class="headerlink" title="UVa 11404 - Palindromic Subsequence"></a><a href="https://cn.vjudge.net/problem/UVA-11404" target="_blank" rel="noopener">UVa 11404 - Palindromic Subsequence</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-1456-Cellular-Network"><span class="post-toc-number">1.6.</span> <span class="post-toc-text"><a href="#UVa-1456-Cellular-Network" class="headerlink" title="UVa 1456 - Cellular Network"></a><a href="https://vjudge.net/problem/UVA-1456" target="_blank" rel="noopener">UVa 1456 - Cellular Network</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-11795-Mega-Man’s-Mission"><span class="post-toc-number">1.7.</span> <span class="post-toc-text"><a href="#UVa-11795-Mega-Man&#x2019;s-Mission" class="headerlink" title="UVa 11795 - Mega Man&#x2019;s Mission"></a><a href="https://vjudge.net/problem/UVA-11795" target="_blank" rel="noopener">UVa 11795 - Mega Man&#x2019;s Mission</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UVa-1452-Jump"><span class="post-toc-number">1.8.</span> <span class="post-toc-text"><a href="#UVa-1452-Jump" class="headerlink" title="UVa 1452 - Jump"></a><a href="https://vjudge.net/problem/UVA-1452" target="_blank" rel="noopener">UVa 1452 - Jump</a></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.9.</span> <span class="post-toc-text"><a href="#" class="headerlink" title=""></a><a href=""></a></span></a></li></ol></li></ol>
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-    
-
-
-
-
 
 <!-- Layouts -->
 
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
-    
-            <p class="article-headline-p">
-                DP练习1
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="http://7xs2ho.com1.z0.glb.clouddn.com/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>slongle</strong>
-        <span>9月 25, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/算法竞赛-动态规划/">算法竞赛-动态规划</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=DP练习1&url=http://yoursite.com/2017/09/25/DP练习1/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=DP练习1&url=http://yoursite.com/2017/09/25/DP练习1/index.html&via=slongle" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=slongle&title=DP练习1&summary=&pics=http://yoursite.comhttp://7xs2ho.com1.z0.glb.clouddn.com/favicon.png&url=http://yoursite.com/2017/09/25/DP练习1/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <div>
-    <h1 style="text-align: center;">
-        <font color="#ff0000"><span style="font-size: 36px;">7/10</span></font>
-    </h1>
-</div>
-
-<h2 id="UVa-11584-Partitioning-by-Palindromes"><a href="#UVa-11584-Partitioning-by-Palindromes" class="headerlink" title="UVa 11584 - Partitioning by Palindromes"></a><a href="https://cn.vjudge.net/problem/UVA-11584" target="_blank" rel="noopener">UVa 11584 - Partitioning by Palindromes</a></h2><p>题意:给出一个字符串$S,|S|\le1000$,询问最少切几段,使得每段都是回文串<br>题解:预处理回文串,$\text{dp}$转移<br><a href="https://cn.vjudge.net/solution/10855573" target="_blank" rel="noopener">CODE</a>  </p>
-<h2 id="UVa-1424-Salesmen"><a href="#UVa-1424-Salesmen" class="headerlink" title="UVa 1424 - Salesmen"></a><a href="https://cn.vjudge.net/problem/UVA-1424" target="_blank" rel="noopener">UVa 1424 - Salesmen</a></h2><p><a href="https://cn.vjudge.net/solution/10855873" target="_blank" rel="noopener">CODE</a>   </p>
-<h2 id="UVa-10534-Wavio-Sequence"><a href="#UVa-10534-Wavio-Sequence" class="headerlink" title="UVa 10534 - Wavio Sequence"></a><a href="https://cn.vjudge.net/problem/UVA-10534" target="_blank" rel="noopener">UVa 10534 - Wavio Sequence</a></h2><p><a href="https://cn.vjudge.net/solution/10856527" target="_blank" rel="noopener">CODE</a>  </p>
-<h2 id="UVa-11552-Fewest-Flops"><a href="#UVa-11552-Fewest-Flops" class="headerlink" title="UVa 11552 - Fewest Flops"></a><a href="https://cn.vjudge.net/problem/UVA-11552" target="_blank" rel="noopener">UVa 11552 - Fewest Flops</a></h2><p>题意:<br><a href="https://cn.vjudge.net/solution/10857129" target="_blank" rel="noopener">CODE</a>  </p>
-<h2 id="UVa-11404-Palindromic-Subsequence"><a href="#UVa-11404-Palindromic-Subsequence" class="headerlink" title="UVa 11404 - Palindromic Subsequence"></a><a href="https://cn.vjudge.net/problem/UVA-11404" target="_blank" rel="noopener">UVa 11404 - Palindromic Subsequence</a></h2><p><a href="https://vjudge.net/solution/10859084" target="_blank" rel="noopener">CODE</a>  </p>
-<h2 id="UVa-1456-Cellular-Network"><a href="#UVa-1456-Cellular-Network" class="headerlink" title="UVa 1456 - Cellular Network"></a><a href="https://vjudge.net/problem/UVA-1456" target="_blank" rel="noopener">UVa 1456 - Cellular Network</a></h2><p><a href="https://vjudge.net/solution/10859659" target="_blank" rel="noopener">CODE</a>  </p>
-<h2 id="UVa-11795-Mega-Man’s-Mission"><a href="#UVa-11795-Mega-Man’s-Mission" class="headerlink" title="UVa 11795 - Mega Man’s Mission"></a><a href="https://vjudge.net/problem/UVA-11795" target="_blank" rel="noopener">UVa 11795 - Mega Man’s Mission</a></h2><p><a href="https://vjudge.net/solution/10860651" target="_blank" rel="noopener">CODE</a>   </p>
-<h2 id="UVa-1452-Jump"><a href="#UVa-1452-Jump" class="headerlink" title="UVa 1452 - Jump"></a><a href="https://vjudge.net/problem/UVA-1452" target="_blank" rel="noopener">UVa 1452 - Jump</a></h2><h2 id=""><a href="#" class="headerlink" title=""></a><a href=""></a></h2>
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用 DISQUS -->
-<div id="disqus-comment">
-    <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2017/09/25/DP练习1/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2017/09/25/DP练习1/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-</script>
-<script type="text/ls-javascript" id="disqus-thread-script">
-    queue.offer(function() {
-            (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document;
-                var s = d.createElement('script');
-                s.src = '//slongle.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', + new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        });
-</script>
-
-</div>
-<style>
-    #disqus-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
+    <!-- Single Timeline Page -->
+    <style>
+	.md-container {
+		width: 90%;
+		max-width: 1170px;
+		margin: 0 auto;
+	}
+	.md-container::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	#md-timeline {
+		position: relative;
+		padding: 2em 0;
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+	@media screen and (max-device-width:480px){
+		#md-timeline {
+			margin-top: 6em;
+		}
+	}
+	#md-timeline::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 18px;
+		height: 100%;
+		width: 2px;
+		background: #d7e4ed;
+	}
+	.md-timeline-title {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.md-timeline-content a {
+		text-decoration: none;
+	}
+	.md-timeline-info {
+		height: 20px;
+		width: 100%;
+		margin: 10px 0px;
+	}
+	.md-timeline-info-span {
+		float: right;
+		margin-right: 10px;
+		text-align: right;
+	}
+	.md-timeline-excerpt {
+	    	clear: right; 
+	}
+	@media only screen and (min-width: 1170px) {
+		#md-timeline {
+			margin-top: 3em;
+			margin-bottom: 3em;
+		}
+		#md-timeline::before {
+			left: 50%;
+			margin-left: -2px;
+		}
+	}
+	.md-timeline-block {
+		position: relative;
+		margin: 2em 0;
+	}
+	.md-timeline-block:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.md-timeline-block:first-child {
+		margin-top: 0;
+	}
+	.md-timeline-block:last-child {
+		margin-bottom: 0;
+	}
+	@media only screen and (min-width: 1170px) {
+		.md-timeline-block {
+			margin: 4em 0;
+		}
+		.md-timeline-block:first-child {
+			margin-top: 0;
+		}
+		.md-timeline-block:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.md-timeline-date {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60px;
+		height: 40px;
+		border-radius: box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+	}
+	.md-timeline-date.blue {
+		background: #0D395F;
+		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+	}
+	@media only screen and (min-width: 1170px) {
+		.md-timeline-date {
+			width: 60px;
+			height: 60px;
+			left: 50%;
+			margin-left: -30px;
+			/* Force Hardware Acceleration in WebKit */
+			-webkit-transform: translateZ(0);
+			-webkit-backface-visibility: hidden;
+		}
+		.cssanimations .md-timeline-date.is-hidden {
+			visibility: hidden;
+		}
+		.cssanimations .md-timeline-date.bounce-in {
+			visibility: visible;
+			-webkit-animation: md-bounce-1 0.6s;
+			-moz-animation: md-bounce-1 0.6s;
+			animation: md-bounce-1 0.6s;
+		}
+	}
+	@-webkit-keyframes md-bounce-1 {
+		0% {
+			opacity: 0;
+			-webkit-transform: scale(0.5);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: scale(1.2);
+		}
+		100% {
+			-webkit-transform: scale(1);
+		}
+	}
+	@-moz-keyframes md-bounce-1 {
+		0% {
+			opacity: 0;
+			-moz-transform: scale(0.5);
+		}
+		60% {
+			opacity: 1;
+			-moz-transform: scale(1.2);
+		}
+		100% {
+			-moz-transform: scale(1);
+		}
+	}
+	@keyframes md-bounce-1 {
+		0% {
+			opacity: 0;
+			-webkit-transform: scale(0.5);
+			-moz-transform: scale(0.5);
+			-ms-transform: scale(0.5);
+			-o-transform: scale(0.5);
+			transform: scale(0.5);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: scale(1.2);
+			-moz-transform: scale(1.2);
+			-ms-transform: scale(1.2);
+			-o-transform: scale(1.2);
+			transform: scale(1.2);
+		}
+		100% {
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			-ms-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+		}
+	}
+	.md-timeline-content {
+		position: relative;
+		margin-left: 60px;
+		background: white;
+		padding: 1em;
+		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+	}
+	.md-timeline-content:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.md-timeline-content h2 {
+		color: #303e49;
+	}
+	.md-timeline-content p, .md-timeline-content .md-read-more, .md-timeline-content .md-date {
+		font-size: 13px;
+		font-size: 0.8125rem;
+	}
+	.md-timeline-content .md-read-more, .md-timeline-content .md-date {
+		display: inline-block;
+	}
+	.md-timeline-content p {
+		margin: 1em 0;
+		line-height: 1.6;
+	}
+	.md-timeline-content .md-read-more {
+		float: right;
+		padding: .8em 1em;
+		background: #acb7c0;
+		color: white;
+		border-radius: 0.25em;
+	}
+	.md-date {
+		color: white;
+		text-align: center;
+	}
+	.no-touch .md-timeline-content .md-read-more:hover {
+		background-color: #bac4cb;
+	}
+	.md-timeline-content::before {
+		content: '';
+		position: absolute;
+		top: 16px;
+		right: 100%;
+		height: 0;
+		width: 0;
+		border: 7px solid transparent;
+		border-right: 7px solid white;
+	}
+	@media only screen and (min-width: 768px) {
+		.md-timeline-content h2 {
+			font-size: 20px;
+			font-size: 1.25rem;
+		}
+		.md-timeline-content p {
+			font-size: 16px;
+			font-size: 1rem;
+		}
+		.md-timeline-content .md-read-more {
+			font-size: 14px;
+			font-size: 0.875rem;
+		}
+	}
+	@media only screen and (min-width: 1170px) {
+		.md-date {
+			text-align: center;
+			margin-top: 10px;
+			line-height: 20px;
+		}
+		.md-timeline-content {
+			margin-left: 0;
+			padding: 1.6em;
+			width: 45%;
+		}
+		.md-timeline-content::before {
+			top: 24px;
+			left: 100%;
+			border-color: transparent;
+			border-left-color: white;
+		}
+		.md-timeline-content .md-read-more {
+			float: left;
+		}
+		.md-timeline-block:nth-child(even) .md-timeline-content {
+			float: right;
+		}
+		.md-timeline-block:nth-child(even) .md-timeline-content::before {
+			top: 24px;
+			left: auto;
+			right: 100%;
+			border-color: transparent;
+			border-right-color: white;
+		}
+		.md-timeline-block:nth-child(even) .md-timeline-content .md-read-more {
+			float: right;
+		}
+		.cssanimations .md-timeline-content.is-hidden {
+			visibility: hidden;
+		}
+		.cssanimations .md-timeline-content.bounce-in {
+			visibility: visible;
+			-webkit-animation: md-bounce-2 0.6s;
+			-moz-animation: md-bounce-2 0.6s;
+			animation: md-bounce-2 0.6s;
+		}
+	}
+	@media only screen and (min-width: 1170px) {
+		/* inverse bounce effect on even content blocks */
+		.cssanimations .md-timeline-block:nth-child(even) .md-timeline-content.bounce-in {
+			-webkit-animation: md-bounce-2-inverse 0.6s;
+			-moz-animation: md-bounce-2-inverse 0.6s;
+			animation: md-bounce-2-inverse 0.6s;
+		}
+	}
+	@-webkit-keyframes md-bounce-2 {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(-100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+		}
+	}
+	@-moz-keyframes md-bounce-2 {
+		0% {
+			opacity: 0;
+			-moz-transform: translateX(-100px);
+		}
+		60% {
+			opacity: 1;
+			-moz-transform: translateX(20px);
+		}
+		100% {
+			-moz-transform: translateX(0);
+		}
+	}
+	@keyframes md-bounce-2 {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(-100px);
+			-moz-transform: translateX(-100px);
+			-ms-transform: translateX(-100px);
+			-o-transform: translateX(-100px);
+			transform: translateX(-100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(20px);
+			-moz-transform: translateX(20px);
+			-ms-transform: translateX(20px);
+			-o-transform: translateX(20px);
+			transform: translateX(20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-ms-transform: translateX(0);
+			-o-transform: translateX(0);
+			transform: translateX(0);
+		}
+	}
+	@-webkit-keyframes md-bounce-2-inverse {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(-20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+		}
+	}
+	@-moz-keyframes md-bounce-2-inverse {
+		0% {
+			opacity: 0;
+			-moz-transform: translateX(100px);
+		}
+		60% {
+			opacity: 1;
+			-moz-transform: translateX(-20px);
+		}
+		100% {
+			-moz-transform: translateX(0);
+		}
+	}
+	@keyframes md-bounce-2-inverse {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(100px);
+			-moz-transform: translateX(100px);
+			-ms-transform: translateX(100px);
+			-o-transform: translateX(100px);
+			transform: translateX(100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(-20px);
+			-moz-transform: translateX(-20px);
+			-ms-transform: translateX(-20px);
+			-o-transform: translateX(-20px);
+			transform: translateX(-20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-ms-transform: translateX(0);
+			-o-transform: translateX(0);
+			transform: translateX(0);
+		}
+	}
 </style>
 
-                
-            </div>
+<section id="md-timeline" class="md-container">
+   	   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">12月 12 2017</div>
+                		</div>
 
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2017/12/12/光线追踪框架/">光线追踪框架</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/计算机图形学-基础/">计算机图形学-基础</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							实现从光照模型说起光照模型是着色(shading)过程的核心这里我采用的是最简单的
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">12月 11 2017</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2017/12/11/AtCoder Regular Contest 085/">AtCoder Regular Contest 085</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/算法竞赛-比赛/">算法竞赛-比赛</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">12月 11 2017</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2017/12/11/AtCoder Regular Contest 086/">AtCoder Regular Contest 086</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/算法竞赛-比赛/">算法竞赛-比赛</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">9月 25 2017</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2017/09/25/DP练习1/">DP练习1</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/算法竞赛-动态规划/">算法竞赛-动态规划</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							
     
-        <a href="/2017/12/11/AtCoder Regular Contest 086/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
+        7/10
     
 
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
 
-    <!-- Next Nav -->
-    
-        <a href="/2017/09/23/Codeforces练习1 排列组合/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
 
-        </div>
-    </div>
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">9月 23 2017</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2017/09/23/Codeforces练习1 排列组合/">Codeforces练习1 排列组合</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/算法竞赛-数学/">算法竞赛-数学</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							
+    
+        27/64
+    
+
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   			   	  		
+   	</section>
+
+<script type="text/ls-javascript" id="page-timeline-script">
+    var adjustFooter = function() {
+        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
+            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
+            $('#bottom').css('bottom', '-' + footerBottom + 'px');
+        }
+    };
+    $(document).ready(function() {
+        adjustFooter();
+    });
+</script>
+
+
 
 
 
@@ -727,14 +983,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
