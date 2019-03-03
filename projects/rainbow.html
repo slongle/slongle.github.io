@@ -280,12 +280,28 @@
 <!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><header style="display:none;"><h1>Rainbow</h1></header><meta itemprop="headline" content="Rainbow"><meta itemprop="author" content="slongle"/><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="rainbow">Rainbow</h2>
+<h4 id="a-physically-based-photorealistic-global-illumination-renderer">A physically-based photorealistic global illumination renderer</h4>
 <p><img src="https://i.loli.net/2019/03/02/5c7a8d9709810.jpg" alt="Rainbow_diffuse.jpg" /></p>
-
+<h4 id="overview">Overview</h4>
+<p><a href="https://github.com/slongle/Rainbow">Rainbow Renderer</a> is a physically-based photorealistic 3D renderer I am writing from scratch in C++. Rainbow is built from the ground up as a global illumination renderer supporting global illumination through light transport algorithms, including volumetric unidirectional pathtracing with multiple importance sampling. The renderer is still a work in progress.</p>
+<h4 id="features">Features</h4>
+<p><strong>Advanced Global Illumination</strong>: Path Tracing, Volumetric Path Tracing.  <br />
+<strong>Geometry</strong>: Support triangle and quad meshes with instancing. Also can support sphere and box.<br />
+<strong>Lights</strong>: Support point light, spot light, area light(rectangle and sphere).<br />
+<strong>Materials and BSDFs</strong>: Support physically based BRDFs, including multiple microfacet models (Beckmann), smooth and rough versions of Fresnel conductors, specular dielectrics. <br />
+<strong>Acceleration Structure System</strong>: Use SAH-BVH acceleration.<br />
+<strong>Render Mode</strong>: Adaptive, Progressive and Final mode.<br />
+<strong>Scene Loading</strong>: Uses a XML custom scene format defining geometry, lights, materials, camera settings, render settings.</p>
+<h4 id="select-images">Select Images</h4>
 <p><img src="https://i.loli.net/2019/03/02/5c7aa1a23feba.jpg" alt="cornell-box" />
-<img src="https://i.loli.net/2019/03/02/5c7aa1a1da611.jpg" alt="sphere-cornell-box" />
+<img src="https://i.loli.net/2019/03/03/5c7b4ddf60805.png" alt="sphere-cornell-box" />
 <img src="https://i.loli.net/2019/03/02/5c7aa1a09abee.jpg" alt="veach-mis" />
-<img src="https://i.loli.net/2019/03/02/5c7aa1a26ec80.jpg" alt="vol-caustic" /></p>
+Veach thesis multiple importance sampling test scene. Rendered using pathtracing with multiple importance sampling.
+<img src="https://i.loli.net/2019/03/02/5c7aa1a26ec80.jpg" alt="vol-caustic" />
+Rendered using volumetric pathtracing (WIP).</p>
+
+<h4 id="resources">Resources</h4>
+<p><a href="http://www.pbr-book.org/">Physically Based Rendering</a>: The go-to reference book for rendering, by Matt Pharr, Wenzel Jakob, and Greg Humphreys.</p>
 </div><div class="d-print-none"><footer class="article__footer"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer></div>
