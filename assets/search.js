@@ -1,1 +1,1 @@
-window.TEXT_SEARCH_DATA={'posts':[]};
+window.TEXT_SEARCH_DATA={'posts':[{'title':'Work+for+Open+Source+Community+Using+Git','url':'%2F2019%2F03%2F19%2FWork-for-Open-Source-Community-Using-Git.html'}]};

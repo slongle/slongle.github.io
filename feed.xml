@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:1727/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:1727/" rel="alternate" type="text/html" /><updated>2019-03-03T13:48:55+08:00</updated><id>http://localhost:1727/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:1727/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:1727/" rel="alternate" type="text/html" /><updated>2019-03-20T19:29:05+08:00</updated><id>http://localhost:1727/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Work for Open Source Community Using Git</title><link href="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html" rel="alternate" type="text/html" title="Work for Open Source Community Using Git" /><published>2019-03-19T00:00:00+08:00</published><updated>2019-03-19T00:00:00+08:00</updated><id>http://localhost:1727/2019/03/19/Work%20for%20Open%20Source%20Community%20Using%20Git</id><content type="html" xml:base="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">&lt;p&gt;长期更新使用Git和Github工作的内容。&lt;/p&gt;
+
+&lt;h2 id=&quot;案例展示&quot;&gt;案例展示&lt;/h2&gt;
+&lt;h3 id=&quot;pr工作流程&quot;&gt;PR工作流程&lt;/h3&gt;
+&lt;h4 id=&quot;场景描述&quot;&gt;场景描述&lt;/h4&gt;
+&lt;p&gt;第一个场景是大家最常遇到的。 &lt;br /&gt;
+先从开源项目那边fork过来，然后clone到本地，准备工作，打算修改完代码再push回去，提交PR。&lt;/p&gt;
+&lt;h4 id=&quot;工作流程&quot;&gt;工作流程&lt;/h4&gt;
+&lt;p&gt;上面提到的流程听起来非常理想，但是对那些对Git没什么经验的人来说，有非常多的坑存在。&lt;br /&gt;
+1.首先我们要时刻保持fork的分支的master分支是与官方的master分支一致。&lt;br /&gt;
+2.然后在你本地的master分支上面新建一个new分支，然后在这个new分支上工作。&lt;br /&gt;
+前两点很重要，很多人一开始就直接在master分支上面干活，后面会造成非常多的麻烦。&lt;br /&gt;
+3.在new分支上干活。&lt;br /&gt;
+4.和远程的new分支同步。&lt;br /&gt;
+5.在Github上面，你的fork仓库里点击PR，提交PR到官方仓库。&lt;br /&gt;
+假设现在我们已经完成工作了，这个PR，我们提交了很多条commit。  &lt;br /&gt;
+6.将new分支上的commit，rebase成1条commit到你的master分支，等待merge。  &lt;br /&gt;
+在PR被merge后，你的fork分支会落后官方分支，接下来要更新你的fork分支。&lt;br /&gt;
+这时我们需要有一个新的merge分支用来merge新的commit，这个merge分支建立在你的master分支上。&lt;br /&gt;
+7.点击github上面的compare，比较你的merge分支和官方master分支，将官方master分支上新的commit以PR的形式加到你的merge分支上。&lt;br /&gt;
+9.将你merge分支上面的commit以rebase的形式放到你的master分支上。&lt;br /&gt;
+10.删除你的merge分支和new分支。&lt;/p&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Git" /><summary type="html">长期更新使用Git和Github工作的内容。 案例展示 PR工作流程 场景描述 第一个场景是大家最常遇到的。 先从开源项目那边fork过来，然后clone到本地，准备工作，打算修改完代码再push回去，提交PR。 工作流程 上面提到的流程听起来非常理想，但是对那些对Git没什么经验的人来说，有非常多的坑存在。 1.首先我们要时刻保持fork的分支的master分支是与官方的master分支一致。 2.然后在你本地的master分支上面新建一个new分支，然后在这个new分支上工作。 前两点很重要，很多人一开始就直接在master分支上面干活，后面会造成非常多的麻烦。 3.在new分支上干活。 4.和远程的new分支同步。 5.在Github上面，你的fork仓库里点击PR，提交PR到官方仓库。 假设现在我们已经完成工作了，这个PR，我们提交了很多条commit。 6.将new分支上的commit，rebase成1条commit到你的master分支，等待merge。 在PR被merge后，你的fork分支会落后官方分支，接下来要更新你的fork分支。 这时我们需要有一个新的merge分支用来merge新的commit，这个merge分支建立在你的master分支上。 7.点击github上面的compare，比较你的merge分支和官方master分支，将官方master分支上新的commit以PR的形式加到你的merge分支上。 9.将你merge分支上面的commit以rebase的形式放到你的master分支上。 10.删除你的merge分支和new分支。</summary></entry></feed>
