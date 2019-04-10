@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Work for Open Source Community Using Git - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Last Time - slongle</title>
 
-<meta name="description" content="长期更新使用Git和Github工作的内容。案例展示PR工作流程场景描述第一个场景是大家最常遇到的。 先从开源项目那边fork过来，然后clone到本地，准备工作，打算修改完代码再push回去，提交PR。工作流程上面提到的流程听起来非常理想，但是对那些对Git没什么经验的人来说，有非常多的坑存在。1.首先我们要时...">
-<link rel="canonical" href="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="TopcoderSRM 754MediumHardSRM 753Hard2019 Humblefool Cup PrelimsHardSRM 752Hard">
+<link rel="canonical" href="http://localhost:1727/2019/04/10/Last-Time.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,41 +277,33 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Work for Open Source Community Using Git</h1></header><span class="split-space">&nbsp;</span>
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Last Time</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-03-19-Work for Open Source Community Using Git.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Work for Open Source Community Using Git"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-04-10-Last Time.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Last Time"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Git">Git</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Mar 19, 2019</span>
-            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-03-19T00:00:00+08:00">
-    <meta itemprop="keywords" content="Git"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+                href="/archive.html?tag=Algorithm">Algorithm</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Apr 10, 2019</span>
+            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-04-10T00:00:00+08:00">
+    <meta itemprop="keywords" content="Algorithm"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><p>长期更新使用Git和Github工作的内容。</p>
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="topcoder">Topcoder</h2>
 
-<h2 id="案例展示">案例展示</h2>
-<h3 id="pr工作流程">PR工作流程</h3>
-<h4 id="场景描述">场景描述</h4>
-<p>第一个场景是大家最常遇到的。 <br />
-先从开源项目那边fork过来，然后clone到本地，准备工作，打算修改完代码再push回去，提交PR。</p>
-<h4 id="工作流程">工作流程</h4>
-<p>上面提到的流程听起来非常理想，但是对那些对Git没什么经验的人来说，有非常多的坑存在。<br />
-1.首先我们要时刻保持fork的分支的master分支是与官方的master分支一致。<br />
-2.然后在你本地的master分支上面新建一个new分支，然后在这个new分支上工作。<br />
-前两点很重要，很多人一开始就直接在master分支上面干活，后面会造成非常多的麻烦。<br />
-3.在new分支上干活。<br />
-4.和远程的new分支同步。<br />
-5.在Github上面，你的fork仓库里点击PR，提交PR到官方仓库。<br />
-假设现在我们已经完成工作了，这个PR，我们提交了很多条commit。  <br />
-6.将new分支上的commit，rebase成1条commit到你的master分支，等待merge。  <br />
-在PR被merge后，你的fork分支会落后官方分支，接下来要更新你的fork分支。<br />
-这时我们需要有一个新的merge分支用来merge新的commit，这个merge分支建立在你的master分支上。<br />
-7.点击github上面的compare，比较你的merge分支和官方master分支，将官方master分支上新的commit以PR的形式加到你的merge分支上。<br />
-9.将你merge分支上面的commit以rebase的形式放到你的master分支上。<br />
-10.删除你的merge分支和new分支。</p>
+<h3 id="srm-754">SRM 754</h3>
+<h4 id="medium">Medium</h4>
+<h4 id="hard">Hard</h4>
 
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-03-19T00:00:00+08:00"><!-- start custom article footer snippet -->
+<h3 id="srm-753">SRM 753</h3>
+<h4 id="hard-1">Hard</h4>
+
+<h3 id="2019-humblefool-cup-prelims">2019 Humblefool Cup Prelims</h3>
+<h4 id="hard-2">Hard</h4>
+
+<h3 id="srm-752">SRM 752</h3>
+<h4 id="hard-3">Hard</h4>
+
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-04-10T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
     <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
@@ -319,7 +311,7 @@
         <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
       </a>
     </p>
-  </div></div></footer><div class="article__section-navigator clearfix"><div class="next"><span>NEXT</span><a href="/2019/04/10/Last-Time.html">Last Time</a></div></div></div>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">Work for Open Source Community Using Git</a></div></div></div>
 
 </div>
 

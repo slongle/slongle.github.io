@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:1727/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:1727/" rel="alternate" type="text/html" /><updated>2019-03-20T19:29:05+08:00</updated><id>http://localhost:1727/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Work for Open Source Community Using Git</title><link href="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html" rel="alternate" type="text/html" title="Work for Open Source Community Using Git" /><published>2019-03-19T00:00:00+08:00</published><updated>2019-03-19T00:00:00+08:00</updated><id>http://localhost:1727/2019/03/19/Work%20for%20Open%20Source%20Community%20Using%20Git</id><content type="html" xml:base="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">&lt;p&gt;长期更新使用Git和Github工作的内容。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:1727/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:1727/" rel="alternate" type="text/html" /><updated>2019-04-10T22:06:25+08:00</updated><id>http://localhost:1727/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Last Time</title><link href="http://localhost:1727/2019/04/10/Last-Time.html" rel="alternate" type="text/html" title="Last Time" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:1727/2019/04/10/Last%20Time</id><content type="html" xml:base="http://localhost:1727/2019/04/10/Last-Time.html">&lt;h2 id=&quot;topcoder&quot;&gt;Topcoder&lt;/h2&gt;
+
+&lt;h3 id=&quot;srm-754&quot;&gt;SRM 754&lt;/h3&gt;
+&lt;h4 id=&quot;medium&quot;&gt;Medium&lt;/h4&gt;
+&lt;h4 id=&quot;hard&quot;&gt;Hard&lt;/h4&gt;
+
+&lt;h3 id=&quot;srm-753&quot;&gt;SRM 753&lt;/h3&gt;
+&lt;h4 id=&quot;hard-1&quot;&gt;Hard&lt;/h4&gt;
+
+&lt;h3 id=&quot;2019-humblefool-cup-prelims&quot;&gt;2019 Humblefool Cup Prelims&lt;/h3&gt;
+&lt;h4 id=&quot;hard-2&quot;&gt;Hard&lt;/h4&gt;
+
+&lt;h3 id=&quot;srm-752&quot;&gt;SRM 752&lt;/h3&gt;
+&lt;h4 id=&quot;hard-3&quot;&gt;Hard&lt;/h4&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Algorithm" /><summary type="html">Topcoder SRM 754 Medium Hard SRM 753 Hard 2019 Humblefool Cup Prelims Hard SRM 752 Hard</summary></entry><entry><title type="html">Work for Open Source Community Using Git</title><link href="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html" rel="alternate" type="text/html" title="Work for Open Source Community Using Git" /><published>2019-03-19T00:00:00+08:00</published><updated>2019-03-19T00:00:00+08:00</updated><id>http://localhost:1727/2019/03/19/Work%20for%20Open%20Source%20Community%20Using%20Git</id><content type="html" xml:base="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">&lt;p&gt;长期更新使用Git和Github工作的内容。&lt;/p&gt;
 
 &lt;h2 id=&quot;案例展示&quot;&gt;案例展示&lt;/h2&gt;
 &lt;h3 id=&quot;pr工作流程&quot;&gt;PR工作流程&lt;/h3&gt;
