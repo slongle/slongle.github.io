@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:1727/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:1727/" rel="alternate" type="text/html" /><updated>2019-04-10T22:06:25+08:00</updated><id>http://localhost:1727/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Last Time</title><link href="http://localhost:1727/2019/04/10/Last-Time.html" rel="alternate" type="text/html" title="Last Time" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:1727/2019/04/10/Last%20Time</id><content type="html" xml:base="http://localhost:1727/2019/04/10/Last-Time.html">&lt;h2 id=&quot;topcoder&quot;&gt;Topcoder&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:1727/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:1727/" rel="alternate" type="text/html" /><updated>2019-04-16T00:38:36+08:00</updated><id>http://localhost:1727/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Last Time</title><link href="http://localhost:1727/2019/04/10/Last-Time.html" rel="alternate" type="text/html" title="Last Time" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:1727/2019/04/10/Last%20Time</id><content type="html" xml:base="http://localhost:1727/2019/04/10/Last-Time.html">&lt;h2 id=&quot;topcoder&quot;&gt;Topcoder&lt;/h2&gt;
 
 &lt;h3 id=&quot;srm-754&quot;&gt;SRM 754&lt;/h3&gt;
 &lt;h4 id=&quot;medium&quot;&gt;Medium&lt;/h4&gt;
+&lt;p&gt;题意 : 给定投影等价类数，构造一组点集方案。&lt;br /&gt;
+题解 : 两个点有两个等价类，对于一个点集，$n^2$条直线去重后的个数为等价类数。构造两列点即可。&lt;/p&gt;
 &lt;h4 id=&quot;hard&quot;&gt;Hard&lt;/h4&gt;
+&lt;p&gt;题意 : 给定$4$连通块大小和$8$连通块大小，返回构造结果。&lt;br /&gt;
+题解 : $8$连通块是由若干$4$连通块组合起来，状压DP一下，DP出一组解。然后按行构造即可。&lt;/p&gt;
 
 &lt;h3 id=&quot;srm-753&quot;&gt;SRM 753&lt;/h3&gt;
 &lt;h4 id=&quot;hard-1&quot;&gt;Hard&lt;/h4&gt;
+&lt;p&gt;题意 : 给定一个序列，区间询问去掉一个数后的最大异或和。&lt;br /&gt;
+题解 : 可持久化Trie树，区间异或和在区间的Trie树上异或出最大值。&lt;/p&gt;
 
 &lt;h3 id=&quot;2019-humblefool-cup-prelims&quot;&gt;2019 Humblefool Cup Prelims&lt;/h3&gt;
 &lt;h4 id=&quot;hard-2&quot;&gt;Hard&lt;/h4&gt;
+&lt;p&gt;题意 : 定义相邻的两个质数为只有一个数位不同，且长度相同。询问两个质数可以到达。&lt;br /&gt;
+题解 : 质数非常连通，预处理之后会发现，只有$4$个块，$2$个是孤点，还有$1$个是大小为$2$的块，剩下的点全部联通。&lt;/p&gt;
 
 &lt;h3 id=&quot;srm-752&quot;&gt;SRM 752&lt;/h3&gt;
-&lt;h4 id=&quot;hard-3&quot;&gt;Hard&lt;/h4&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Algorithm" /><summary type="html">Topcoder SRM 754 Medium Hard SRM 753 Hard 2019 Humblefool Cup Prelims Hard SRM 752 Hard</summary></entry><entry><title type="html">Work for Open Source Community Using Git</title><link href="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html" rel="alternate" type="text/html" title="Work for Open Source Community Using Git" /><published>2019-03-19T00:00:00+08:00</published><updated>2019-03-19T00:00:00+08:00</updated><id>http://localhost:1727/2019/03/19/Work%20for%20Open%20Source%20Community%20Using%20Git</id><content type="html" xml:base="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">&lt;p&gt;长期更新使用Git和Github工作的内容。&lt;/p&gt;
+&lt;h4 id=&quot;hard-3&quot;&gt;Hard&lt;/h4&gt;
+&lt;p&gt;题意 : 有$n$个硬币在桌子上，有$1$个硬币在手里，每次抛硬币，正面的话桌面上加$1$个硬币，手里留$1$个硬币，如果桌上有$2N$个硬币则游戏结束。反面的话，从桌上硬币拿走手里的硬币数个放到手里，如果桌上拿空则游戏结束。输出期望场数。&lt;br /&gt;
+题解 : 转移显然有环，但是由于正面的特殊性，定义$f[i]$表示手里$1$个硬币，桌上$i$个硬币的期望场数。转移方程$f[i]=(f[i+1]+1)*0.5+(f[i]+2)*0.5^2+(f[i-2]+3)*0.5^3+\cdots$。可以发现转移有后效性，但是我们可以将$f[i+1]$去除后效性。&lt;/p&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Algorithm" /><summary type="html">Topcoder SRM 754 Medium 题意 : 给定投影等价类数，构造一组点集方案。 题解 : 两个点有两个等价类，对于一个点集，$n^2$条直线去重后的个数为等价类数。构造两列点即可。 Hard 题意 : 给定$4$连通块大小和$8$连通块大小，返回构造结果。 题解 : $8$连通块是由若干$4$连通块组合起来，状压DP一下，DP出一组解。然后按行构造即可。 SRM 753 Hard 题意 : 给定一个序列，区间询问去掉一个数后的最大异或和。 题解 : 可持久化Trie树，区间异或和在区间的Trie树上异或出最大值。 2019 Humblefool Cup Prelims Hard 题意 : 定义相邻的两个质数为只有一个数位不同，且长度相同。询问两个质数可以到达。 题解 : 质数非常连通，预处理之后会发现，只有$4$个块，$2$个是孤点，还有$1$个是大小为$2$的块，剩下的点全部联通。 SRM 752 Hard 题意 : 有$n$个硬币在桌子上，有$1$个硬币在手里，每次抛硬币，正面的话桌面上加$1$个硬币，手里留$1$个硬币，如果桌上有$2N$个硬币则游戏结束。反面的话，从桌上硬币拿走手里的硬币数个放到手里，如果桌上拿空则游戏结束。输出期望场数。 题解 : 转移显然有环，但是由于正面的特殊性，定义$f[i]$表示手里$1$个硬币，桌上$i$个硬币的期望场数。转移方程$f[i]=(f[i+1]+1)*0.5+(f[i]+2)*0.5^2+(f[i-2]+3)*0.5^3+\cdots$。可以发现转移有后效性，但是我们可以将$f[i+1]$去除后效性。</summary></entry><entry><title type="html">Work for Open Source Community Using Git</title><link href="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html" rel="alternate" type="text/html" title="Work for Open Source Community Using Git" /><published>2019-03-19T00:00:00+08:00</published><updated>2019-03-19T00:00:00+08:00</updated><id>http://localhost:1727/2019/03/19/Work%20for%20Open%20Source%20Community%20Using%20Git</id><content type="html" xml:base="http://localhost:1727/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">&lt;p&gt;长期更新使用Git和Github工作的内容。&lt;/p&gt;
 
 &lt;h2 id=&quot;案例展示&quot;&gt;案例展示&lt;/h2&gt;
 &lt;h3 id=&quot;pr工作流程&quot;&gt;PR工作流程&lt;/h3&gt;
