@@ -416,6 +416,15 @@ a..b.b…a<br />
 $1.f(l)=f(r)$，此时要求$f(l)|S$，方案数为$9*10^{f(l)-1}-\frac{S}{f(l)}+1$。<br />
 $2.f(l)+1=f(r)$，令$t=r-l+1$，$f(l)=\text{len}$，$f(r)=\text{len}+1$，$l$到跨越的距离为$x$，跨越到$r$的距离为$y$，得到等式$S=\text{len}*t+y$，枚举$t$，则$y=S\%t$，$x=t-S\%t$，若$x，y$都大于$0$则计入答案</p>
 
+<h2 id="codeforces">Codeforces</h2>
+
+<h3 id="educational-codeforces-round-63">Educational Codeforces Round 63</h3>
+<h4 id="f-delivery-oligopoly">F Delivery Oligopoly</h4>
+<p>题意：给一张$n(n\le 15)$个点，$m$条边的双连通图。询问删除最多的边使得新图为双连通图的方案。<br />
+题解：对于一个双连通图，双连通块的构造方法是一个双连通块加上一条链/一个点。那么我们枚举双连通块点集$s$，枚举一个端点为$i,j$且点集为$t$的链，使得$i,j$分别与$s$内两点相连。<br />
+预处理出$i$到点集$s(i\not\in s)$的最大/次大距离，预处理出点集为$s$，左右端点为$i$和$j$的链的最小花费。转移记录方案。 <br />
+复杂度$O(3^n*n^2)$。</p>
+
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-04-10T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
