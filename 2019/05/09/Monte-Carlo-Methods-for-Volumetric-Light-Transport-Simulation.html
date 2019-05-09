@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Monte Carlo Methods for Volumetric Light Transport Simulation - slongle</title>
 
-<meta name="description" content="##Section 2. Optical PropertiesCollision Coefficient  density per unit volume: $\rho (m^{-3})$  cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$  scatter...">
+<meta name="description" content="Section 2. Optical PropertiesCollision Coefficient  density per unit volume: $\rho (m^{-3})$  cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$  scatterin...">
 <link rel="canonical" href="http://localhost:1727/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
@@ -291,9 +291,7 @@
             </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-05-09T00:00:00+08:00">
     <meta itemprop="keywords" content="Computer,Graphics"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><p>##</p>
-
-<h2 id="section-2-optical-properties">Section 2. Optical Properties</h2>
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="section-2-optical-properties">Section 2. Optical Properties</h2>
 
 <h3 id="collision-coefficient">Collision Coefficient</h3>
 
@@ -319,7 +317,7 @@
 
 <p>Then, this differential equation can yield</p>
 
-<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{\infin}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt</script>
+<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{\infty}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt</script>
 
 <p>Here, $y=x-t\cdot\omega$, $T(x,y)=e^{-\int_{x}^{y}\mu_{t}(z)dz}$(Beer Lambert Law)</p>
 
@@ -349,10 +347,15 @@
   </tbody>
 </table>
 
-<p>$D(x,y)=\begin{cases}
-|n(x)\cdot \omega_{x\rightarrow y}| &amp; \text{x is on a surface} <br />
-1 &amp; \text{x is in a medium}
-\end{cases}$</p>
+<table>
+  <tbody>
+    <tr>
+      <td>$D(x,y)=\begin{cases}</td>
+      <td>n(x)\cdot \omega_{x\rightarrow y}</td>
+      <td>&amp; \text{x is on a surface} \ 1 &amp; \text{x is in a medium} \end{cases}$</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>$f_{x\rightarrow y\rightarrow z}=\begin{cases}f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface}\\mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z)&amp; \text{y is in a medium}\end{cases}$</p>
 
