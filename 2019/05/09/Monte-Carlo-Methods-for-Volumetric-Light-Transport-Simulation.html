@@ -311,7 +311,7 @@
 
 <h2 id="section-3-volumetric-rendering-equation">Section 3. Volumetric Rendering Equation</h2>
 
-<p>### Radiative Transfer Equation (RTE)</p>
+<h3 id="radiative-transfer-equation-rte">Radiative Transfer Equation (RTE)</h3>
 
 <script type="math/tex; mode=display">(\omega\cdot\nabla)\cdot L(x,\omega)=-\mu_{t}(x)L(x,\omega)+\mu_{a}(x)L_{e}(x,\omega)+\mu_{s}(x)L_{s}(x,\omega)</script>
 
@@ -333,13 +333,15 @@
 
 <script type="math/tex; mode=display">f(\overline{x_{k}})=W(x_0,x_1)G(x_0,x_1)T(x_0,x_1)\cdot L_{e}(x_k\rightarrow x_{k-1})\cdot \prod_{i=1}^{i=k-1}f_{s}(x_{i+1}\rightarrow x_{i}\rightarrow x_{i-1})G(x_{i},x_{i+1})T(x_{i},x_{i+1})</script>
 
-<p>$W$ is response of the point on the sensor<br />
-$G(x,y)=\frac{D(x,y)\cdot D(y,x)}{||x-y||^2}$<br />
-$D(x,y)=\begin{cases} |n(x)\cdot \omega_{x\rightarrow y}| &amp; \text{x is on a surface} \ 1 &amp; \text{x is in a medium} \end{cases}$</p>
+<p>$W$ is response of the point on the sensor</p>
 
-<p>$f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface} \ \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp; \text{y is in a medium} \end{cases}$</p>
+<p>$G(x,y)=\frac{D(x,y)\cdot D(y,x)}{\Vert x-y\Vert ^2}$</p>
 
-<p>$L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is on a surface} \ \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is in a medium}\end{cases}$</p>
+<p>$D(x,y)=\begin{cases} \vert n(x)\cdot \omega_{x\rightarrow y}\vert &amp; \text{x is on a surface} \newline 1 &amp; \text{x is in a medium} \end{cases}$</p>
+
+<p>$f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface} \newline \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp; \text{y is in a medium} \end{cases}$</p>
+
+<p>$L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is on a surface} \newline \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is in a medium}\end{cases}$</p>
 
 <h2 id="section-4-distance-sampling">Section 4. Distance Sampling</h2>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-05-09T00:00:00+08:00"><!-- start custom article footer snippet -->
