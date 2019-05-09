@@ -333,33 +333,13 @@
 
 <script type="math/tex; mode=display">f(\overline{x_{k}})=W(x_0,x_1)G(x_0,x_1)T(x_0,x_1)\cdot L_{e}(x_k\rightarrow x_{k-1})\cdot \prod_{i=1}^{i=k-1}f_{s}(x_{i+1}\rightarrow x_{i}\rightarrow x_{i-1})G(x_{i},x_{i+1})T(x_{i},x_{i+1})</script>
 
-<p>$W$ is response of the point on the sensor</p>
+<p>$W$ is response of the point on the sensor<br />
+$G(x,y)=\frac{D(x,y)\cdot D(y,x)}{||x-y||^2}$<br />
+$D(x,y)=\begin{cases} |n(x)\cdot \omega_{x\rightarrow y}| &amp; \text{x is on a surface} \ 1 &amp; \text{x is in a medium} \end{cases}$</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$G(x,y)=\frac{D(x,y)\cdot D(y,x)}{</td>
-      <td> </td>
-      <td>x-y</td>
-      <td> </td>
-      <td>^2}$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface} \ \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp; \text{y is in a medium} \end{cases}$</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$D(x,y)=\begin{cases}</td>
-      <td>n(x)\cdot \omega_{x\rightarrow y}</td>
-      <td>&amp; \text{x is on a surface} \ 1 &amp; \text{x is in a medium} \end{cases}$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>$f_{x\rightarrow y\rightarrow z}=\begin{cases}f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface}\\mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z)&amp; \text{y is in a medium}\end{cases}$</p>
-
-<p>$L_{e}(x\rightarrow y)=\begin{cases}L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is on a surface}\ \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y})&amp;\text{x is in a medium}\end{cases}$</p>
+<p>$L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is on a surface} \ \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is in a medium}\end{cases}$</p>
 
 <h2 id="section-4-distance-sampling">Section 4. Distance Sampling</h2>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-05-09T00:00:00+08:00"><!-- start custom article footer snippet -->
