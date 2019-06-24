@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Monte Carlo Methods for Volumetric Light Transport Simulation - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之Design Pattern - slongle</title>
 
-<meta name="description" content="Section 2. Optical PropertiesCollision Coefficient  density per unit volume: $\rho (m^{-3})$  cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$  scatterin...">
-<link rel="canonical" href="http://localhost:3798/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="Creational patterns工厂方法模式(Factory Method pattern)抽象工厂模式(Abstract Factory)抽象工厂模式和工厂方法模式的区别在于，抽象工厂模式的工厂会创造一个产品的多个组件，而工厂方法模式直接创造一个产品。构造器模式(Builder)Builder抽象类的子类...">
+<link rel="canonical" href="http://localhost:3798/2019/06/22/Software-Construction-Design-Pattern.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,71 +277,87 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Monte Carlo Methods for Volumetric Light Transport Simulation</h1></header><span class="split-space">&nbsp;</span>
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之Design Pattern</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-05-09-Monte Carlo Methods for Volumetric Light Transport Simulation.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Monte Carlo Methods for Volumetric Light Transport Simulation"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-06-22-Software Construction Design Pattern.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之Design Pattern"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Computer-Graphics">Computer-Graphics</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>May 09, 2019</span>
-            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-05-09T00:00:00+08:00">
-    <meta itemprop="keywords" content="Computer-Graphics"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+                href="/archive.html?tag=Software-Construction">Software-Construction</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Jun 22, 2019</span>
+            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-06-22T00:00:00+08:00">
+    <meta itemprop="keywords" content="Software-Construction"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="section-2-optical-properties">Section 2. Optical Properties</h2>
-
-<h3 id="collision-coefficient">Collision Coefficient</h3>
-
-<ol>
-  <li>density per unit volume: $\rho (m^{-3})$</li>
-  <li>cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$</li>
-  <li>scattering(absorption) coefficient: $\mu_{s}(\mu_{a})=\sigma_{s}(\sigma_{a}) \cdot \rho (m^{-1})$</li>
-  <li>extinction coefficient: $\mu_{t}=\mu_{s}+\mu_{a}$</li>
-  <li>single-scattering albedo: $\alpha=\frac{\mu_{s}}{\mu_{t}}$</li>
-</ol>
-
-<h3 id="phase-function">Phase Function</h3>
-
-<p>Examples: Henyey-Greenstein, Rayleigh, Lorenz-Mie.</p>
-
-<p>For more details in <em>Handbook of Digital Image Synthesis: Scientific Foundations of Rendering</em></p>
-
-<h2 id="section-3-volumetric-rendering-equation">Section 3. Volumetric Rendering Equation</h2>
-
-<h3 id="radiative-transfer-equation-rte">Radiative Transfer Equation (RTE)</h3>
-
-<script type="math/tex; mode=display">(\omega\cdot\nabla)\cdot L(x,\omega)=-\mu_{t}(x)L(x,\omega)+\mu_{a}(x)L_{e}(x,\omega)+\mu_{s}(x)L_{s}(x,\omega)</script>
-
-<p>Then, this differential equation can yield</p>
-
-<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{\infty}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt</script>
-
-<p>Here, $y=x-t\cdot\omega$, $T(x,y)=e^{-\int_{x}^{y}\mu_{t}(z)dz}$(Beer Lambert Law)</p>
-
-<h3 id="volume-rendering-equation">Volume Rendering Equation</h3>
-
-<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{dist}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt+T(x,z)L(z,\omega)</script>
-
-<p>Here,$z=x-dist\cdot \omega$</p>
-
-<h3 id="path-integral-formulation">Path Integral Formulation</h3>
-
-<p>$\overline{x_{k}}={x_0,x_1,\dots,x_k}$, the $x_0$ is the point on the sensor</p>
-
-<script type="math/tex; mode=display">f(\overline{x_{k}})=W(x_0,x_1)G(x_0,x_1)T(x_0,x_1)\cdot L_{e}(x_k\rightarrow x_{k-1})\cdot \prod_{i=1}^{i=k-1}f_{s}(x_{i+1}\rightarrow x_{i}\rightarrow x_{i-1})G(x_{i},x_{i+1})T(x_{i},x_{i+1})</script>
-
-<p>$W$ is response of the point on the sensor</p>
-
-<p>$G(x,y)=\frac{D(x,y)\cdot D(y,x)}{\Vert x-y\Vert ^2}$</p>
-
-<p>$D(x,y)=\begin{cases} \vert n(x)\cdot \omega_{x\rightarrow y}\vert &amp; \text{x is on a surface} \newline 1 &amp; \text{x is in a medium} \end{cases}$</p>
-
-<p>$f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface} \newline \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp; \text{y is in a medium} \end{cases}$</p>
-
-<p>$L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is on a surface} \newline \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is in a medium}\end{cases}$</p>
-
-<h2 id="section-4-distance-sampling">Section 4. Distance Sampling</h2>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-05-09T00:00:00+08:00"><!-- start custom article footer snippet -->
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="creational-patterns">Creational patterns</h2>
+<h3 id="工厂方法模式factory-method-pattern">工厂方法模式(Factory Method pattern)</h3>
+<p><img src="https://i.postimg.cc/PqH1yTw3/0048.png" alt="" /></p>
+<h3 id="抽象工厂模式abstract-factory">抽象工厂模式(Abstract Factory)</h3>
+<p><img src="https://i.postimg.cc/7Z0gSffJ/0049.png" alt="" />
+抽象工厂模式和工厂方法模式的区别在于，抽象工厂模式的工厂会创造一个产品的多个组件，而工厂方法模式直接创造一个产品。</p>
+<h3 id="构造器模式builder">构造器模式(Builder)</h3>
+<p>Builder抽象类的子类直接build一种产品。<br />
+<img src="https://i.postimg.cc/yxDRxNMd/0050.png" alt="" /></p>
+<h2 id="structural-patterns">Structural patterns</h2>
+<h3 id="适配器模式adapter">适配器模式(Adapter)</h3>
+<p>封装为Client方便的形式。<br />
+<img src="https://i.postimg.cc/y6tr73Rw/0042.png" alt="" /></p>
+<h3 id="装饰器模式decorator">装饰器模式(Decorator)</h3>
+<p>将类和类之间嵌套起来，使得到的类包含有之前类的属性和自己的属性。<br />
+<img src="https://i.postimg.cc/HsMvnW4j/0043.png" alt="" />
+<img src="https://i.postimg.cc/dVKHyM46/0044.png" alt="" /></p>
+<h3 id="外观模式facade">外观模式(Facade)</h3>
+<p>也是为了Client的方便来封装。<br />
+与Adapter模式不同的是，Facade是将一些过程封装为一个过程，而Adapter是将参数封装。</p>
+<h3 id="桥接模式bridge">桥接模式(Bridge)</h3>
+<p>通过委派和继承来实现复杂操作。<br />
+<img src="https://i.postimg.cc/SxhGT60f/0051.png" alt="" /></p>
+<h3 id="代理模式proxy">代理模式(Proxy)</h3>
+<p>为了隔离Client的访问，设置一个代理。<br />
+<img src="https://i.postimg.cc/k5jFgL2T/0052.png" alt="" /></p>
+<h3 id="组合模式composite">组合模式(Composite)</h3>
+<p>类似于装饰器模式，区别在于每个类内部可以有多个其他类的实例而不是只有一个。</p>
+<h2 id="behavioral-patterns">Behavioral patterns</h2>
+<h3 id="策略模式strategy">策略模式(Strategy)</h3>
+<p>对于策略进行抽象，抽象为Strategy类/接口，然后Strategy中有一个work函数，在子类中实现这个work函数。<br />
+这样只需要切换传入的Strategy是哪个子类就可以了。<br />
+<img src="https://i.postimg.cc/k4VFHwTD/0045.png" alt="" /></p>
+<h3 id="模板模式template-method">模板模式(Template Method)</h3>
+<p>当做事情的步骤一样，但具体方法不同。<br />
+具体来说是，当某个过程work都是由step1(),step2(),step3()这种顺序执行，即</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">work</span><span class="o">(){</span>
+    <span class="n">step1</span><span class="o">();</span>
+    <span class="n">step2</span><span class="o">();</span>
+    <span class="n">step3</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>但是step1(),step2()可能对于不同的事情具体操作不同，要写成不同的类。<br />
+那么可以在抽象类/接口中实现work()如上，并定义函数step1(),step2()…，然后在继承这个类的不同的类中Override这些step()方法。<br />
+<img src="https://i.postimg.cc/vHyf7Qw4/0046.png" alt="" /></p>
+<h3 id="迭代器模式iterator">迭代器模式(Iterator)</h3>
+<p>对于遍历ADT中的元素，使用Iterator来遍历，不用用户自己去决定怎么遍历。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Iterator</span> <span class="n">iterator</span> <span class="o">=</span> <span class="n">adt</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">iterator</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+      <span class="n">Integer</span> <span class="n">item</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">)</span> <span class="n">iterator</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<p><img src="https://i.postimg.cc/y8bDGKtX/0047.png" alt="" /></p>
+<h3 id="观察者模式observer">观察者模式(Observer)</h3>
+<p>有一个被观察者A和很多观察者B1,B2,…。<br />
+Bi先到A那里注册，当A有事件要发布时，A会更新所有观察者的状态。<br />
+<img src="https://i.postimg.cc/2jLFCcrx/0053.png" alt="" /></p>
+<h3 id="访问者模式visitor">访问者模式(Visitor)</h3>
+<p>以类与类的交互形式完成操作。<br />
+<img src="https://i.postimg.cc/4dDcKGsQ/0054.png" alt="" /></p>
+<h3 id="中介模式mediator">中介模式(Mediator)</h3>
+<p>本质上是A与B的交互，现在转化为A与B的中介的交互。<br />
+通过设置中介，使得整个结构耦合度降低。<br />
+<img src="https://i.postimg.cc/bYnb7Z9C/0055.png" alt="" /></p>
+<h3 id="命令模式command">命令模式(Command)</h3>
+<p>通过委派的形式，将命令作用的实例保存在命令里，执行命令即可。<br />
+<img src="https://i.postimg.cc/ZKFNqXg6/0056.png" alt="" /></p>
+<h3 id="备忘录模式memento-pattern">备忘录模式(Memento Pattern)</h3>
+<p><img src="https://i.postimg.cc/L8tx2ykW/0057.png" alt="" /></p>
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-06-22T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
     <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
@@ -349,7 +365,7 @@
         <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
       </a>
     </p>
-  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/04/10/Last-Time.html">Last Time</a></div><div class="next"><span>NEXT</span><a href="/2019/06/20/Software-Construction-Thread.html">Software Construction之Thread</a></div></div></div>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/21/Software-Construction-ADT.html">Software Construction之ADT</a></div></div></div>
 
 </div>
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Monte Carlo Methods for Volumetric Light Transport Simulation - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之ADT - slongle</title>
 
-<meta name="description" content="Section 2. Optical PropertiesCollision Coefficient  density per unit volume: $\rho (m^{-3})$  cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$  scatterin...">
-<link rel="canonical" href="http://localhost:3798/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="Mutable和ImmutablePrimitive:int,Integer,String…为Immutable，在stack中分配内存Object:Immutable/Mutable，heap中分配内存防御式拷贝check静态类型检查：可在编译阶段发现错误，是关于“类型”的检查，不考虑值  语法错误  类名/函...">
+<link rel="canonical" href="http://localhost:3798/2019/06/21/Software-Construction-ADT.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,71 +277,103 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Monte Carlo Methods for Volumetric Light Transport Simulation</h1></header><span class="split-space">&nbsp;</span>
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之ADT</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-05-09-Monte Carlo Methods for Volumetric Light Transport Simulation.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Monte Carlo Methods for Volumetric Light Transport Simulation"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-06-21-Software Construction ADT.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之ADT"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Computer-Graphics">Computer-Graphics</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>May 09, 2019</span>
-            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-05-09T00:00:00+08:00">
-    <meta itemprop="keywords" content="Computer-Graphics"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+                href="/archive.html?tag=Software-Construction">Software-Construction</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Jun 21, 2019</span>
+            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-06-21T00:00:00+08:00">
+    <meta itemprop="keywords" content="Software-Construction"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="section-2-optical-properties">Section 2. Optical Properties</h2>
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h3 id="mutable和immutable">Mutable和Immutable</h3>
+<p>Primitive:int,Integer,String…为Immutable，在
+stack中分配内存<br />
+Object:Immutable/Mutable，heap中分配内存
+防御式拷贝</p>
 
-<h3 id="collision-coefficient">Collision Coefficient</h3>
+<h3 id="check">check</h3>
+<p>静态类型检查：可在编译阶段发现错误，是关于“类型”的检查，不考虑值</p>
+<ul>
+  <li>语法错误</li>
+  <li>类名/函数名错误</li>
+  <li>参数数目错误</li>
+  <li>参数类型错误</li>
+  <li>返回值类型错误
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="n">b</span> <span class="o">*=</span> <span class="mi">3</span><span class="o">;</span>
+<span class="c1">// b cannot be resolved to a variable</span>
+<span class="o">---------------</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span><span class="o">;</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="n">b</span> <span class="o">*=</span> <span class="mi">3</span><span class="o">;</span>
+<span class="c1">// The local variable b may not have been initialized</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-<ol>
-  <li>density per unit volume: $\rho (m^{-3})$</li>
-  <li>cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$</li>
-  <li>scattering(absorption) coefficient: $\mu_{s}(\mu_{a})=\sigma_{s}(\sigma_{a}) \cdot \rho (m^{-1})$</li>
-  <li>extinction coefficient: $\mu_{t}=\mu_{s}+\mu_{a}$</li>
-  <li>single-scattering albedo: $\alpha=\frac{\mu_{s}}{\mu_{t}}$</li>
-</ol>
+<p>动态检查：关于“值”的检查</p>
+<ul>
+  <li>非法的参数值(int=int/0会error,double=int/double(0)等返回Infinity不会error)</li>
+  <li>非法的返回值</li>
+  <li>越界</li>
+  <li>空指针</li>
+</ul>
 
-<h3 id="phase-function">Phase Function</h3>
+<h3 id="snapshot-diagram">Snapshot diagram</h3>
+<ul>
+  <li>基本类型的值
+<img src="https://i.postimg.cc/tJKPLmtB/0036.png" alt="" /></li>
+  <li>对象类型的值
+<img src="https://i.postimg.cc/zGSWc7Lk/0037.png" alt="" /></li>
+  <li>Immutable的值用双线椭圆
+<img src="https://i.postimg.cc/sgR7mq2X/0038.png" alt="" /></li>
+  <li>值的改变
+<img src="https://i.postimg.cc/ncmqvppg/0039.png" alt="" /></li>
+  <li>final值使用双线箭头
+<img src="https://i.postimg.cc/3rVg4d52/0040.png" alt="" /></li>
+</ul>
 
-<p>Examples: Henyey-Greenstein, Rayleigh, Lorenz-Mie.</p>
+<h3 id="exception">Exception</h3>
+<p>checked exception:要handle的exception，如：找不到xxx<br />
+unchecked exception:不handle，直接退出的exception，如<code class="highlighter-rouge">Null­Pointer­Exception</code><br />
+不用handle的是unchecked，用handle的是checked<br />
+<img src="https://i.postimg.cc/g2PWRnTQ/0041.png" alt="" /><br />
+Exception类是checked exception<br />
+RuntimeException和Error类是unchecked exception</p>
+<h3 id="spec">Spec</h3>
+<ul>
+  <li>spec里不需要解释参数的类型</li>
+  <li>若spec:A&gt;=spec:B，那么满足A的precondition&lt;=B的precondition,且对于满足B的precondition来说，A的postcondition&gt;=B的postcondition。<br />
+也就是更弱的precondition或更强的postcondition，意味着更少的实现方式，和更多的用户使用。<br />
+两个不可比较的spec也可能有交集。</li>
+  <li>好的spec应该是倾向于陈述性，而不是具体的实现。<br />
+好的spec应该既不强也不弱，强会给实现带来负担，弱会给client的使用带来限制。<br />
+好的spec应该是解耦的。</li>
+</ul>
 
-<p>For more details in <em>Handbook of Digital Image Synthesis: Scientific Foundations of Rendering</em></p>
+<h3 id="abstract-type">Abstract type</h3>
+<ul>
+  <li>区分Creator和Producer：A的Creater是用非A的参数来构造一个A并返回，A的Producer是用一个A来构造一个A并返回。</li>
+  <li>区分Creator/Producer和Observor：A的Observor是返回一个非A的对象，A的Creator/Producer是返回一个A的对象。</li>
+</ul>
 
-<h2 id="section-3-volumetric-rendering-equation">Section 3. Volumetric Rendering Equation</h2>
-
-<h3 id="radiative-transfer-equation-rte">Radiative Transfer Equation (RTE)</h3>
-
-<script type="math/tex; mode=display">(\omega\cdot\nabla)\cdot L(x,\omega)=-\mu_{t}(x)L(x,\omega)+\mu_{a}(x)L_{e}(x,\omega)+\mu_{s}(x)L_{s}(x,\omega)</script>
-
-<p>Then, this differential equation can yield</p>
-
-<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{\infty}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt</script>
-
-<p>Here, $y=x-t\cdot\omega$, $T(x,y)=e^{-\int_{x}^{y}\mu_{t}(z)dz}$(Beer Lambert Law)</p>
-
-<h3 id="volume-rendering-equation">Volume Rendering Equation</h3>
-
-<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{dist}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt+T(x,z)L(z,\omega)</script>
-
-<p>Here,$z=x-dist\cdot \omega$</p>
-
-<h3 id="path-integral-formulation">Path Integral Formulation</h3>
-
-<p>$\overline{x_{k}}={x_0,x_1,\dots,x_k}$, the $x_0$ is the point on the sensor</p>
-
-<script type="math/tex; mode=display">f(\overline{x_{k}})=W(x_0,x_1)G(x_0,x_1)T(x_0,x_1)\cdot L_{e}(x_k\rightarrow x_{k-1})\cdot \prod_{i=1}^{i=k-1}f_{s}(x_{i+1}\rightarrow x_{i}\rightarrow x_{i-1})G(x_{i},x_{i+1})T(x_{i},x_{i+1})</script>
-
-<p>$W$ is response of the point on the sensor</p>
-
-<p>$G(x,y)=\frac{D(x,y)\cdot D(y,x)}{\Vert x-y\Vert ^2}$</p>
-
-<p>$D(x,y)=\begin{cases} \vert n(x)\cdot \omega_{x\rightarrow y}\vert &amp; \text{x is on a surface} \newline 1 &amp; \text{x is in a medium} \end{cases}$</p>
-
-<p>$f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface} \newline \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp; \text{y is in a medium} \end{cases}$</p>
-
-<p>$L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is on a surface} \newline \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is in a medium}\end{cases}$</p>
-
-<h2 id="section-4-distance-sampling">Section 4. Distance Sampling</h2>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-05-09T00:00:00+08:00"><!-- start custom article footer snippet -->
+<h3 id="spec和rep">Spec和Rep</h3>
+<p>Spec包括函数名，包括类名。<br />
+Rep包括field和field的注释。</p>
+<h3 id="representation-independence">Representation independence</h3>
+<p>表示独立性：Client不需要考虑ADT中的具体实现。</p>
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-06-21T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
     <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
@@ -349,7 +381,7 @@
         <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
       </a>
     </p>
-  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/04/10/Last-Time.html">Last Time</a></div><div class="next"><span>NEXT</span><a href="/2019/06/20/Software-Construction-Thread.html">Software Construction之Thread</a></div></div></div>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/20/Software-Construction-Thread.html">Software Construction之Thread</a></div><div class="next"><span>NEXT</span><a href="/2019/06/22/Software-Construction-Design-Pattern.html">Software Construction之Design Pattern</a></div></div></div>
 
 </div>
 
