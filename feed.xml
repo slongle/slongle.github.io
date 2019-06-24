@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:3798/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:3798/" rel="alternate" type="text/html" /><updated>2019-06-24T21:49:06+08:00</updated><id>http://localhost:3798/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Software Construction之Design Pattern</title><link href="http://localhost:3798/2019/06/22/Software-Construction-Design-Pattern.html" rel="alternate" type="text/html" title="Software Construction之Design Pattern" /><published>2019-06-22T00:00:00+08:00</published><updated>2019-06-22T00:00:00+08:00</updated><id>http://localhost:3798/2019/06/22/Software%20Construction%20Design%20Pattern</id><content type="html" xml:base="http://localhost:3798/2019/06/22/Software-Construction-Design-Pattern.html">&lt;h2 id=&quot;creational-patterns&quot;&gt;Creational patterns&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:3798/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:3798/" rel="alternate" type="text/html" /><updated>2019-06-24T22:24:54+08:00</updated><id>http://localhost:3798/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Software Construction之Test and Exception</title><link href="http://localhost:3798/2019/06/22/Software-Construction-Test-and-Exception.html" rel="alternate" type="text/html" title="Software Construction之Test and Exception" /><published>2019-06-22T00:00:00+08:00</published><updated>2019-06-22T00:00:00+08:00</updated><id>http://localhost:3798/2019/06/22/Software%20Construction%20Test%20and%20Exception</id><content type="html" xml:base="http://localhost:3798/2019/06/22/Software-Construction-Test-and-Exception.html">&lt;h2 id=&quot;exception&quot;&gt;Exception&lt;/h2&gt;
+&lt;h3 id=&quot;checked-and-unchecked-exception&quot;&gt;checked and unchecked exception&lt;/h3&gt;
+&lt;p&gt;checked exception:要handle的exception，如：找不到xxx&lt;br /&gt;
+unchecked exception:不handle，直接退出的exception，如&lt;code class=&quot;highlighter-rouge&quot;&gt;Null­Pointer­Exception&lt;/code&gt;&lt;br /&gt;
+不用handle的是unchecked，用handle的是checked&lt;br /&gt;
+&lt;img src=&quot;https://i.postimg.cc/g2PWRnTQ/0041.png&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+Exception类是checked exception&lt;br /&gt;
+RuntimeException和Error类是unchecked exception&lt;/p&gt;
+&lt;h3 id=&quot;javadoc&quot;&gt;Javadoc&lt;/h3&gt;
+&lt;p&gt;checked exception需要注释，unchecked exception和error不需要&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
+ * @throws NotPerfectSquareException if x it not a perfect square
+ */&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;integerSquareRoot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NotPerfectSquareException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;定义和抛出异常&quot;&gt;定义和抛出异常&lt;/h3&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NotPerfectSquareException&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NotPerfectSquareException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NotPerfectSquareException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NotPerfectSquareException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NotPerfectSquareException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/**
+ * @throws NotPerfectSquareException if x it not a perfect square
+ */&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;integerSquareRoot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NotPerfectSquareException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NotPerfectSquareException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;exception的执行&quot;&gt;Exception的执行&lt;/h3&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;无论怎么执行try和catch，最后都会执行final中的内容&lt;br /&gt;
+当A结束时出现异常，如果被捕获就执行C,D，如果没被捕获直接执行D然后退出&lt;/p&gt;
+&lt;h2 id=&quot;test&quot;&gt;Test&lt;/h2&gt;
+&lt;h3 id=&quot;test-strategy&quot;&gt;Test Strategy&lt;/h3&gt;
+&lt;h4 id=&quot;白盒测试&quot;&gt;白盒测试&lt;/h4&gt;
+&lt;p&gt;针对代码执行路径设计测试，要求全覆盖&lt;/p&gt;
+&lt;h4 id=&quot;黑盒测试&quot;&gt;黑盒测试&lt;/h4&gt;
+&lt;p&gt;只考虑spec&lt;/p&gt;
+&lt;h5 id=&quot;等价类划分&quot;&gt;等价类划分&lt;/h5&gt;
+&lt;p&gt;正负，奇偶，整数非整数，具体某格式和非该格式，长度限制，数据上限&lt;/p&gt;
+&lt;h5 id=&quot;考虑边界值&quot;&gt;考虑边界值&lt;/h5&gt;
+&lt;p&gt;边界值及边界值附近&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/*
+ * Testing Strategy
+ * 
+ * Partition the inputs as follow
+ * text.length() : 0, 1, &amp;gt;1
+ * start : 0, 1, 1&amp;lt;start&amp;lt;text.length(), text.length()-1, text.length()
+ * text.length()-start : 0, 1, even&amp;gt;1, odd&amp;gt;1 
+ * 
+ * Include ... because ...
+ *
+ */&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;// cover text.length() = 0&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//       start = text.length = 0         &lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Text&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testXXX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Software-Construction" /><summary type="html">Exception checked and unchecked exception checked exception:要handle的exception，如：找不到xxx unchecked exception:不handle，直接退出的exception，如Null­Pointer­Exception 不用handle的是unchecked，用handle的是checked Exception类是checked exception RuntimeException和Error类是unchecked exception Javadoc checked exception需要注释，unchecked exception和error不需要 /** * @throws NotPerfectSquareException if x it not a perfect square */ int integerSquareRoot(int x) throws NotPerfectSquareException{ ... } 定义和抛出异常 public class NotPerfectSquareException extends Exception { public NotPerfectSquareException() { super(); } public NotPerfectSquareException(String message) { super(message); } public NotPerfectSquareException(String message, Throwable cause) { super(message, cause); } public NotPerfectSquareException(Throwable cause) { super(cause); } } /** * @throws NotPerfectSquareException if x it not a perfect square */ int integerSquareRoot(int x) throws NotPerfectSquareException{ throws new NotPerfectSquareException(); } Exception的执行 try{ A; B; } catch(Exception1 e1){ C; } final{ D; } 无论怎么执行try和catch，最后都会执行final中的内容 当A结束时出现异常，如果被捕获就执行C,D，如果没被捕获直接执行D然后退出 Test Test Strategy 白盒测试 针对代码执行路径设计测试，要求全覆盖 黑盒测试 只考虑spec 等价类划分 正负，奇偶，整数非整数，具体某格式和非该格式，长度限制，数据上限 考虑边界值 边界值及边界值附近 /* * Testing Strategy * * Partition the inputs as follow * text.length() : 0, 1, &amp;gt;1 * start : 0, 1, 1&amp;lt;start&amp;lt;text.length(), text.length()-1, text.length() * text.length()-start : 0, 1, even&amp;gt;1, odd&amp;gt;1 * * Include ... because ... * */ // cover text.length() = 0 // start = text.length = 0 @Text public void testXXX(){ ... }</summary></entry><entry><title type="html">Software Construction之Design Pattern</title><link href="http://localhost:3798/2019/06/22/Software-Construction-Design-Pattern-%E5%89%AF%E6%9C%AC.html" rel="alternate" type="text/html" title="Software Construction之Design Pattern" /><published>2019-06-22T00:00:00+08:00</published><updated>2019-06-22T00:00:00+08:00</updated><id>http://localhost:3798/2019/06/22/Software%20Construction%20Design%20Pattern%20-%20%E5%89%AF%E6%9C%AC</id><content type="html" xml:base="http://localhost:3798/2019/06/22/Software-Construction-Design-Pattern-%E5%89%AF%E6%9C%AC.html">&lt;h2 id=&quot;creational-patterns&quot;&gt;Creational patterns&lt;/h2&gt;
 &lt;h3 id=&quot;工厂方法模式factory-method-pattern&quot;&gt;工厂方法模式(Factory Method pattern)&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.postimg.cc/PqH1yTw3/0048.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3 id=&quot;抽象工厂模式abstract-factory&quot;&gt;抽象工厂模式(Abstract Factory)&lt;/h3&gt;

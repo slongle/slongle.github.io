@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之ADT - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之Design Pattern - slongle</title>
 
-<meta name="description" content="Mutable和ImmutablePrimitive:int,Integer,String…为Immutable，在stack中分配内存Object:Immutable/Mutable，heap中分配内存防御式拷贝check静态类型检查：可在编译阶段发现错误，是关于“类型”的检查，不考虑值  语法错误  类名/函...">
-<link rel="canonical" href="http://localhost:3798/2019/06/21/Software-Construction-ADT.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="Creational patterns工厂方法模式(Factory Method pattern)抽象工厂模式(Abstract Factory)抽象工厂模式和工厂方法模式的区别在于，抽象工厂模式的工厂会创造一个产品的多个组件，而工厂方法模式直接创造一个产品。构造器模式(Builder)Builder抽象类的子类...">
+<link rel="canonical" href="http://localhost:3798/2019/06/22/Software-Construction-Design-Pattern-%E5%89%AF%E6%9C%AC.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,103 +277,87 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之ADT</h1></header><span class="split-space">&nbsp;</span>
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之Design Pattern</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-06-21-Software Construction ADT.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之ADT"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-06-22-Software Construction Design Pattern - 副本.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之Design Pattern"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/archive.html?tag=Software-Construction">Software-Construction</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Jun 21, 2019</span>
-            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-06-21T00:00:00+08:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Jun 22, 2019</span>
+            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-06-22T00:00:00+08:00">
     <meta itemprop="keywords" content="Software-Construction"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h3 id="mutable和immutable">Mutable和Immutable</h3>
-<p>Primitive:int,Integer,String…为Immutable，在
-stack中分配内存<br />
-Object:Immutable/Mutable，heap中分配内存
-防御式拷贝</p>
-
-<h3 id="check">check</h3>
-<p>静态类型检查：可在编译阶段发现错误，是关于“类型”的检查，不考虑值</p>
-<ul>
-  <li>语法错误</li>
-  <li>类名/函数名错误</li>
-  <li>参数数目错误</li>
-  <li>参数类型错误</li>
-  <li>返回值类型错误
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
-<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="creational-patterns">Creational patterns</h2>
+<h3 id="工厂方法模式factory-method-pattern">工厂方法模式(Factory Method pattern)</h3>
+<p><img src="https://i.postimg.cc/PqH1yTw3/0048.png" alt="" /></p>
+<h3 id="抽象工厂模式abstract-factory">抽象工厂模式(Abstract Factory)</h3>
+<p><img src="https://i.postimg.cc/7Z0gSffJ/0049.png" alt="" />
+抽象工厂模式和工厂方法模式的区别在于，抽象工厂模式的工厂会创造一个产品的多个组件，而工厂方法模式直接创造一个产品。</p>
+<h3 id="构造器模式builder">构造器模式(Builder)</h3>
+<p>Builder抽象类的子类直接build一种产品。<br />
+<img src="https://i.postimg.cc/yxDRxNMd/0050.png" alt="" /></p>
+<h2 id="structural-patterns">Structural patterns</h2>
+<h3 id="适配器模式adapter">适配器模式(Adapter)</h3>
+<p>封装为Client方便的形式。<br />
+<img src="https://i.postimg.cc/y6tr73Rw/0042.png" alt="" /></p>
+<h3 id="装饰器模式decorator">装饰器模式(Decorator)</h3>
+<p>将类和类之间嵌套起来，使得到的类包含有之前类的属性和自己的属性。<br />
+<img src="https://i.postimg.cc/HsMvnW4j/0043.png" alt="" />
+<img src="https://i.postimg.cc/dVKHyM46/0044.png" alt="" /></p>
+<h3 id="外观模式facade">外观模式(Facade)</h3>
+<p>也是为了Client的方便来封装。<br />
+与Adapter模式不同的是，Facade是将一些过程封装为一个过程，而Adapter是将参数封装。</p>
+<h3 id="桥接模式bridge">桥接模式(Bridge)</h3>
+<p>通过委派和继承来实现复杂操作。<br />
+<img src="https://i.postimg.cc/SxhGT60f/0051.png" alt="" /></p>
+<h3 id="代理模式proxy">代理模式(Proxy)</h3>
+<p>为了隔离Client的访问，设置一个代理。<br />
+<img src="https://i.postimg.cc/k5jFgL2T/0052.png" alt="" /></p>
+<h3 id="组合模式composite">组合模式(Composite)</h3>
+<p>类似于装饰器模式，区别在于每个类内部可以有多个其他类的实例而不是只有一个。</p>
+<h2 id="behavioral-patterns">Behavioral patterns</h2>
+<h3 id="策略模式strategy">策略模式(Strategy)</h3>
+<p>对于策略进行抽象，抽象为Strategy类/接口，然后Strategy中有一个work函数，在子类中实现这个work函数。<br />
+这样只需要切换传入的Strategy是哪个子类就可以了。<br />
+<img src="https://i.postimg.cc/k4VFHwTD/0045.png" alt="" /></p>
+<h3 id="模板模式template-method">模板模式(Template Method)</h3>
+<p>当做事情的步骤一样，但具体方法不同。<br />
+具体来说是，当某个过程work都是由step1(),step2(),step3()这种顺序执行，即</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">work</span><span class="o">(){</span>
+    <span class="n">step1</span><span class="o">();</span>
+    <span class="n">step2</span><span class="o">();</span>
+    <span class="n">step3</span><span class="o">();</span>
 <span class="o">}</span>
-<span class="n">b</span> <span class="o">*=</span> <span class="mi">3</span><span class="o">;</span>
-<span class="c1">// b cannot be resolved to a variable</span>
-<span class="o">---------------</span>
-<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">b</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-<span class="o">}</span>
-<span class="n">b</span> <span class="o">*=</span> <span class="mi">3</span><span class="o">;</span>
-<span class="c1">// The local variable b may not have been initialized</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>动态检查：关于“值”的检查</p>
-<ul>
-  <li>非法的参数值(int=int/0会error,double=int/double(0)等返回Infinity不会error)</li>
-  <li>非法的返回值</li>
-  <li>越界</li>
-  <li>空指针</li>
-</ul>
-
-<h3 id="snapshot-diagram">Snapshot diagram</h3>
-<ul>
-  <li>基本类型的值
-<img src="https://i.postimg.cc/tJKPLmtB/0036.png" alt="" /></li>
-  <li>对象类型的值
-<img src="https://i.postimg.cc/zGSWc7Lk/0037.png" alt="" /></li>
-  <li>Immutable的值用双线椭圆
-<img src="https://i.postimg.cc/sgR7mq2X/0038.png" alt="" /></li>
-  <li>值的改变
-<img src="https://i.postimg.cc/ncmqvppg/0039.png" alt="" /></li>
-  <li>final值使用双线箭头
-<img src="https://i.postimg.cc/3rVg4d52/0040.png" alt="" /></li>
-</ul>
-
-<h3 id="exception">Exception</h3>
-<p>checked exception:要handle的exception，如：找不到xxx<br />
-unchecked exception:不handle，直接退出的exception，如<code class="highlighter-rouge">Null­Pointer­Exception</code><br />
-不用handle的是unchecked，用handle的是checked<br />
-<img src="https://i.postimg.cc/g2PWRnTQ/0041.png" alt="" /><br />
-Exception类是checked exception<br />
-RuntimeException和Error类是unchecked exception</p>
-<h3 id="spec">Spec</h3>
-<ul>
-  <li>spec里不需要解释参数的类型</li>
-  <li>若spec:A&gt;=spec:B，那么满足A的precondition&lt;=B的precondition,且对于满足B的precondition来说，A的postcondition&gt;=B的postcondition。<br />
-也就是更弱的precondition或更强的postcondition，意味着更少的实现方式，和更多的用户使用。<br />
-两个不可比较的spec也可能有交集。</li>
-  <li>好的spec应该是倾向于陈述性，而不是具体的实现。<br />
-好的spec应该既不强也不弱，强会给实现带来负担，弱会给client的使用带来限制。<br />
-好的spec应该是解耦的。</li>
-</ul>
-
-<h3 id="abstract-type">Abstract type</h3>
-<ul>
-  <li>区分Creator和Producer：A的Creater是用非A的参数来构造一个A并返回，A的Producer是用一个A来构造一个A并返回。</li>
-  <li>区分Creator/Producer和Observor：A的Observor是返回一个非A的对象，A的Creator/Producer是返回一个A的对象。</li>
-</ul>
-
-<h3 id="spec和rep">Spec和Rep</h3>
-<p>Spec包括函数名，包括类名。<br />
-Rep包括field和field的注释。</p>
-<h3 id="representation-independence">Representation independence</h3>
-<p>表示独立性：Client不需要考虑ADT中的具体实现。</p>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-06-21T00:00:00+08:00"><!-- start custom article footer snippet -->
+</code></pre></div></div>
+<p>但是step1(),step2()可能对于不同的事情具体操作不同，要写成不同的类。<br />
+那么可以在抽象类/接口中实现work()如上，并定义函数step1(),step2()…，然后在继承这个类的不同的类中Override这些step()方法。<br />
+<img src="https://i.postimg.cc/vHyf7Qw4/0046.png" alt="" /></p>
+<h3 id="迭代器模式iterator">迭代器模式(Iterator)</h3>
+<p>对于遍历ADT中的元素，使用Iterator来遍历，不用用户自己去决定怎么遍历。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Iterator</span> <span class="n">iterator</span> <span class="o">=</span> <span class="n">adt</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">iterator</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+      <span class="n">Integer</span> <span class="n">item</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">)</span> <span class="n">iterator</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<p><img src="https://i.postimg.cc/y8bDGKtX/0047.png" alt="" /></p>
+<h3 id="观察者模式observer">观察者模式(Observer)</h3>
+<p>有一个被观察者A和很多观察者B1,B2,…。<br />
+Bi先到A那里注册，当A有事件要发布时，A会更新所有观察者的状态。<br />
+<img src="https://i.postimg.cc/2jLFCcrx/0053.png" alt="" /></p>
+<h3 id="访问者模式visitor">访问者模式(Visitor)</h3>
+<p>以类与类的交互形式完成操作。<br />
+<img src="https://i.postimg.cc/4dDcKGsQ/0054.png" alt="" /></p>
+<h3 id="中介模式mediator">中介模式(Mediator)</h3>
+<p>本质上是A与B的交互，现在转化为A与B的中介的交互。<br />
+通过设置中介，使得整个结构耦合度降低。<br />
+<img src="https://i.postimg.cc/bYnb7Z9C/0055.png" alt="" /></p>
+<h3 id="命令模式command">命令模式(Command)</h3>
+<p>通过委派的形式，将命令作用的实例保存在命令里，执行命令即可。<br />
+<img src="https://i.postimg.cc/ZKFNqXg6/0056.png" alt="" /></p>
+<h3 id="备忘录模式memento-pattern">备忘录模式(Memento Pattern)</h3>
+<p><img src="https://i.postimg.cc/L8tx2ykW/0057.png" alt="" /></p>
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-06-22T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
     <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
@@ -381,7 +365,7 @@ Rep包括field和field的注释。</p>
         <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
       </a>
     </p>
-  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/20/Software-Construction-Thread.html">Software Construction之Thread</a></div><div class="next"><span>NEXT</span><a href="/2019/06/22/Software-Construction-Design-Pattern-%E5%89%AF%E6%9C%AC.html">Software Construction之Design Pattern</a></div></div></div>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/21/Software-Construction-ADT.html">Software Construction之ADT</a></div><div class="next"><span>NEXT</span><a href="/2019/06/22/Software-Construction-Test-and-Exception.html">Software Construction之Test and Exception</a></div></div></div>
 
 </div>
 
