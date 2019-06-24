@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:3798/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:3798/" rel="alternate" type="text/html" /><updated>2019-06-20T16:56:09+08:00</updated><id>http://localhost:3798/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Software Construction Ch10</title><link href="http://localhost:3798/2019/06/20/Software-Construction-Ch10.html" rel="alternate" type="text/html" title="Software Construction Ch10" /><published>2019-06-20T00:00:00+08:00</published><updated>2019-06-20T00:00:00+08:00</updated><id>http://localhost:3798/2019/06/20/Software%20Construction%20Ch10</id><content type="html" xml:base="http://localhost:3798/2019/06/20/Software-Construction-Ch10.html">&lt;h2 id=&quot;java中多线程的状态及转移&quot;&gt;Java中多线程的状态及转移&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:3798/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:3798/" rel="alternate" type="text/html" /><updated>2019-06-24T17:46:44+08:00</updated><id>http://localhost:3798/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Software Construction之ADT</title><link href="http://localhost:3798/2019/05/21/Software-Construction-ADT.html" rel="alternate" type="text/html" title="Software Construction之ADT" /><published>2019-05-21T00:00:00+08:00</published><updated>2019-05-21T00:00:00+08:00</updated><id>http://localhost:3798/2019/05/21/Software%20Construction%20ADT</id><content type="html" xml:base="http://localhost:3798/2019/05/21/Software-Construction-ADT.html">&lt;h3 id=&quot;mutable和immutable&quot;&gt;Mutable和Immutable&lt;/h3&gt;
+&lt;p&gt;Primitive:int,Integer,String…为Immutable，在
+stack中分配内存&lt;br /&gt;
+Object:Immutable/Mutable，heap中分配内存
+防御式拷贝&lt;/p&gt;
+
+&lt;h3 id=&quot;check&quot;&gt;check&lt;/h3&gt;
+&lt;p&gt;静态类型检查：可在编译阶段发现错误，是关于“类型”的检查，不考虑值&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;语法错误&lt;/li&gt;
+  &lt;li&gt;类名/函数名错误&lt;/li&gt;
+  &lt;li&gt;参数数目错误&lt;/li&gt;
+  &lt;li&gt;参数类型错误&lt;/li&gt;
+  &lt;li&gt;返回值类型错误
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// b cannot be resolved to a variable&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;---------------&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// The local variable b may not have been initialized&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;动态检查：关于“值”的检查&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;非法的参数值(int=int/0会error,double=int/double(0)等返回Infinity不会error)&lt;/li&gt;
+  &lt;li&gt;非法的返回值&lt;/li&gt;
+  &lt;li&gt;越界&lt;/li&gt;
+  &lt;li&gt;空指针&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;snapshot-diagram&quot;&gt;Snapshot diagram&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;基本类型的值
+&lt;img src=&quot;https://i.postimg.cc/tJKPLmtB/0036.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;对象类型的值
+&lt;img src=&quot;https://i.postimg.cc/zGSWc7Lk/0037.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Immutable的值用双线椭圆
+&lt;img src=&quot;https://i.postimg.cc/sgR7mq2X/0038.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;值的改变
+&lt;img src=&quot;https://i.postimg.cc/ncmqvppg/0039.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;final值使用双线箭头
+&lt;img src=&quot;https://i.postimg.cc/3rVg4d52/0040.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;exception&quot;&gt;Exception&lt;/h3&gt;
+&lt;p&gt;checked exception:要handle的exception，如：找不到xxx&lt;br /&gt;
+unchecked exception:不handle，直接退出的exception，如&lt;code class=&quot;highlighter-rouge&quot;&gt;Null­Pointer­Exception&lt;/code&gt;&lt;br /&gt;
+不用handle的是unchecked，用handle的是checked&lt;br /&gt;
+&lt;img src=&quot;https://i.postimg.cc/g2PWRnTQ/0041.png&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+Exception类是checked exception&lt;br /&gt;
+RuntimeException和Error类是unchecked exception&lt;/p&gt;
+&lt;h3 id=&quot;spec&quot;&gt;Spec&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;spec里不需要解释参数的类型&lt;/li&gt;
+  &lt;li&gt;若spec:A&amp;gt;=spec:B，那么满足A的precondition&amp;lt;=B的precondition,且对于满足B的precondition来说，A的postcondition&amp;gt;=B的postcondition。&lt;br /&gt;
+也就是更弱的precondition或更强的postcondition，意味着更少的实现方式，和更多的用户使用。&lt;br /&gt;
+两个不可比较的spec也可能有交集。&lt;/li&gt;
+  &lt;li&gt;好的spec应该是倾向于陈述性，而不是具体的实现。&lt;br /&gt;
+好的spec应该既不强也不弱，强会给实现带来负担，弱会给client的使用带来限制。&lt;br /&gt;
+好的spec应该是解耦的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;abstract-type&quot;&gt;Abstract type&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;区分Creator和Producer：A的Creater是用非A的参数来构造一个A并返回，A的Producer是用一个A来构造一个A并返回。&lt;/li&gt;
+  &lt;li&gt;区分Creator/Producer和Observor：A的Observor是返回一个非A的对象，A的Creator/Producer是返回一个A的对象。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;spec和rep&quot;&gt;Spec和Rep&lt;/h3&gt;
+&lt;p&gt;Spec包括函数名，包括类名。&lt;br /&gt;
+Rep包括field和field的注释。&lt;/p&gt;
+&lt;h3 id=&quot;representation-independence&quot;&gt;Representation independence&lt;/h3&gt;
+&lt;p&gt;表示独立性：Client不需要考虑ADT中的具体实现。&lt;/p&gt;
+&lt;h3 id=&quot;invariant&quot;&gt;Invariant&lt;/h3&gt;
+
+&lt;h3 id=&quot;正则表达式&quot;&gt;正则表达式&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;$*$:{0,}&lt;/li&gt;
+  &lt;li&gt;$+$:{1,}&lt;/li&gt;
+  &lt;li&gt;$?$:{0,1}&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;:或&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;^:取补集&lt;/li&gt;
+  &lt;li&gt;[bc]等价于[b-c]&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Software-Construction" /><summary type="html">Mutable和Immutable Primitive:int,Integer,String…为Immutable，在 stack中分配内存 Object:Immutable/Mutable，heap中分配内存 防御式拷贝 check 静态类型检查：可在编译阶段发现错误，是关于“类型”的检查，不考虑值 语法错误 类名/函数名错误 参数数目错误 参数类型错误 返回值类型错误 int a = 5; if (a &amp;gt; 10) { int b = 2; } else { int b = 4; } b *= 3; // b cannot be resolved to a variable --------------- int a = 5; int b; if (a &amp;gt; 10) { b = 1; } b *= 3; // The local variable b may not have been initialized 动态检查：关于“值”的检查 非法的参数值(int=int/0会error,double=int/double(0)等返回Infinity不会error) 非法的返回值 越界 空指针 Snapshot diagram 基本类型的值 对象类型的值 Immutable的值用双线椭圆 值的改变 final值使用双线箭头 Exception checked exception:要handle的exception，如：找不到xxx unchecked exception:不handle，直接退出的exception，如Null­Pointer­Exception 不用handle的是unchecked，用handle的是checked Exception类是checked exception RuntimeException和Error类是unchecked exception Spec spec里不需要解释参数的类型 若spec:A&amp;gt;=spec:B，那么满足A的precondition&amp;lt;=B的precondition,且对于满足B的precondition来说，A的postcondition&amp;gt;=B的postcondition。 也就是更弱的precondition或更强的postcondition，意味着更少的实现方式，和更多的用户使用。 两个不可比较的spec也可能有交集。 好的spec应该是倾向于陈述性，而不是具体的实现。 好的spec应该既不强也不弱，强会给实现带来负担，弱会给client的使用带来限制。 好的spec应该是解耦的。 Abstract type 区分Creator和Producer：A的Creater是用非A的参数来构造一个A并返回，A的Producer是用一个A来构造一个A并返回。 区分Creator/Producer和Observor：A的Observor是返回一个非A的对象，A的Creator/Producer是返回一个A的对象。 Spec和Rep Spec包括函数名，包括类名。 Rep包括field和field的注释。 Representation independence 表示独立性：Client不需要考虑ADT中的具体实现。 Invariant 正则表达式 $*$:{0,} $+$:{1,} $?$:{0,1} :或 ^:取补集 [bc]等价于[b-c]</summary></entry><entry><title type="html">Software Construction之Thread</title><link href="http://localhost:3798/2019/05/20/Software-Construction-Thread.html" rel="alternate" type="text/html" title="Software Construction之Thread" /><published>2019-05-20T00:00:00+08:00</published><updated>2019-05-20T00:00:00+08:00</updated><id>http://localhost:3798/2019/05/20/Software%20Construction%20Thread</id><content type="html" xml:base="http://localhost:3798/2019/05/20/Software-Construction-Thread.html">&lt;h2 id=&quot;java中多线程的状态及转移&quot;&gt;Java中多线程的状态及转移&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.postimg.cc/tTwXyz1x/0034.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;threadstart和threadrun的区别&quot;&gt;Thread.start()和Thread.run()的区别&lt;/h2&gt;
 &lt;ul&gt;
@@ -78,15 +181,27 @@
   &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;死锁deadlock&quot;&gt;死锁(Deadlock)&lt;/h2&gt;
-&lt;p&gt;如下图所示，当T1进入锁定a，T2进入锁定b后，T1和T2进入死锁&lt;br /&gt;
+    &lt;h3 id=&quot;threadsafe-和-race-condition&quot;&gt;&lt;strong&gt;Threadsafe 和 race condition&lt;/strong&gt;&lt;/h3&gt;
+    &lt;p&gt;&lt;strong&gt;注意：这是两个没有关系的词&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Threadsafe只保证在多线程的情况下，ADT依然满足ADT的spec&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Threadsafe的ADT依然会发生race condition&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;比如HashSet的Iterator，在多线程下不是ThreadSafe的，因为Iterator的spec要求在使用Iterator时，不能修改HashSet&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;但即便使用了&lt;code class=&quot;highlighter-rouge&quot;&gt;Collections.synchronizedMap&lt;/code&gt;，虽然get(),put()等操作是Threadsafe的，但Iterator仍然不是Threadsafe&lt;/strong&gt;&lt;/p&gt;
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;s:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;// not threadsafe, even if lst is a synchronized list wrapper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;strong&gt;即使使用了&lt;code class=&quot;highlighter-rouge&quot;&gt;Collections.synchronizedMap&lt;/code&gt;，当两个Thread同时调用put()操作，是race condition&lt;/strong&gt;&lt;/p&gt;
+    &lt;h2 id=&quot;锁&quot;&gt;锁&lt;/h2&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;synchronized (list) { ... }&lt;/code&gt;&lt;br /&gt;
+&lt;strong&gt;只代表别人不能用list的锁&lt;/strong&gt;&lt;/p&gt;
+    &lt;h3 id=&quot;死锁deadlock&quot;&gt;死锁(Deadlock)&lt;/h3&gt;
+    &lt;p&gt;如下图所示，当T1进入锁定a，T2进入锁定b后，T1和T2进入死锁&lt;br /&gt;
 &lt;img src=&quot;https://i.postimg.cc/kg4hzHJF/0035.png&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
 如何判断死锁？&lt;br /&gt;
 两个进程有T1和T2，锁的序列为S1和S2，取S1和S2的任意两个前缀P1和P2(P1∩P2为空)，以及相应的下一位N1和N2。&lt;br /&gt;
-若N1$\in$P2且N2$\in$P1则N1和N2死锁。&lt;/p&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Software-Construction" /><summary type="html">Java中多线程的状态及转移 Thread.start()和Thread.run()的区别 Thread.start()只能被调用一次，而Thread.run()可以被调用多次 Thread.start()是真正的多线程，在得到cpu的time slice时，开始执行run()方法；而Thread.run()只是一个函数，当Thread.run()被调用时，程序顺序执行Thread.run()的内容，执行结束后才会继续执行后面的内容 主动改变线程状态的方法 Thread.sleep() 注意，Thread.sleep()需要处理InterruptedException异常 Thread.interrupt() 注意，Thread.interrupted()只会在Thread.sleep()时或者使用Thread.interrupted()/Thread.currentThread().isInterrupted()时检测，否则即使外界调用Thread.interrupt()，线程仍然继续执行 举例来说，下面的代码不会停止，会一直输出”Running” Thread a=new Thread(new Runnable() { @Override public void run() { while(true){ System.out.println(&quot;Running&quot;); } } }); a.start(); a.interrupt(); 想要接收到interrupt信号需要下面这种写法 Thread a=new Thread(new Runnable() { @Override public void run() { while(!Thread.interrupted()){ System.out.println(&quot;Running&quot;); } } }); a.start(); a.interrupt(); 或者 Thread a = new Thread(new Runnable() { @Override public void run() { try { while (true) { System.out.println(&quot;Running&quot;); Thread.sleep(100); } } catch (InterruptedException ie){ } } }); a.start(); a.interrupt(); Thread Safe Confinement 线程之间不共享mutable数据(避免使用mutable的全局变量) Immutability No mutator methods All fields are private and final No representation exposure No mutation whatsoever of mutable objects in the rep not even beneficent mutation Threadsafe Data Types private static Map&amp;lt;Integer,Boolean&amp;gt; cache = Collections.synchronizedMap(new HashMap&amp;lt;&amp;gt;()); 即使在线程安全的ADT上，使用 iterator也是不安全的 Lock 使用synchronized 使用方法： public void foo(){ synchronized(this){ ... } } 等价于 public synchronized void foo(){ ... } 死锁(Deadlock) 如下图所示，当T1进入锁定a，T2进入锁定b后，T1和T2进入死锁 如何判断死锁？ 两个进程有T1和T2，锁的序列为S1和S2，取S1和S2的任意两个前缀P1和P2(P1∩P2为空)，以及相应的下一位N1和N2。 若N1$\in$P2且N2$\in$P1则N1和N2死锁。</summary></entry><entry><title type="html">Monte Carlo Methods for Volumetric Light Transport Simulation</title><link href="http://localhost:3798/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html" rel="alternate" type="text/html" title="Monte Carlo Methods for Volumetric Light Transport Simulation" /><published>2019-05-09T00:00:00+08:00</published><updated>2019-05-09T00:00:00+08:00</updated><id>http://localhost:3798/2019/05/09/Monte%20Carlo%20Methods%20for%20Volumetric%20Light%20Transport%20Simulation</id><content type="html" xml:base="http://localhost:3798/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html">&lt;h2 id=&quot;section-2-optical-properties&quot;&gt;Section 2. Optical Properties&lt;/h2&gt;
+若N1$\in$P2且N2$\in$P1则N1和N2死锁。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Software-Construction" /><summary type="html">Java中多线程的状态及转移 Thread.start()和Thread.run()的区别 Thread.start()只能被调用一次，而Thread.run()可以被调用多次 Thread.start()是真正的多线程，在得到cpu的time slice时，开始执行run()方法；而Thread.run()只是一个函数，当Thread.run()被调用时，程序顺序执行Thread.run()的内容，执行结束后才会继续执行后面的内容 主动改变线程状态的方法 Thread.sleep() 注意，Thread.sleep()需要处理InterruptedException异常 Thread.interrupt() 注意，Thread.interrupted()只会在Thread.sleep()时或者使用Thread.interrupted()/Thread.currentThread().isInterrupted()时检测，否则即使外界调用Thread.interrupt()，线程仍然继续执行 举例来说，下面的代码不会停止，会一直输出”Running” Thread a=new Thread(new Runnable() { @Override public void run() { while(true){ System.out.println(&quot;Running&quot;); } } }); a.start(); a.interrupt(); 想要接收到interrupt信号需要下面这种写法 Thread a=new Thread(new Runnable() { @Override public void run() { while(!Thread.interrupted()){ System.out.println(&quot;Running&quot;); } } }); a.start(); a.interrupt(); 或者 Thread a = new Thread(new Runnable() { @Override public void run() { try { while (true) { System.out.println(&quot;Running&quot;); Thread.sleep(100); } } catch (InterruptedException ie){ } } }); a.start(); a.interrupt(); Thread Safe Confinement 线程之间不共享mutable数据(避免使用mutable的全局变量) Immutability No mutator methods All fields are private and final No representation exposure No mutation whatsoever of mutable objects in the rep not even beneficent mutation Threadsafe Data Types private static Map&amp;lt;Integer,Boolean&amp;gt; cache = Collections.synchronizedMap(new HashMap&amp;lt;&amp;gt;()); 即使在线程安全的ADT上，使用 iterator也是不安全的 Lock 使用synchronized 使用方法： public void foo(){ synchronized(this){ ... } } 等价于 public synchronized void foo(){ ... } Threadsafe 和 race condition 注意：这是两个没有关系的词 Threadsafe只保证在多线程的情况下，ADT依然满足ADT的spec Threadsafe的ADT依然会发生race condition 比如HashSet的Iterator，在多线程下不是ThreadSafe的，因为Iterator的spec要求在使用Iterator时，不能修改HashSet 但即便使用了Collections.synchronizedMap，虽然get(),put()等操作是Threadsafe的，但Iterator仍然不是Threadsafe for (String s: lst) { ... } // not threadsafe, even if lst is a synchronized list wrapper 即使使用了Collections.synchronizedMap，当两个Thread同时调用put()操作，是race condition 锁 synchronized (list) { ... } 只代表别人不能用list的锁 死锁(Deadlock) 如下图所示，当T1进入锁定a，T2进入锁定b后，T1和T2进入死锁 如何判断死锁？ 两个进程有T1和T2，锁的序列为S1和S2，取S1和S2的任意两个前缀P1和P2(P1∩P2为空)，以及相应的下一位N1和N2。 若N1$\in$P2且N2$\in$P1则N1和N2死锁。</summary></entry><entry><title type="html">Monte Carlo Methods for Volumetric Light Transport Simulation</title><link href="http://localhost:3798/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html" rel="alternate" type="text/html" title="Monte Carlo Methods for Volumetric Light Transport Simulation" /><published>2019-05-09T00:00:00+08:00</published><updated>2019-05-09T00:00:00+08:00</updated><id>http://localhost:3798/2019/05/09/Monte%20Carlo%20Methods%20for%20Volumetric%20Light%20Transport%20Simulation</id><content type="html" xml:base="http://localhost:3798/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html">&lt;h2 id=&quot;section-2-optical-properties&quot;&gt;Section 2. Optical Properties&lt;/h2&gt;
 
 &lt;h3 id=&quot;collision-coefficient&quot;&gt;Collision Coefficient&lt;/h3&gt;
 

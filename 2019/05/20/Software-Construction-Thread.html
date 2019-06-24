@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Monte Carlo Methods for Volumetric Light Transport Simulation - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之Thread - slongle</title>
 
-<meta name="description" content="Section 2. Optical PropertiesCollision Coefficient  density per unit volume: $\rho (m^{-3})$  cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$  scatterin...">
-<link rel="canonical" href="http://localhost:3798/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="Java中多线程的状态及转移Thread.start()和Thread.run()的区别  Thread.start()只能被调用一次，而Thread.run()可以被调用多次  Thread.start()是真正的多线程，在得到cpu的time slice时，开始执行run()方法；而Thread.run()只...">
+<link rel="canonical" href="http://localhost:3798/2019/05/20/Software-Construction-Thread.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,71 +277,119 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Monte Carlo Methods for Volumetric Light Transport Simulation</h1></header><span class="split-space">&nbsp;</span>
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之Thread</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-05-09-Monte Carlo Methods for Volumetric Light Transport Simulation.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Monte Carlo Methods for Volumetric Light Transport Simulation"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-05-20-Software Construction Thread.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之Thread"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Computer-Graphics">Computer-Graphics</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>May 09, 2019</span>
-            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-05-09T00:00:00+08:00">
-    <meta itemprop="keywords" content="Computer-Graphics"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+                href="/archive.html?tag=Software-Construction">Software-Construction</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>May 20, 2019</span>
+            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-05-20T00:00:00+08:00">
+    <meta itemprop="keywords" content="Software-Construction"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="section-2-optical-properties">Section 2. Optical Properties</h2>
-
-<h3 id="collision-coefficient">Collision Coefficient</h3>
-
-<ol>
-  <li>density per unit volume: $\rho (m^{-3})$</li>
-  <li>cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$</li>
-  <li>scattering(absorption) coefficient: $\mu_{s}(\mu_{a})=\sigma_{s}(\sigma_{a}) \cdot \rho (m^{-1})$</li>
-  <li>extinction coefficient: $\mu_{t}=\mu_{s}+\mu_{a}$</li>
-  <li>single-scattering albedo: $\alpha=\frac{\mu_{s}}{\mu_{t}}$</li>
-</ol>
-
-<h3 id="phase-function">Phase Function</h3>
-
-<p>Examples: Henyey-Greenstein, Rayleigh, Lorenz-Mie.</p>
-
-<p>For more details in <em>Handbook of Digital Image Synthesis: Scientific Foundations of Rendering</em></p>
-
-<h2 id="section-3-volumetric-rendering-equation">Section 3. Volumetric Rendering Equation</h2>
-
-<h3 id="radiative-transfer-equation-rte">Radiative Transfer Equation (RTE)</h3>
-
-<script type="math/tex; mode=display">(\omega\cdot\nabla)\cdot L(x,\omega)=-\mu_{t}(x)L(x,\omega)+\mu_{a}(x)L_{e}(x,\omega)+\mu_{s}(x)L_{s}(x,\omega)</script>
-
-<p>Then, this differential equation can yield</p>
-
-<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{\infty}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt</script>
-
-<p>Here, $y=x-t\cdot\omega$, $T(x,y)=e^{-\int_{x}^{y}\mu_{t}(z)dz}$(Beer Lambert Law)</p>
-
-<h3 id="volume-rendering-equation">Volume Rendering Equation</h3>
-
-<script type="math/tex; mode=display">L(x,\omega)=\int_{0}^{dist}T(x,y)[\mu_{a}(y)L_{e}(y,\omega)+\mu_{s}(y)L_{s}(y,\omega)]dt+T(x,z)L(z,\omega)</script>
-
-<p>Here,$z=x-dist\cdot \omega$</p>
-
-<h3 id="path-integral-formulation">Path Integral Formulation</h3>
-
-<p>$\overline{x_{k}}={x_0,x_1,\dots,x_k}$, the $x_0$ is the point on the sensor</p>
-
-<script type="math/tex; mode=display">f(\overline{x_{k}})=W(x_0,x_1)G(x_0,x_1)T(x_0,x_1)\cdot L_{e}(x_k\rightarrow x_{k-1})\cdot \prod_{i=1}^{i=k-1}f_{s}(x_{i+1}\rightarrow x_{i}\rightarrow x_{i-1})G(x_{i},x_{i+1})T(x_{i},x_{i+1})</script>
-
-<p>$W$ is response of the point on the sensor</p>
-
-<p>$G(x,y)=\frac{D(x,y)\cdot D(y,x)}{\Vert x-y\Vert ^2}$</p>
-
-<p>$D(x,y)=\begin{cases} \vert n(x)\cdot \omega_{x\rightarrow y}\vert &amp; \text{x is on a surface} \newline 1 &amp; \text{x is in a medium} \end{cases}$</p>
-
-<p>$f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp; \text{y is on a surface} \newline \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp; \text{y is in a medium} \end{cases}$</p>
-
-<p>$L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is on a surface} \newline \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp; \text{x is in a medium}\end{cases}$</p>
-
-<h2 id="section-4-distance-sampling">Section 4. Distance Sampling</h2>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-05-09T00:00:00+08:00"><!-- start custom article footer snippet -->
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="java中多线程的状态及转移">Java中多线程的状态及转移</h2>
+<p><img src="https://i.postimg.cc/tTwXyz1x/0034.jpg" alt="" /></p>
+<h2 id="threadstart和threadrun的区别">Thread.start()和Thread.run()的区别</h2>
+<ul>
+  <li>Thread.start()只能被调用一次，而Thread.run()可以被调用多次</li>
+  <li>Thread.start()是真正的多线程，在得到cpu的time slice时，开始执行run()方法；而Thread.run()只是一个函数，当Thread.run()被调用时，程序顺序执行Thread.run()的内容，执行结束后才会继续执行后面的内容
+    <h2 id="主动改变线程状态的方法">主动改变线程状态的方法</h2>
+  </li>
+  <li>Thread.sleep()<br />
+注意，Thread.sleep()需要处理InterruptedException异常</li>
+  <li>Thread.interrupt()<br />
+注意，Thread.interrupted()只会在Thread.sleep()时或者使用Thread.interrupted()/Thread.currentThread().isInterrupted()时检测，否则即使外界调用Thread.interrupt()，线程仍然继续执行<br />
+举例来说，下面的代码不会停止，会一直输出”Running”
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Thread</span> <span class="n">a</span><span class="o">=</span><span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Running"</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">});</span>
+<span class="n">a</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">a</span><span class="o">.</span><span class="na">interrupt</span><span class="o">();</span>
+</code></pre></div>    </div>
+    <p>想要接收到interrupt信号需要下面这种写法</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Thread</span> <span class="n">a</span><span class="o">=</span><span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">while</span><span class="o">(!</span><span class="n">Thread</span><span class="o">.</span><span class="na">interrupted</span><span class="o">()){</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Running"</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">});</span>
+<span class="n">a</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">a</span><span class="o">.</span><span class="na">interrupt</span><span class="o">();</span>
+</code></pre></div>    </div>
+    <p>或者</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Thread</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">try</span> <span class="o">{</span>
+          <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Running"</span><span class="o">);</span>
+              <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">ie</span><span class="o">){</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">});</span>
+<span class="n">a</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">a</span><span class="o">.</span><span class="na">interrupt</span><span class="o">();</span>
+</code></pre></div>    </div>
+    <h2 id="thread-safe">Thread Safe</h2>
+    <h3 id="confinement">Confinement</h3>
+    <p>线程之间不共享mutable数据(避免使用mutable的全局变量)</p>
+    <h3 id="immutability">Immutability</h3>
+  </li>
+  <li>No mutator methods</li>
+  <li>All fields are private and final</li>
+  <li>No representation exposure</li>
+  <li>No mutation whatsoever of mutable objects in the rep not even beneficent mutation
+    <h3 id="threadsafe-data-types">Threadsafe Data Types</h3>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">synchronizedMap</span><span class="o">(</span><span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;());</span>
+</code></pre></div>    </div>
+    <p>即使在线程安全的ADT上，使用 iterator也是不安全的</p>
+    <h3 id="lock">Lock</h3>
+    <p>使用synchronized
+使用方法：</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">foo</span><span class="o">(){</span>
+  <span class="kd">synchronized</span><span class="o">(</span><span class="k">this</span><span class="o">){</span>
+      <span class="o">...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <p>等价于</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">foo</span><span class="o">(){</span>
+  <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <h3 id="threadsafe-和-race-condition"><strong>Threadsafe 和 race condition</strong></h3>
+    <p><strong>注意：这是两个没有关系的词</strong><br />
+<strong>Threadsafe只保证在多线程的情况下，ADT依然满足ADT的spec</strong><br />
+<strong>Threadsafe的ADT依然会发生race condition</strong><br />
+<strong>比如HashSet的Iterator，在多线程下不是ThreadSafe的，因为Iterator的spec要求在使用Iterator时，不能修改HashSet</strong><br />
+<strong>但即便使用了<code class="highlighter-rouge">Collections.synchronizedMap</code>，虽然get(),put()等操作是Threadsafe的，但Iterator仍然不是Threadsafe</strong></p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="nl">s:</span> <span class="n">lst</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span> 
+<span class="c1">// not threadsafe, even if lst is a synchronized list wrapper</span>
+</code></pre></div>    </div>
+    <p><strong>即使使用了<code class="highlighter-rouge">Collections.synchronizedMap</code>，当两个Thread同时调用put()操作，是race condition</strong></p>
+    <h2 id="锁">锁</h2>
+    <p><code class="highlighter-rouge">synchronized (list) { ... }</code><br />
+<strong>只代表别人不能用list的锁</strong></p>
+    <h3 id="死锁deadlock">死锁(Deadlock)</h3>
+    <p>如下图所示，当T1进入锁定a，T2进入锁定b后，T1和T2进入死锁<br />
+<img src="https://i.postimg.cc/kg4hzHJF/0035.png" alt="" /><br />
+如何判断死锁？<br />
+两个进程有T1和T2，锁的序列为S1和S2，取S1和S2的任意两个前缀P1和P2(P1∩P2为空)，以及相应的下一位N1和N2。<br />
+若N1$\in$P2且N2$\in$P1则N1和N2死锁。</p>
+  </li>
+</ul>
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-05-20T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
     <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
@@ -349,7 +397,7 @@
         <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
       </a>
     </p>
-  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/04/10/Last-Time.html">Last Time</a></div><div class="next"><span>NEXT</span><a href="/2019/05/20/Software-Construction-Thread.html">Software Construction之Thread</a></div></div></div>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/05/09/Monte-Carlo-Methods-for-Volumetric-Light-Transport-Simulation.html">Monte Carlo Methods for Volumetric Light Transport Simulation</a></div><div class="next"><span>NEXT</span><a href="/2019/05/21/Software-Construction-ADT.html">Software Construction之ADT</a></div></div></div>
 
 </div>
 
