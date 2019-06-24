@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之JVM - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之Others - slongle</title>
 
-<meta name="description" content="MemoryStack：所有的局部的primitive和ref变量 Heap：所有的Object(局部的Object也是在Heap里，但局部的ref是stack) Heap中有Method Area(Metaspace)：类信息，常量，静态变量GCMark-Sweep标记是否存活，释放死亡的空间Mark-Comp...">
-<link rel="canonical" href="http://localhost:3798/2019/06/23/Software-Construction-JVM.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="正则表达式  $*$:{0,}  $+$:{1,}  $?$:{0,1}                              :或                      ^:取补集  [bc]等价于[b-c]    LSP    子类型可以增加方法，但不可删  子类型需要实现抽象类型中的所有未实现方法 ...">
+<link rel="canonical" href="http://localhost:3798/2019/06/23/Software-Construction-Others.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,53 +277,52 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之JVM</h1></header><span class="split-space">&nbsp;</span>
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之Others</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-06-23-Software Construction JVM.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之JVM"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-06-23-Software Construction Others.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之Others"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/archive.html?tag=Software-Construction">Software-Construction</a>
             </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Jun 23, 2019</span>
             </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-06-23T00:00:00+08:00">
     <meta itemprop="keywords" content="Software-Construction"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h3 id="memory">Memory</h3>
-<p>Stack：所有的局部的primitive和ref变量 <br />
-Heap：所有的Object(局部的Object也是在Heap里，但局部的ref是stack) <br />
-Heap中有Method Area(Metaspace)：类信息，常量，静态变量</p>
-<h3 id="gc">GC</h3>
-<h4 id="mark-sweep">Mark-Sweep</h4>
-<p>标记是否存活，释放死亡的空间</p>
-<h4 id="mark-compact">Mark-Compact</h4>
-<p>标记是否存活，释放死亡的空间，然后碎片整理</p>
-<h4 id="copy">Copy</h4>
-<p>标记是否存活，将活的整个复制到另一个空间</p>
-<h4 id="具体gc">具体GC</h4>
-<p><img src="https://i.postimg.cc/HsRbRbfh/0058.png" alt="" />
-年轻代：copy算法执行GC<br />
-老年代：Mark-Sweep或Mark-Compact算法执行GC<br />
-当某个区域满时，执行GC<br />
-年轻代执行minor GC，时间较短<br />
-年轻代中经历多轮minor GC后，copy到老年代<br />
-老年代满了之后，老年代执行full GC</p>
-<h4 id="设置各代空间大小">设置各代空间大小</h4>
-<p><img src="https://i.postimg.cc/9QHry13C/0059.png" alt="" /></p>
-<h3 id="jvm命令">JVM命令</h3>
-<h4 id="jmap">jmap</h4>
-<p>Heap Configuration:<br />
-   MinHeapFreeRatio         = 0    //JVM最小空闲比率 jvm heap 在使用率小于 n 时 ,heap 进行收缩<br />
-   MaxHeapFreeRatio         = 100  //JVM最大空闲比率 jvm heap 在使用率大于 n 时 ,heap 进行扩张 <br />
-   MaxHeapSize              = 2095054848 (1998.0MB) //JVM堆的最大大小<br />
-   NewSize                  = 44040192 (42.0MB) //JVM新生代的默认大小<br />
-   MaxNewSize               = 698351616 (666.0MB) //JVM新生代的最大大小<br />
-   OldSize                  = 88080384 (84.0MB) //JVM老生代的默认大小 <br />
-   NewRatio                 = 2 //新生代：老生代（的大小）=1:2<br />
-   SurvivorRatio            = 8 //survivor:eden = 1:8,即survivor space是新生代大小的1/(8+2)[因为有两个survivor区域]<br />
-   MetaspaceSize            = 21807104 (20.796875MB) //元空间的默认大小，超过此值就会触发Full GC<br />
-   CompressedClassSpaceSize = 1073741824 (1024.0MB) //类指针压缩空间的默认大小<br />
-   MaxMetaspaceSize         = 17592186044415 MB //元空间的最大大小<br />
-   G1HeapRegionSize         = 0 (0.0MB) //使用G1垃圾收集器的时候，堆被分割的大小</p>
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h3 id="正则表达式">正则表达式</h3>
+<ul>
+  <li>$*$:{0,}</li>
+  <li>$+$:{1,}</li>
+  <li>$?$:{0,1}</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>:或</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>^:取补集</li>
+  <li>[bc]等价于[b-c]
+    <h3 id="lsp">LSP</h3>
+  </li>
+  <li>子类型可以增加方法，但不可删</li>
+  <li>子类型需要实现抽象类型中的所有未实现方法</li>
+  <li>子类型中重写的方法必须有相同或子类型的返回值或者符合 co-variance 的参数</li>
+  <li>子类型中重写的方法必须使用同样类型的参数或者符合 contra-variance 的参数</li>
+  <li>子类型中重写的方法不能抛出额外的异常</li>
+  <li>更强的不变量</li>
+  <li>更弱的前置条件</li>
+  <li>更强的后置条件
+    <h3 id="软件构造基础">软件构造基础</h3>
+    <p><img src="https://i.postimg.cc/Y2g37nxw/0060.png" alt="" /></p>
+    <h3 id="版本控制">版本控制</h3>
+    <p>SCM : 软件配置管理<br />
+VCS : 版本控制  <br />
+SCI : 软件配置项(软件中发生改变的基本单元，例如:文件)<br />
+CMDB : 配置管理数据库(存储软件的各配置项随时间发生变化的信息)</p>
+  </li>
+</ul>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-06-23T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
@@ -332,7 +331,7 @@ Heap中有Method Area(Metaspace)：类信息，常量，静态变量</p>
         <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
       </a>
     </p>
-  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/22/Software-Construction-Test-and-Exception.html">Software Construction之Test and Exception</a></div><div class="next"><span>NEXT</span><a href="/2019/06/23/Software-Construction-Others.html">Software Construction之Others</a></div></div></div>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/23/Software-Construction-JVM.html">Software Construction之JVM</a></div></div></div>
 
 </div>
 
