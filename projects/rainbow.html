@@ -289,6 +289,7 @@
 <strong>Geometry</strong>: Support triangle and quad meshes with instancing. Also can support sphere and box.<br />
 <strong>Lights</strong>: Support point light, spot light, area light(rectangle and sphere).<br />
 <strong>Materials and BSDFs</strong>: Support physically based BSDFs, including multiple microfacet models (Beckmann), smooth and rough versions of Fresnel conductors, specular dielectrics. <br />
+<strong>Media</strong>: Support homogeneous and heterogeneous medium.<br />
 <strong>Acceleration Structure System</strong>: Use SAH-BVH acceleration.<br />
 <strong>Render Mode</strong>: Adaptive, Progressive and Final mode.<br />
 <strong>Scene Loading</strong>: Uses a XML custom scene format defining geometry, lights, materials, camera settings, render settings.</p>
@@ -297,8 +298,11 @@
 <img src="https://i.loli.net/2019/03/03/5c7b4ddf60805.png" alt="sphere-cornell-box" />
 <img src="https://i.loli.net/2019/03/02/5c7aa1a09abee.jpg" alt="veach-mis" />
 Veach thesis multiple importance sampling test scene. Rendered using pathtracing with multiple importance sampling.
-<img src="https://i.loli.net/2019/03/02/5c7aa1a26ec80.jpg" alt="vol-caustic" />
-Rendered using volumetric pathtracing (WIP).</p>
+<img src="https://i.postimg.cc/ryHf24pD/0002.png" alt="vol-caustic" /><br />
+Homogeneous medium<br />
+<img src="https://i.postimg.cc/9MJN7NVb/0001.png" alt="hetvol" /><br />
+Heterogeneous medium<br />
+Rendered using volumetric unidirectional pathtracing.</p>
 
 <h4 id="resources">Resources</h4>
 <p><a href="http://www.pbr-book.org/">Physically Based Rendering</a>: The go-to reference book for rendering, by Matt Pharr, Wenzel Jakob, and Greg Humphreys.<br />
