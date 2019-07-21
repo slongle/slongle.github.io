@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:3798/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:3798/" rel="alternate" type="text/html" /><updated>2019-07-10T00:01:44+08:00</updated><id>http://localhost:3798/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Software Construction之JVM</title><link href="http://localhost:3798/2019/06/23/Software-Construction-JVM.html" rel="alternate" type="text/html" title="Software Construction之JVM" /><published>2019-06-23T00:00:00+08:00</published><updated>2019-06-23T00:00:00+08:00</updated><id>http://localhost:3798/2019/06/23/Software%20Construction%20JVM</id><content type="html" xml:base="http://localhost:3798/2019/06/23/Software-Construction-JVM.html">&lt;h3 id=&quot;memory&quot;&gt;Memory&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:3798/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:3798/" rel="alternate" type="text/html" /><updated>2019-07-21T23:17:22+08:00</updated><id>http://localhost:3798/feed.xml</id><title type="html">slongle</title><subtitle></subtitle><author><name>slongle</name><email>junchendeng@gmail.com</email></author><entry><title type="html">Software Construction之JVM</title><link href="http://localhost:3798/2019/06/23/Software-Construction-JVM.html" rel="alternate" type="text/html" title="Software Construction之JVM" /><published>2019-06-23T00:00:00+08:00</published><updated>2019-06-23T00:00:00+08:00</updated><id>http://localhost:3798/2019/06/23/Software%20Construction%20JVM</id><content type="html" xml:base="http://localhost:3798/2019/06/23/Software-Construction-JVM.html">&lt;h3 id=&quot;memory&quot;&gt;Memory&lt;/h3&gt;
 &lt;p&gt;Stack：所有的局部的primitive和ref变量 &lt;br /&gt;
 Heap：所有的Object(局部的Object也是在Heap里，但局部的ref是stack) &lt;br /&gt;
 Heap中有Method Area(Metaspace)：类信息，常量，静态变量&lt;/p&gt;
@@ -447,7 +447,7 @@ Rep包括field和field的注释。&lt;/p&gt;
 
 &lt;p&gt;$L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp;amp; \text{x is on a surface} \newline \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp;amp; \text{x is in a medium}\end{cases}$&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4-distance-sampling&quot;&gt;Section 4. Distance Sampling&lt;/h2&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Computer-Graphics" /><summary type="html">Section 2. Optical Properties Collision Coefficient density per unit volume: $\rho (m^{-3})$ cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$ scattering(absorption) coefficient: $\mu_{s}(\mu_{a})=\sigma_{s}(\sigma_{a}) \cdot \rho (m^{-1})$ extinction coefficient: $\mu_{t}=\mu_{s}+\mu_{a}$ single-scattering albedo: $\alpha=\frac{\mu_{s}}{\mu_{t}}$ Phase Function Examples: Henyey-Greenstein, Rayleigh, Lorenz-Mie. For more details in Handbook of Digital Image Synthesis: Scientific Foundations of Rendering Section 3. Volumetric Rendering Equation Radiative Transfer Equation (RTE) Then, this differential equation can yield Here, $y=x-t\cdot\omega$, $T(x,y)=e^{-\int_{x}^{y}\mu_{t}(z)dz}$(Beer Lambert Law) Volume Rendering Equation Here,$z=x-dist\cdot \omega$ Path Integral Formulation $\overline{x_{k}}={x_0,x_1,\dots,x_k}$, the $x_0$ is the point on the sensor $W$ is response of the point on the sensor $G(x,y)=\frac{D(x,y)\cdot D(y,x)}{\Vert x-y\Vert ^2}$ $D(x,y)=\begin{cases} \vert n(x)\cdot \omega_{x\rightarrow y}\vert &amp;amp; \text{x is on a surface} \newline 1 &amp;amp; \text{x is in a medium} \end{cases}$ $f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp;amp; \text{y is on a surface} \newline \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp;amp; \text{y is in a medium} \end{cases}$ $L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp;amp; \text{x is on a surface} \newline \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp;amp; \text{x is in a medium}\end{cases}$ Section 4. Distance Sampling</summary></entry><entry><title type="html">Last Time</title><link href="http://localhost:3798/2019/04/10/Last-Time.html" rel="alternate" type="text/html" title="Last Time" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:3798/2019/04/10/Last%20Time</id><content type="html" xml:base="http://localhost:3798/2019/04/10/Last-Time.html">&lt;h2 id=&quot;todolist&quot;&gt;ToDoList：&lt;/h2&gt;
+&lt;h2 id=&quot;section-4-distance-sampling&quot;&gt;Section 4. Distance Sampling&lt;/h2&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Computer-Graphics" /><summary type="html">Section 2. Optical Properties Collision Coefficient density per unit volume: $\rho (m^{-3})$ cross sectional area: $\sigma_{s}, \sigma_{a} (m^2)$ scattering(absorption) coefficient: $\mu_{s}(\mu_{a})=\sigma_{s}(\sigma_{a}) \cdot \rho (m^{-1})$ extinction coefficient: $\mu_{t}=\mu_{s}+\mu_{a}$ single-scattering albedo: $\alpha=\frac{\mu_{s}}{\mu_{t}}$ Phase Function Examples: Henyey-Greenstein, Rayleigh, Lorenz-Mie. For more details in Handbook of Digital Image Synthesis: Scientific Foundations of Rendering Section 3. Volumetric Rendering Equation Radiative Transfer Equation (RTE) Then, this differential equation can yield Here, $y=x-t\cdot\omega$, $T(x,y)=e^{-\int_{x}^{y}\mu_{t}(z)dz}$(Beer Lambert Law) Volume Rendering Equation Here,$z=x-dist\cdot \omega$ Path Integral Formulation $\overline{x_{k}}={x_0,x_1,\dots,x_k}$, the $x_0$ is the point on the sensor $W$ is response of the point on the sensor $G(x,y)=\frac{D(x,y)\cdot D(y,x)}{\Vert x-y\Vert ^2}$ $D(x,y)=\begin{cases} \vert n(x)\cdot \omega_{x\rightarrow y}\vert &amp;amp; \text{x is on a surface} \newline 1 &amp;amp; \text{x is in a medium} \end{cases}$ $f_{x\rightarrow y\rightarrow z}=\begin{cases} f_{r}(x\rightarrow y\rightarrow z) &amp;amp; \text{y is on a surface} \newline \mu_{s}(y)\cdot f_{p}(x\rightarrow y\rightarrow z) &amp;amp; \text{y is in a medium} \end{cases}$ $L_{e}(x\rightarrow y)=\begin{cases} L_{e}(x,\omega_{x\rightarrow y}) &amp;amp; \text{x is on a surface} \newline \mu_{a}(x)L_{e}(x,\omega_{x\rightarrow y}) &amp;amp; \text{x is in a medium}\end{cases}$ Section 4. Distance Sampling</summary></entry><entry><title type="html">Last Time</title><link href="http://localhost:3798/2019/04/10/Last-Time.html" rel="alternate" type="text/html" title="Last Time" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:3798/2019/04/10/Last%20Time</id><content type="html" xml:base="http://localhost:3798/2019/04/10/Last-Time.html">&lt;h2 id=&quot;todolist-&quot;&gt;ToDoList :&lt;/h2&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;TCO14 Round 1A 250&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;TCO14 Round 1A 500&lt;/li&gt;
@@ -465,6 +465,21 @@ Rep包括field和field的注释。&lt;/p&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;TCO14 Round 2B 500&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;TCO14 Round 2B 900&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;timeline&quot;&gt;Timeline&lt;/h2&gt;
+&lt;h3 id=&quot;20190715-20190721&quot;&gt;2019/07/15-2019/07/21&lt;/h3&gt;
+&lt;h4 id=&quot;2800-3800&quot;&gt;2800-3800&lt;/h4&gt;
+&lt;p&gt;SRM 655 BichromeSky(Hard)&lt;br /&gt;
+1146H Satanic Panic(2800)&lt;br /&gt;
+1142C U2(2800)&lt;/p&gt;
+&lt;h4 id=&quot;2500-2700&quot;&gt;2500-2700&lt;/h4&gt;
+&lt;p&gt;1195F Geometers Anonymous Club(2700)&lt;br /&gt;
+1194F Crossword Expert(2500)&lt;/p&gt;
+&lt;h4 id=&quot;2100-2400&quot;&gt;2100-2400&lt;/h4&gt;
+&lt;p&gt;1190D Tokitsukaze and Strange Rectangle(2200)&lt;br /&gt;
+1194E Count The Rectangles(2200)&lt;br /&gt;
+1188B Count Pairs(2200)&lt;br /&gt;
+1195E OpenStreetMap(2100)&lt;/p&gt;
 
 &lt;h2 id=&quot;topcoder&quot;&gt;Topcoder&lt;/h2&gt;
 
@@ -491,17 +506,22 @@ Rep包括field和field的注释。&lt;/p&gt;
 &lt;p&gt;题意 : 有$n$个硬币在桌子上，有$1$个硬币在手里，每次抛硬币，正面的话桌面上加$1$个硬币，手里留$1$个硬币，如果桌上有$2N$个硬币则游戏结束。反面的话，从桌上硬币拿走手里的硬币数个放到手里，如果桌上拿空则游戏结束。输出期望场数。&lt;br /&gt;
 题解 : 转移显然有环，但是由于正面的特殊性，定义$f[i]$表示手里$1$个硬币，桌上$i$个硬币的期望场数。转移方程$f[i]=(f[i+1]+1)*0.5+(f[i]+2)*0.5^2+(f[i-2]+3)*0.5^3+\cdots$。可以发现转移有后效性，但是我们可以将$f[i+1]$去除后效性。&lt;/p&gt;
 
+&lt;h3 id=&quot;srm-655&quot;&gt;SRM 655&lt;/h3&gt;
+&lt;h4 id=&quot;hard-4&quot;&gt;Hard&lt;/h4&gt;
+&lt;p&gt;题意 : $n$个红点，$m$个蓝点，没有三点共线，第i个红点以$p_i$的概率出现，求红点的凸包包含所有蓝点的概率。$n, m \le 100$&lt;br /&gt;
+题解 : 对于包含所有蓝点的要求，等价于包含所有蓝点形成的凸包。对于一个红点，对蓝点构成的凸包做切线，这两条切线是这个红点的覆盖范围。问题就转化为有$n$个区间，每个区间出现的概率为$p_i$，询问全部覆盖的概率，DP一下即可。&lt;br /&gt;
+复杂度$O(n^3)$。&lt;/p&gt;
+
 &lt;h3 id=&quot;tco-2014-round-1b&quot;&gt;TCO 2014 Round 1B&lt;/h3&gt;
 &lt;h4 id=&quot;medium-wolvesandsheep&quot;&gt;Medium WolvesAndSheep&lt;/h4&gt;
-&lt;p&gt;贪心反例：&lt;br /&gt;
+&lt;p&gt;贪心反例 : &lt;br /&gt;
 x[]&lt;br /&gt;
 []v&lt;br /&gt;
 纯贪心（按行和列分别做一次），不会分割，所以x还是能到达v。&lt;/p&gt;
 
-&lt;h3 id=&quot;tco-2014-round-1b-1&quot;&gt;TCO 2014 Round 1B&lt;/h3&gt;
 &lt;h4 id=&quot;hard-eagleinzoo&quot;&gt;Hard EagleInZoo&lt;/h4&gt;
-&lt;p&gt;题意：给定一棵树，从根节点放入动物，如果这个节点已经有动物了，就等概率的选择子节点往下走，重复过程直到有空节点或离开树，一旦离开树，这次的过程停止。询问放入$m$个动物，最后一只留在树上的概率。  &lt;br /&gt;
-题解：关键：设计状态转移时，要让转移的方案不相交。&lt;br /&gt;
+&lt;p&gt;题意 : 给定一棵树，从根节点放入动物，如果这个节点已经有动物了，就等概率的选择子节点往下走，重复过程直到有空节点或离开树，一旦离开树，这次的过程停止。询问放入$m$个动物，最后一只留在树上的概率。  &lt;br /&gt;
+题解 : 关键 : 设计状态转移时，要让转移的方案不相交。&lt;br /&gt;
 $dp[i][j]$表示以$i$为根的子树，放入$j$个动物，最后一只能够留在树上的概率。&lt;br /&gt;
 转移的时候考虑最后一个动物留在哪个子树，这样使得转移的方案不相交。&lt;br /&gt;
 假设以$i$为根的子树放入$j$个动物，$i$的子节点数为$c$，枚举进入某个个子树$ch$的动物数$k$，那么概率为${\frac{1}{c}}^{k}*(1-\frac{1}{c})^{j-1-k}*C_{j-2}^{k-1}$
@@ -509,23 +529,21 @@ $dp[i][j]$表示以$i$为根的子树，放入$j$个动物，最后一只能够�
 
 &lt;h3 id=&quot;tco-2014-round-2a&quot;&gt;TCO 2014 Round 2A&lt;/h3&gt;
 &lt;h4 id=&quot;easy-sixteenbricks&quot;&gt;Easy SixteenBricks&lt;/h4&gt;
-&lt;p&gt;题意：给定16块$1*1*x[i]$砖，放在$4*4$的格子里，使得可以看见的面积最大。&lt;br /&gt;
-题解：关键：首先要大小交替摆放，然后降维分析。&lt;br /&gt;
+&lt;p&gt;题意 : 给定16块$1*1*x[i]$砖，放在$4*4$的格子里，使得可以看见的面积最大。&lt;br /&gt;
+题解 : 关键 : 首先要大小交替摆放，然后降维分析。&lt;br /&gt;
 $a&amp;gt;b&amp;gt;c&amp;gt;d$，考虑一维情况$adbc$比$acbd$更优，因为两个的面积分别是$2a+2b-2d$和$2a+2b-2c$，然后放在二维即可。&lt;/p&gt;
 
-&lt;h3 id=&quot;tco-2014-round-2a-1&quot;&gt;TCO 2014 Round 2A&lt;/h3&gt;
 &lt;h4 id=&quot;medium-narrowpassage&quot;&gt;Medium NarrowPassage&lt;/h4&gt;
-&lt;p&gt;题意：在$0$到$l$的走廊里，给定每个物品$n\le 50$的初始位置和目标位置，要改变物品的顺序，必须这些物品在最左端或最右端，询问最小移动步数。&lt;br /&gt;
-题解：关键：最优移动的方案。&lt;br /&gt;
+&lt;p&gt;题意 : 在$0$到$l$的走廊里，给定每个物品$n\le 50$的初始位置和目标位置，要改变物品的顺序，必须这些物品在最左端或最右端，询问最小移动步数。&lt;br /&gt;
+题解 : 关键 : 最优移动的方案。&lt;br /&gt;
 首先一种情况是，按最开始的位置分成三段，左边一段全部移到最左边，右边一段全部移到最右边，中间一段自行调整。&lt;br /&gt;
 这种情况的要求是，中间段不能交叉，左边和右边那段的目标位置不能跨越中间那段。&lt;br /&gt;
 另一种方案是&lt;img src=&quot;http://7xs2ho.com1.z0.glb.clouddn.com/0013.png&quot; alt=&quot;&quot; /&gt;
 这类情况的最优方案是，按照起点排序，左边到左端点，右边到右端点，然后按终点排序，枚举边界，右边点的到右端点。&lt;/p&gt;
 
-&lt;h3 id=&quot;tco-2014-round-2a-2&quot;&gt;TCO 2014 Round 2A&lt;/h3&gt;
 &lt;h4 id=&quot;hard-treepuzzle&quot;&gt;Hard TreePuzzle&lt;/h4&gt;
-&lt;p&gt;题意：给定一棵树$(n\le 500)$，给定每个点有无黑点，根节点放一个红点，询问哪些点能被红点到达。&lt;br /&gt;
-题解：关键：分类讨论啊。&lt;br /&gt;
+&lt;p&gt;题意 : 给定一棵树$(n\le 500)$，给定每个点有无黑点，根节点放一个红点，询问哪些点能被红点到达。&lt;br /&gt;
+题解 : 关键 : 分类讨论啊。&lt;br /&gt;
 首先，你现在红点在$x$，黑点分布为$f[x]$，$y$为$x$的一个子节点，判断$y$是否可达。&lt;br /&gt;
 1.若$y$的子树中空节点数大于等于$1$，则可达。&lt;br /&gt;
 2.若$y$的子树中空节点数等于$0$，且$x$的子节点中，子树中空节点数大于等于$1$的个数为$0$，即$x$的子树中无空节点，则不可达。&lt;br /&gt;
@@ -536,8 +554,8 @@ $a&amp;gt;b&amp;gt;c&amp;gt;d$，考虑一维情况$adbc$比$acbd$更优，因�
 &lt;h2 id=&quot;atcoder&quot;&gt;Atcoder&lt;/h2&gt;
 &lt;h3 id=&quot;arc-88&quot;&gt;ARC 88&lt;/h3&gt;
 &lt;h4 id=&quot;d-wide-flip&quot;&gt;D Wide Flip&lt;/h4&gt;
-&lt;p&gt;题意：给定一个长度为$n$的$01$序列，可以翻转一段连续的长度大于$k$的区间，询问最大的$k$。&lt;br /&gt;
-题解：关键：假设我们选定了一个$k$，我们能单独修改某些单独位置。&lt;br /&gt;
+&lt;p&gt;题意 : 给定一个长度为$n$的$01$序列，可以翻转一段连续的长度大于$k$的区间，询问最大的$k$。&lt;br /&gt;
+题解 : 关键 : 假设我们选定了一个$k$，我们能单独修改某些单独位置。&lt;br /&gt;
 修改第$i\ge k+1$位，可以通过修改$[1,i-1]$和$[1,i]$。&lt;br /&gt;
 修改第$i\le n-k$位，可以通过修改$[i,n]$和$[i+1,n]$。&lt;br /&gt;
 到了第$i$和$i+1$位为$01/10$时，我们要修改第$i$和$i+1$位都能达到我们的目的，所以取一个更大的$k$。&lt;br /&gt;
@@ -546,10 +564,10 @@ $1\ \ 3\ \ 56\ \ 89\ \ $  &lt;br /&gt;
 $9\ \ 7\ \ 54\ \ 21\ \ $  &lt;br /&gt;
 可以观察上图，取$\lceil\frac{n}{2}\rceil$一定可以实现目的，因为可以随意修改左右两侧的值，实际上我们要去找的，最靠近中心的01交替的位置，以这个位置对称过去的两侧都可以随意修改，而剩下来中间的部分不用修改。&lt;/p&gt;
 &lt;h4 id=&quot;e-papple-sort&quot;&gt;E Papple Sort&lt;/h4&gt;
-&lt;p&gt;题意：给定一个字符串，询问通过交换相邻字符，最少几次能变为回文串。  &lt;br /&gt;
-题解：关键：&lt;br /&gt;
+&lt;p&gt;题意 : 给定一个字符串，询问通过交换相邻字符，最少几次能变为回文串。  &lt;br /&gt;
+题解 : 关键 : &lt;br /&gt;
 1.a…a…a…a，第2个a一定不会越过第3个a，也就是说相同字母的相对位置不变。&lt;br /&gt;
-2.交换相邻字符我们想到：1)可以转化为任意两个位置的交换2)统计答案为求目标位置的逆序对数。&lt;br /&gt;
+2.交换相邻字符我们想到 : 1)可以转化为任意两个位置的交换2)统计答案为求目标位置的逆序对数。&lt;br /&gt;
 现在转化为求目标位置，回文的话可以看成是一层一层的，结合第一点我们可以确定第1个a一定和最后一个a是一个回文对，然后我们考虑两对的情况。&lt;br /&gt;
 a..a.b…b&lt;br /&gt;
 a..b.a…b&lt;br /&gt;
@@ -560,29 +578,83 @@ a..b.b…a&lt;br /&gt;
 
 &lt;h3 id=&quot;arc-89&quot;&gt;ARC 89&lt;/h3&gt;
 &lt;h4 id=&quot;d-checker&quot;&gt;D Checker&lt;/h4&gt;
-&lt;p&gt;题解：关键：把每个位置的横纵坐标对$2k$取模。&lt;br /&gt;
+&lt;p&gt;题解 : 关键 : 把每个位置的横纵坐标对$2k$取模。&lt;br /&gt;
 做二维前缀和即可。&lt;/p&gt;
 
 &lt;h3 id=&quot;arc-90&quot;&gt;ARC 90&lt;/h3&gt;
 &lt;h4 id=&quot;e-avoiding-collision&quot;&gt;E Avoiding Collision&lt;/h4&gt;
-&lt;p&gt;题意：给定一张无向图，给定两个点$s$和$t$，两个人分别从$s$和$t$出发，并且都沿着最短路走到$t$和$s$，询问两个人不相遇的方案数。  &lt;br /&gt;
-题解：核心是容斥来求，$ans=$最短路对数-到达同一个点的最短路对数-到达同一条边的最短路对数。&lt;br /&gt;
+&lt;p&gt;题意 : 给定一张无向图，给定两个点$s$和$t$，两个人分别从$s$和$t$出发，并且都沿着最短路走到$t$和$s$，询问两个人不相遇的方案数。  &lt;br /&gt;
+题解 : 核心是容斥来求，$ans=$最短路对数-到达同一个点的最短路对数-到达同一条边的最短路对数。&lt;br /&gt;
 先分别求出$s$和$t$到每个点的距离$dis_{1/2}[i]$和最短路方案数$num_{1/2}[i]$，最短路对数为$num_{1}[t]^2$，枚举点，若能作为最短路上的点且两人到达时间相同则计入，枚举边，若能作为最短路上的边且两人在边上能够相遇则计入。&lt;/p&gt;
 
 &lt;h4 id=&quot;f-number-of-digits&quot;&gt;F Number of Digits&lt;/h4&gt;
-&lt;p&gt;题意：定义$f(a)$为$a$在十进制中的位数，给定$S(S\le 10^8)$，询问有多少对$l,r$满足，$\sum_{i=l}^{r}f(i)=S$。  &lt;br /&gt;
-题解：首先想到$\text{two-point}$，但是$l,r$的范围很大不适用，但但是我们注意到一个关键的性质，当$l\ge10^7$时，因为$f(i)\ge8,i\in[l,r]$，$l$到$r$的距离小于等于$\frac{S}{8}$，所以会得到$f(r)\le f(l)+1$。我们分情况来看一看。&lt;br /&gt;
+&lt;p&gt;题意 : 定义$f(a)$为$a$在十进制中的位数，给定$S(S\le 10^8)$，询问有多少对$l,r$满足，$\sum_{i=l}^{r}f(i)=S$。  &lt;br /&gt;
+题解 : 首先想到$\text{two-point}$，但是$l,r$的范围很大不适用，但但是我们注意到一个关键的性质，当$l\ge10^7$时，因为$f(i)\ge8,i\in[l,r]$，$l$到$r$的距离小于等于$\frac{S}{8}$，所以会得到$f(r)\le f(l)+1$。我们分情况来看一看。&lt;br /&gt;
 $1.f(l)=f(r)$，此时要求$f(l)|S$，方案数为$9*10^{f(l)-1}-\frac{S}{f(l)}+1$。&lt;br /&gt;
 $2.f(l)+1=f(r)$，令$t=r-l+1$，$f(l)=\text{len}$，$f(r)=\text{len}+1$，$l$到跨越的距离为$x$，跨越到$r$的距离为$y$，得到等式$S=\text{len}*t+y$，枚举$t$，则$y=S\%t$，$x=t-S\%t$，若$x，y$都大于$0$则计入答案&lt;/p&gt;
 
 &lt;h2 id=&quot;codeforces&quot;&gt;Codeforces&lt;/h2&gt;
 
+&lt;h3 id=&quot;codeforces-round-574&quot;&gt;Codeforces Round #574&lt;/h3&gt;
+
+&lt;h4 id=&quot;1195f-geometers-anonymous-club&quot;&gt;1195F Geometers Anonymous Club&lt;/h4&gt;
+&lt;p&gt;题意 : 给定$n$个凸包，有$m$次询问，查询在$[l_i,r_i]$中的凸包的闵可夫斯基和的点集大小。  &lt;br /&gt;
+题解 : 回想一下合并两个凸包求闵科夫斯基和的过程，会发现相同斜率的线段只用一次，所以问题转化为求区间中颜色个数，离线树状数组即可。&lt;/p&gt;
+
+&lt;h4 id=&quot;1195e-openstreetmap&quot;&gt;1195E OpenStreetMap&lt;/h4&gt;
+&lt;p&gt;题意 : 询问在$n\cdot m$的矩阵中，所有$a\cdot b$的子矩阵的最小值的和。$n,m,a,b\le 3000$。&lt;br /&gt;
+题解 : 先单调栈求一遍每个点横着往左长度为$a$的最小值，再用这个最小值为权值纵向求一个长度为$b$的，最后全加起来即可。$O(nm)$。&lt;/p&gt;
+
+&lt;h3 id=&quot;educational-codeforces-round-68&quot;&gt;Educational Codeforces Round 68&lt;/h3&gt;
+
+&lt;h4 id=&quot;1194f-crossword-expert&quot;&gt;1194F Crossword Expert&lt;/h4&gt;
+&lt;p&gt;题意 : 有$n$个任务，第$i$个任务的完成时间为$t_i$，Bob完成每个任务的时间等概率地为$t_i$或$t_i+1$。现在Bob按顺序完成任务，询问在$m$的时间里，期望完成多少任务。$n\le 2\cdot 10^5, 1\le t_i\le 10^9, m\le 2\cdot 10^{14}$。   &lt;br /&gt;
+题解 : 对于第$i$个任务，完成它的概率为$\frac{\sum_{j=0}^{m-sum[i]}C_{i}^{j}}{2^i}$。&lt;br /&gt;
+对于$\sum_{j=0}^{a}C_{i}^{j}$转移到$\sum_{j=0}^{a}C_{i+1}^{j}$，可以使用$\sum_{j=0}^{a}C_{i+1}^{j}=2\cdot\sum_{j=0}^{a}C_{i}^{j}-C_{i}^{a}$来实现。&lt;br /&gt;
+且由于$m-sum[i]$是下降的，所以可以只用求$O(n)$个组合数即可。&lt;/p&gt;
+
+&lt;h4 id=&quot;1194e-count-the-rectangles&quot;&gt;1194E Count The Rectangles&lt;/h4&gt;
+&lt;p&gt;题意 : 给定$n$条平行于x轴 或y轴的线段，求一共能围成多少个不同的矩形。$n\le 5000$。&lt;br /&gt;
+题解 : 把$x$轴平行的线按$y$排序，将$y$轴平行的线拆成两个点(入点和出点)，并按$y$轴排序。&lt;br /&gt;
+枚举一条$y$轴平行的线，将所有$y$值小于它的点的$x$值加入或删除(入点和出点)，然后按$y$值遍历大于这条平行于$x$轴的线，将$x$值插入和删除，每次查询在这两条平行于$x$轴的线中间合法的$x$值数量即可。$O(n^2\log{n})$。&lt;/p&gt;
+
+&lt;h3 id=&quot;codeforces-round-573&quot;&gt;Codeforces Round #573&lt;/h3&gt;
+&lt;h4 id=&quot;1190d-tokitsukaze-and-strange-rectangle&quot;&gt;1190D Tokitsukaze and Strange Rectangle&lt;/h4&gt;
+&lt;p&gt;题意 : 给定$n$个点，每次使用一个凹字形的框框出一个点集，询问本质不同的点集个数。$n\le 2\cdot 10^5$。&lt;br /&gt;
+题解 : 先把所有点按$y$轴排序，从大到小，每层统计新加入的点与原来的点形成的贡献，每层结束再把新点加进去。离散化和树状数组处理统计贡献即可。&lt;/p&gt;
+
+&lt;h3 id=&quot;codeforces-round-572&quot;&gt;Codeforces Round #572&lt;/h3&gt;
+&lt;h4 id=&quot;1188b-count-pairs&quot;&gt;1188B Count Pairs&lt;/h4&gt;
+&lt;p&gt;题意 : 给定$n$个值$x_i$，询问有多少对在模$p$意义下满足$(x_i-x_j)\cdot(x_i^2+x_j^2)=k$。$n\le 3\cdot 10^5$&lt;br /&gt;
+题解 : 上面的式子乘$x_i+x_j$变为$x_i^4-x_j^4=k(x_i-x_j)$，移项得到$x_i^4-x_i\cdot k=x_j^4-x_j\cdot k$。map处理一下即可。&lt;br /&gt;
+$O(n\log{n})$&lt;/p&gt;
+
+&lt;h3 id=&quot;forethought-future-cup---elimination-round&quot;&gt;Forethought Future Cup - Elimination Round&lt;/h3&gt;
+&lt;h4 id=&quot;1146h-satanic-panic&quot;&gt;1146H Satanic Panic&lt;/h4&gt;
+&lt;p&gt;题意 : 给定平面上$n$个点，询问形成的五角星数量。$n\le 300$&lt;br /&gt;
+题解 : 这题有个DP做法，我这里写个组合的。&lt;br /&gt;
+首先是$C_{n}^{5}$，考虑减掉不合法的情况。&lt;br /&gt;
+形成合法五角星的5个点，肯定是每个点都在这5个点形成的凸包定点上。&lt;br /&gt;
+所以，可以分为两种情况：三角形中有两个点，四边形里有一个点。 &lt;br /&gt;
+第一种情况，枚举一个三角形，内部拿两个即可。&lt;br /&gt;
+第二种情况，枚举一个三角形，在内部拿一个点，外部再拿一个点即可。&lt;br /&gt;
+可以使用bitset的与和count来求三角形内点的个数。&lt;br /&gt;
+$O(n^3)$&lt;/p&gt;
+
+&lt;h3 id=&quot;codeforces-round-549&quot;&gt;Codeforces Round #549&lt;/h3&gt;
+&lt;h4 id=&quot;1142c-u2&quot;&gt;1142C U2&lt;/h4&gt;
+&lt;p&gt;题解 : 给定$n$个点，任意两个$x$值不同的点可以求出一个满足$x^2+bx+c=y$的抛物线。询问没有任何点严格在抛物线上方的抛物线个数。$n\le 10^5$。  &lt;br /&gt;
+题意 : 对于一个点$(x_i,y_i)$和他所在的抛物线$x^2+b_ix+c_i=y$，要求满足不存在$y’&amp;gt;x’^2+bx’+c$，这个点所在的抛物线可以表示为$bx_i+c=y_i-x_i^2$，$x_i,y_i$已知，而$b,c$未知，可以将$b,c$看做未知数，每个点转化为$(x_i,y_i-x_i^2)$后可以表示为这条直线上的点，那么任意两个转化后的点的连线就是这条直线。&lt;br /&gt;
+按照抛物线的要求，要求这条直线上面没有点，即求上凸包。&lt;br /&gt;
+注意$x$轴值相同的点不算上凸包的点。  &lt;br /&gt;
+$O(n\log{n})$&lt;/p&gt;
+
 &lt;h3 id=&quot;educational-codeforces-round-63&quot;&gt;Educational Codeforces Round 63&lt;/h3&gt;
 &lt;h4 id=&quot;f-delivery-oligopoly&quot;&gt;F Delivery Oligopoly&lt;/h4&gt;
-&lt;p&gt;题意：给一张$n(n\le 15)$个点，$m$条边的双连通图。询问删除最多的边使得新图为双连通图的方案。&lt;br /&gt;
-题解：对于一个双连通图，双连通块的构造方法是一个双连通块加上一条链/一个点。那么我们枚举双连通块点集$s$，枚举一个端点为$i,j$且点集为$t$的链，使得$i,j$分别与$s$内两点相连。&lt;br /&gt;
+&lt;p&gt;题意 : 给一张$n(n\le 15)$个点，$m$条边的双连通图。询问删除最多的边使得新图为双连通图的方案。&lt;br /&gt;
+题解 : 对于一个双连通图，双连通块的构造方法是一个双连通块加上一条链/一个点。那么我们枚举双连通块点集$s$，枚举一个端点为$i,j$且点集为$t$的链，使得$i,j$分别与$s$内两点相连。&lt;br /&gt;
 预处理出$i$到点集$s(i\not\in s)$的最大/次大距离，预处理出点集为$s$，左右端点为$i$和$j$的链的最小花费。转移记录方案。 &lt;br /&gt;
-复杂度$O(3^n*n^2)$。&lt;/p&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Algorithm" /><summary type="html">ToDoList： TCO14 Round 1A 250 TCO14 Round 1A 500 TCO14 Round 1A 1000 TCO14 Round 1B 200 TCO14 Round 1B 600 TCO14 Round 1B 900 TCO14 Round 1C 250 TCO14 Round 1C 450 TCO14 Round 1C 950 TCO14 Round 2A 250 TCO14 Round 2A 500 TCO14 Round 2A 1000 TCO14 Round 2B 350 TCO14 Round 2B 500 TCO14 Round 2B 900 Topcoder SRM 754 Medium 题意 : 给定投影等价类数，构造一组点集方案。 题解 : 两个点有两个等价类，对于一个点集，$n^2$条直线去重后的个数为等价类数。构造两列点即可。 Hard 题意 : 给定$4$连通块大小和$8$连通块大小，返回构造结果。 题解 : $8$连通块是由若干$4$连通块组合起来，状压DP一下，DP出一组解。然后按行构造即可。 SRM 753 Hard 题意 : 给定一个序列，区间询问去掉一个数后的最大异或和。 题解 : 可持久化Trie树，区间异或和在区间的Trie树上异或出最大值。 2019 Humblefool Cup Prelims Hard 题意 : 定义相邻的两个质数为只有一个数位不同，且长度相同。询问两个质数可以到达。 题解 : 质数非常连通，预处理之后会发现，只有$4$个块，$2$个是孤点，还有$1$个是大小为$2$的块，剩下的点全部联通。 SRM 752 Hard 题意 : 有$n$个硬币在桌子上，有$1$个硬币在手里，每次抛硬币，正面的话桌面上加$1$个硬币，手里留$1$个硬币，如果桌上有$2N$个硬币则游戏结束。反面的话，从桌上硬币拿走手里的硬币数个放到手里，如果桌上拿空则游戏结束。输出期望场数。 题解 : 转移显然有环，但是由于正面的特殊性，定义$f[i]$表示手里$1$个硬币，桌上$i$个硬币的期望场数。转移方程$f[i]=(f[i+1]+1)*0.5+(f[i]+2)*0.5^2+(f[i-2]+3)*0.5^3+\cdots$。可以发现转移有后效性，但是我们可以将$f[i+1]$去除后效性。 TCO 2014 Round 1B Medium WolvesAndSheep 贪心反例： x[] []v 纯贪心（按行和列分别做一次），不会分割，所以x还是能到达v。 TCO 2014 Round 1B Hard EagleInZoo 题意：给定一棵树，从根节点放入动物，如果这个节点已经有动物了，就等概率的选择子节点往下走，重复过程直到有空节点或离开树，一旦离开树，这次的过程停止。询问放入$m$个动物，最后一只留在树上的概率。 题解：关键：设计状态转移时，要让转移的方案不相交。 $dp[i][j]$表示以$i$为根的子树，放入$j$个动物，最后一只能够留在树上的概率。 转移的时候考虑最后一个动物留在哪个子树，这样使得转移的方案不相交。 假设以$i$为根的子树放入$j$个动物，$i$的子节点数为$c$，枚举进入某个个子树$ch$的动物数$k$，那么概率为${\frac{1}{c}}^{k}*(1-\frac{1}{c})^{j-1-k}*C_{j-2}^{k-1}$ 不管进入别的$ch$的情况是怎么样，所以概率是$1-\frac{1}{c}$ TCO 2014 Round 2A Easy SixteenBricks 题意：给定16块$1*1*x[i]$砖，放在$4*4$的格子里，使得可以看见的面积最大。 题解：关键：首先要大小交替摆放，然后降维分析。 $a&amp;gt;b&amp;gt;c&amp;gt;d$，考虑一维情况$adbc$比$acbd$更优，因为两个的面积分别是$2a+2b-2d$和$2a+2b-2c$，然后放在二维即可。 TCO 2014 Round 2A Medium NarrowPassage 题意：在$0$到$l$的走廊里，给定每个物品$n\le 50$的初始位置和目标位置，要改变物品的顺序，必须这些物品在最左端或最右端，询问最小移动步数。 题解：关键：最优移动的方案。 首先一种情况是，按最开始的位置分成三段，左边一段全部移到最左边，右边一段全部移到最右边，中间一段自行调整。 这种情况的要求是，中间段不能交叉，左边和右边那段的目标位置不能跨越中间那段。 另一种方案是 这类情况的最优方案是，按照起点排序，左边到左端点，右边到右端点，然后按终点排序，枚举边界，右边点的到右端点。 TCO 2014 Round 2A Hard TreePuzzle 题意：给定一棵树$(n\le 500)$，给定每个点有无黑点，根节点放一个红点，询问哪些点能被红点到达。 题解：关键：分类讨论啊。 首先，你现在红点在$x$，黑点分布为$f[x]$，$y$为$x$的一个子节点，判断$y$是否可达。 1.若$y$的子树中空节点数大于等于$1$，则可达。 2.若$y$的子树中空节点数等于$0$，且$x$的子节点中，子树中空节点数大于等于$1$的个数为$0$，即$x$的子树中无空节点，则不可达。 3.若$y$的子树中空节点数等于$0$，且$x$的子节点中，子树中空节点数大于等于$1$的个数大于等于$2$，则可达。 4.若$y$的子树中空节点数等于$0$，且$x$的子节点中，子树中空节点数大于等于$1$的个数等于$1$，记该节点为$z$，其子树中空节点数为$cnt$。 找到$z$的子树中离$z$最近的，且度数大于等于$3$的节点$z’$，若$cnt\ge z$到$z’$的节点数+$2$，则可到达，否则不可到达。 Atcoder ARC 88 D Wide Flip 题意：给定一个长度为$n$的$01$序列，可以翻转一段连续的长度大于$k$的区间，询问最大的$k$。 题解：关键：假设我们选定了一个$k$，我们能单独修改某些单独位置。 修改第$i\ge k+1$位，可以通过修改$[1,i-1]$和$[1,i]$。 修改第$i\le n-k$位，可以通过修改$[i,n]$和$[i+1,n]$。 到了第$i$和$i+1$位为$01/10$时，我们要修改第$i$和$i+1$位都能达到我们的目的，所以取一个更大的$k$。 $0110010010$ $1\ \ 3\ \ 56\ \ 89\ \ $ $9\ \ 7\ \ 54\ \ 21\ \ $ 可以观察上图，取$\lceil\frac{n}{2}\rceil$一定可以实现目的，因为可以随意修改左右两侧的值，实际上我们要去找的，最靠近中心的01交替的位置，以这个位置对称过去的两侧都可以随意修改，而剩下来中间的部分不用修改。 E Papple Sort 题意：给定一个字符串，询问通过交换相邻字符，最少几次能变为回文串。 题解：关键： 1.a…a…a…a，第2个a一定不会越过第3个a，也就是说相同字母的相对位置不变。 2.交换相邻字符我们想到：1)可以转化为任意两个位置的交换2)统计答案为求目标位置的逆序对数。 现在转化为求目标位置，回文的话可以看成是一层一层的，结合第一点我们可以确定第1个a一定和最后一个a是一个回文对，然后我们考虑两对的情况。 a..a.b…b a..b.a…b a..b.b…a 分为上面三种，其中第三种显然最终a在b外面，第一种一定会先变成第二种。 而第二种,首先我们假设中间的b和a关于中心对称了，因为不对称要整体平移对于ab谁在外面无影响，然后a在外面我们要右侧a移到右侧b外面，b在外面我们要左侧b移到左侧a外面，因为要对称这两个的操作数是相同的。 所以根据上面三种情况，我们从左向右扫标记每对最终的位置，求一个逆序对即可。 ARC 89 D Checker 题解：关键：把每个位置的横纵坐标对$2k$取模。 做二维前缀和即可。 ARC 90 E Avoiding Collision 题意：给定一张无向图，给定两个点$s$和$t$，两个人分别从$s$和$t$出发，并且都沿着最短路走到$t$和$s$，询问两个人不相遇的方案数。 题解：核心是容斥来求，$ans=$最短路对数-到达同一个点的最短路对数-到达同一条边的最短路对数。 先分别求出$s$和$t$到每个点的距离$dis_{1/2}[i]$和最短路方案数$num_{1/2}[i]$，最短路对数为$num_{1}[t]^2$，枚举点，若能作为最短路上的点且两人到达时间相同则计入，枚举边，若能作为最短路上的边且两人在边上能够相遇则计入。 F Number of Digits 题意：定义$f(a)$为$a$在十进制中的位数，给定$S(S\le 10^8)$，询问有多少对$l,r$满足，$\sum_{i=l}^{r}f(i)=S$。 题解：首先想到$\text{two-point}$，但是$l,r$的范围很大不适用，但但是我们注意到一个关键的性质，当$l\ge10^7$时，因为$f(i)\ge8,i\in[l,r]$，$l$到$r$的距离小于等于$\frac{S}{8}$，所以会得到$f(r)\le f(l)+1$。我们分情况来看一看。 $1.f(l)=f(r)$，此时要求$f(l)|S$，方案数为$9*10^{f(l)-1}-\frac{S}{f(l)}+1$。 $2.f(l)+1=f(r)$，令$t=r-l+1$，$f(l)=\text{len}$，$f(r)=\text{len}+1$，$l$到跨越的距离为$x$，跨越到$r$的距离为$y$，得到等式$S=\text{len}*t+y$，枚举$t$，则$y=S\%t$，$x=t-S\%t$，若$x，y$都大于$0$则计入答案 Codeforces Educational Codeforces Round 63 F Delivery Oligopoly 题意：给一张$n(n\le 15)$个点，$m$条边的双连通图。询问删除最多的边使得新图为双连通图的方案。 题解：对于一个双连通图，双连通块的构造方法是一个双连通块加上一条链/一个点。那么我们枚举双连通块点集$s$，枚举一个端点为$i,j$且点集为$t$的链，使得$i,j$分别与$s$内两点相连。 预处理出$i$到点集$s(i\not\in s)$的最大/次大距离，预处理出点集为$s$，左右端点为$i$和$j$的链的最小花费。转移记录方案。 复杂度$O(3^n*n^2)$。</summary></entry><entry><title type="html">Work for Open Source Community Using Git</title><link href="http://localhost:3798/2019/03/19/Work-for-Open-Source-Community-Using-Git.html" rel="alternate" type="text/html" title="Work for Open Source Community Using Git" /><published>2019-03-19T00:00:00+08:00</published><updated>2019-03-19T00:00:00+08:00</updated><id>http://localhost:3798/2019/03/19/Work%20for%20Open%20Source%20Community%20Using%20Git</id><content type="html" xml:base="http://localhost:3798/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">&lt;p&gt;长期更新使用Git和Github工作的内容。&lt;/p&gt;
+复杂度$O(3^n\cdot n^2)$。&lt;/p&gt;</content><author><name>slongle</name><email>junchendeng@gmail.com</email></author><category term="Algorithm" /><summary type="html">ToDoList : TCO14 Round 1A 250 TCO14 Round 1A 500 TCO14 Round 1A 1000 TCO14 Round 1B 200 TCO14 Round 1B 600 TCO14 Round 1B 900 TCO14 Round 1C 250 TCO14 Round 1C 450 TCO14 Round 1C 950 TCO14 Round 2A 250 TCO14 Round 2A 500 TCO14 Round 2A 1000 TCO14 Round 2B 350 TCO14 Round 2B 500 TCO14 Round 2B 900 Timeline 2019/07/15-2019/07/21 2800-3800 SRM 655 BichromeSky(Hard) 1146H Satanic Panic(2800) 1142C U2(2800) 2500-2700 1195F Geometers Anonymous Club(2700) 1194F Crossword Expert(2500) 2100-2400 1190D Tokitsukaze and Strange Rectangle(2200) 1194E Count The Rectangles(2200) 1188B Count Pairs(2200) 1195E OpenStreetMap(2100) Topcoder SRM 754 Medium 题意 : 给定投影等价类数，构造一组点集方案。 题解 : 两个点有两个等价类，对于一个点集，$n^2$条直线去重后的个数为等价类数。构造两列点即可。 Hard 题意 : 给定$4$连通块大小和$8$连通块大小，返回构造结果。 题解 : $8$连通块是由若干$4$连通块组合起来，状压DP一下，DP出一组解。然后按行构造即可。 SRM 753 Hard 题意 : 给定一个序列，区间询问去掉一个数后的最大异或和。 题解 : 可持久化Trie树，区间异或和在区间的Trie树上异或出最大值。 2019 Humblefool Cup Prelims Hard 题意 : 定义相邻的两个质数为只有一个数位不同，且长度相同。询问两个质数可以到达。 题解 : 质数非常连通，预处理之后会发现，只有$4$个块，$2$个是孤点，还有$1$个是大小为$2$的块，剩下的点全部联通。 SRM 752 Hard 题意 : 有$n$个硬币在桌子上，有$1$个硬币在手里，每次抛硬币，正面的话桌面上加$1$个硬币，手里留$1$个硬币，如果桌上有$2N$个硬币则游戏结束。反面的话，从桌上硬币拿走手里的硬币数个放到手里，如果桌上拿空则游戏结束。输出期望场数。 题解 : 转移显然有环，但是由于正面的特殊性，定义$f[i]$表示手里$1$个硬币，桌上$i$个硬币的期望场数。转移方程$f[i]=(f[i+1]+1)*0.5+(f[i]+2)*0.5^2+(f[i-2]+3)*0.5^3+\cdots$。可以发现转移有后效性，但是我们可以将$f[i+1]$去除后效性。 SRM 655 Hard 题意 : $n$个红点，$m$个蓝点，没有三点共线，第i个红点以$p_i$的概率出现，求红点的凸包包含所有蓝点的概率。$n, m \le 100$ 题解 : 对于包含所有蓝点的要求，等价于包含所有蓝点形成的凸包。对于一个红点，对蓝点构成的凸包做切线，这两条切线是这个红点的覆盖范围。问题就转化为有$n$个区间，每个区间出现的概率为$p_i$，询问全部覆盖的概率，DP一下即可。 复杂度$O(n^3)$。 TCO 2014 Round 1B Medium WolvesAndSheep 贪心反例 : x[] []v 纯贪心（按行和列分别做一次），不会分割，所以x还是能到达v。 Hard EagleInZoo 题意 : 给定一棵树，从根节点放入动物，如果这个节点已经有动物了，就等概率的选择子节点往下走，重复过程直到有空节点或离开树，一旦离开树，这次的过程停止。询问放入$m$个动物，最后一只留在树上的概率。 题解 : 关键 : 设计状态转移时，要让转移的方案不相交。 $dp[i][j]$表示以$i$为根的子树，放入$j$个动物，最后一只能够留在树上的概率。 转移的时候考虑最后一个动物留在哪个子树，这样使得转移的方案不相交。 假设以$i$为根的子树放入$j$个动物，$i$的子节点数为$c$，枚举进入某个个子树$ch$的动物数$k$，那么概率为${\frac{1}{c}}^{k}*(1-\frac{1}{c})^{j-1-k}*C_{j-2}^{k-1}$ 不管进入别的$ch$的情况是怎么样，所以概率是$1-\frac{1}{c}$ TCO 2014 Round 2A Easy SixteenBricks 题意 : 给定16块$1*1*x[i]$砖，放在$4*4$的格子里，使得可以看见的面积最大。 题解 : 关键 : 首先要大小交替摆放，然后降维分析。 $a&amp;gt;b&amp;gt;c&amp;gt;d$，考虑一维情况$adbc$比$acbd$更优，因为两个的面积分别是$2a+2b-2d$和$2a+2b-2c$，然后放在二维即可。 Medium NarrowPassage 题意 : 在$0$到$l$的走廊里，给定每个物品$n\le 50$的初始位置和目标位置，要改变物品的顺序，必须这些物品在最左端或最右端，询问最小移动步数。 题解 : 关键 : 最优移动的方案。 首先一种情况是，按最开始的位置分成三段，左边一段全部移到最左边，右边一段全部移到最右边，中间一段自行调整。 这种情况的要求是，中间段不能交叉，左边和右边那段的目标位置不能跨越中间那段。 另一种方案是 这类情况的最优方案是，按照起点排序，左边到左端点，右边到右端点，然后按终点排序，枚举边界，右边点的到右端点。 Hard TreePuzzle 题意 : 给定一棵树$(n\le 500)$，给定每个点有无黑点，根节点放一个红点，询问哪些点能被红点到达。 题解 : 关键 : 分类讨论啊。 首先，你现在红点在$x$，黑点分布为$f[x]$，$y$为$x$的一个子节点，判断$y$是否可达。 1.若$y$的子树中空节点数大于等于$1$，则可达。 2.若$y$的子树中空节点数等于$0$，且$x$的子节点中，子树中空节点数大于等于$1$的个数为$0$，即$x$的子树中无空节点，则不可达。 3.若$y$的子树中空节点数等于$0$，且$x$的子节点中，子树中空节点数大于等于$1$的个数大于等于$2$，则可达。 4.若$y$的子树中空节点数等于$0$，且$x$的子节点中，子树中空节点数大于等于$1$的个数等于$1$，记该节点为$z$，其子树中空节点数为$cnt$。 找到$z$的子树中离$z$最近的，且度数大于等于$3$的节点$z’$，若$cnt\ge z$到$z’$的节点数+$2$，则可到达，否则不可到达。 Atcoder ARC 88 D Wide Flip 题意 : 给定一个长度为$n$的$01$序列，可以翻转一段连续的长度大于$k$的区间，询问最大的$k$。 题解 : 关键 : 假设我们选定了一个$k$，我们能单独修改某些单独位置。 修改第$i\ge k+1$位，可以通过修改$[1,i-1]$和$[1,i]$。 修改第$i\le n-k$位，可以通过修改$[i,n]$和$[i+1,n]$。 到了第$i$和$i+1$位为$01/10$时，我们要修改第$i$和$i+1$位都能达到我们的目的，所以取一个更大的$k$。 $0110010010$ $1\ \ 3\ \ 56\ \ 89\ \ $ $9\ \ 7\ \ 54\ \ 21\ \ $ 可以观察上图，取$\lceil\frac{n}{2}\rceil$一定可以实现目的，因为可以随意修改左右两侧的值，实际上我们要去找的，最靠近中心的01交替的位置，以这个位置对称过去的两侧都可以随意修改，而剩下来中间的部分不用修改。 E Papple Sort 题意 : 给定一个字符串，询问通过交换相邻字符，最少几次能变为回文串。 题解 : 关键 : 1.a…a…a…a，第2个a一定不会越过第3个a，也就是说相同字母的相对位置不变。 2.交换相邻字符我们想到 : 1)可以转化为任意两个位置的交换2)统计答案为求目标位置的逆序对数。 现在转化为求目标位置，回文的话可以看成是一层一层的，结合第一点我们可以确定第1个a一定和最后一个a是一个回文对，然后我们考虑两对的情况。 a..a.b…b a..b.a…b a..b.b…a 分为上面三种，其中第三种显然最终a在b外面，第一种一定会先变成第二种。 而第二种,首先我们假设中间的b和a关于中心对称了，因为不对称要整体平移对于ab谁在外面无影响，然后a在外面我们要右侧a移到右侧b外面，b在外面我们要左侧b移到左侧a外面，因为要对称这两个的操作数是相同的。 所以根据上面三种情况，我们从左向右扫标记每对最终的位置，求一个逆序对即可。 ARC 89 D Checker 题解 : 关键 : 把每个位置的横纵坐标对$2k$取模。 做二维前缀和即可。 ARC 90 E Avoiding Collision 题意 : 给定一张无向图，给定两个点$s$和$t$，两个人分别从$s$和$t$出发，并且都沿着最短路走到$t$和$s$，询问两个人不相遇的方案数。 题解 : 核心是容斥来求，$ans=$最短路对数-到达同一个点的最短路对数-到达同一条边的最短路对数。 先分别求出$s$和$t$到每个点的距离$dis_{1/2}[i]$和最短路方案数$num_{1/2}[i]$，最短路对数为$num_{1}[t]^2$，枚举点，若能作为最短路上的点且两人到达时间相同则计入，枚举边，若能作为最短路上的边且两人在边上能够相遇则计入。 F Number of Digits 题意 : 定义$f(a)$为$a$在十进制中的位数，给定$S(S\le 10^8)$，询问有多少对$l,r$满足，$\sum_{i=l}^{r}f(i)=S$。 题解 : 首先想到$\text{two-point}$，但是$l,r$的范围很大不适用，但但是我们注意到一个关键的性质，当$l\ge10^7$时，因为$f(i)\ge8,i\in[l,r]$，$l$到$r$的距离小于等于$\frac{S}{8}$，所以会得到$f(r)\le f(l)+1$。我们分情况来看一看。 $1.f(l)=f(r)$，此时要求$f(l)|S$，方案数为$9*10^{f(l)-1}-\frac{S}{f(l)}+1$。 $2.f(l)+1=f(r)$，令$t=r-l+1$，$f(l)=\text{len}$，$f(r)=\text{len}+1$，$l$到跨越的距离为$x$，跨越到$r$的距离为$y$，得到等式$S=\text{len}*t+y$，枚举$t$，则$y=S\%t$，$x=t-S\%t$，若$x，y$都大于$0$则计入答案 Codeforces Codeforces Round #574 1195F Geometers Anonymous Club 题意 : 给定$n$个凸包，有$m$次询问，查询在$[l_i,r_i]$中的凸包的闵可夫斯基和的点集大小。 题解 : 回想一下合并两个凸包求闵科夫斯基和的过程，会发现相同斜率的线段只用一次，所以问题转化为求区间中颜色个数，离线树状数组即可。 1195E OpenStreetMap 题意 : 询问在$n\cdot m$的矩阵中，所有$a\cdot b$的子矩阵的最小值的和。$n,m,a,b\le 3000$。 题解 : 先单调栈求一遍每个点横着往左长度为$a$的最小值，再用这个最小值为权值纵向求一个长度为$b$的，最后全加起来即可。$O(nm)$。 Educational Codeforces Round 68 1194F Crossword Expert 题意 : 有$n$个任务，第$i$个任务的完成时间为$t_i$，Bob完成每个任务的时间等概率地为$t_i$或$t_i+1$。现在Bob按顺序完成任务，询问在$m$的时间里，期望完成多少任务。$n\le 2\cdot 10^5, 1\le t_i\le 10^9, m\le 2\cdot 10^{14}$。 题解 : 对于第$i$个任务，完成它的概率为$\frac{\sum_{j=0}^{m-sum[i]}C_{i}^{j}}{2^i}$。 对于$\sum_{j=0}^{a}C_{i}^{j}$转移到$\sum_{j=0}^{a}C_{i+1}^{j}$，可以使用$\sum_{j=0}^{a}C_{i+1}^{j}=2\cdot\sum_{j=0}^{a}C_{i}^{j}-C_{i}^{a}$来实现。 且由于$m-sum[i]$是下降的，所以可以只用求$O(n)$个组合数即可。 1194E Count The Rectangles 题意 : 给定$n$条平行于x轴 或y轴的线段，求一共能围成多少个不同的矩形。$n\le 5000$。 题解 : 把$x$轴平行的线按$y$排序，将$y$轴平行的线拆成两个点(入点和出点)，并按$y$轴排序。 枚举一条$y$轴平行的线，将所有$y$值小于它的点的$x$值加入或删除(入点和出点)，然后按$y$值遍历大于这条平行于$x$轴的线，将$x$值插入和删除，每次查询在这两条平行于$x$轴的线中间合法的$x$值数量即可。$O(n^2\log{n})$。 Codeforces Round #573 1190D Tokitsukaze and Strange Rectangle 题意 : 给定$n$个点，每次使用一个凹字形的框框出一个点集，询问本质不同的点集个数。$n\le 2\cdot 10^5$。 题解 : 先把所有点按$y$轴排序，从大到小，每层统计新加入的点与原来的点形成的贡献，每层结束再把新点加进去。离散化和树状数组处理统计贡献即可。 Codeforces Round #572 1188B Count Pairs 题意 : 给定$n$个值$x_i$，询问有多少对在模$p$意义下满足$(x_i-x_j)\cdot(x_i^2+x_j^2)=k$。$n\le 3\cdot 10^5$ 题解 : 上面的式子乘$x_i+x_j$变为$x_i^4-x_j^4=k(x_i-x_j)$，移项得到$x_i^4-x_i\cdot k=x_j^4-x_j\cdot k$。map处理一下即可。 $O(n\log{n})$ Forethought Future Cup - Elimination Round 1146H Satanic Panic 题意 : 给定平面上$n$个点，询问形成的五角星数量。$n\le 300$ 题解 : 这题有个DP做法，我这里写个组合的。 首先是$C_{n}^{5}$，考虑减掉不合法的情况。 形成合法五角星的5个点，肯定是每个点都在这5个点形成的凸包定点上。 所以，可以分为两种情况：三角形中有两个点，四边形里有一个点。 第一种情况，枚举一个三角形，内部拿两个即可。 第二种情况，枚举一个三角形，在内部拿一个点，外部再拿一个点即可。 可以使用bitset的与和count来求三角形内点的个数。 $O(n^3)$ Codeforces Round #549 1142C U2 题解 : 给定$n$个点，任意两个$x$值不同的点可以求出一个满足$x^2+bx+c=y$的抛物线。询问没有任何点严格在抛物线上方的抛物线个数。$n\le 10^5$。 题意 : 对于一个点$(x_i,y_i)$和他所在的抛物线$x^2+b_ix+c_i=y$，要求满足不存在$y’&amp;gt;x’^2+bx’+c$，这个点所在的抛物线可以表示为$bx_i+c=y_i-x_i^2$，$x_i,y_i$已知，而$b,c$未知，可以将$b,c$看做未知数，每个点转化为$(x_i,y_i-x_i^2)$后可以表示为这条直线上的点，那么任意两个转化后的点的连线就是这条直线。 按照抛物线的要求，要求这条直线上面没有点，即求上凸包。 注意$x$轴值相同的点不算上凸包的点。 $O(n\log{n})$ Educational Codeforces Round 63 F Delivery Oligopoly 题意 : 给一张$n(n\le 15)$个点，$m$条边的双连通图。询问删除最多的边使得新图为双连通图的方案。 题解 : 对于一个双连通图，双连通块的构造方法是一个双连通块加上一条链/一个点。那么我们枚举双连通块点集$s$，枚举一个端点为$i,j$且点集为$t$的链，使得$i,j$分别与$s$内两点相连。 预处理出$i$到点集$s(i\not\in s)$的最大/次大距离，预处理出点集为$s$，左右端点为$i$和$j$的链的最小花费。转移记录方案。 复杂度$O(3^n\cdot n^2)$。</summary></entry><entry><title type="html">Work for Open Source Community Using Git</title><link href="http://localhost:3798/2019/03/19/Work-for-Open-Source-Community-Using-Git.html" rel="alternate" type="text/html" title="Work for Open Source Community Using Git" /><published>2019-03-19T00:00:00+08:00</published><updated>2019-03-19T00:00:00+08:00</updated><id>http://localhost:3798/2019/03/19/Work%20for%20Open%20Source%20Community%20Using%20Git</id><content type="html" xml:base="http://localhost:3798/2019/03/19/Work-for-Open-Source-Community-Using-Git.html">&lt;p&gt;长期更新使用Git和Github工作的内容。&lt;/p&gt;
 
 &lt;h2 id=&quot;案例展示&quot;&gt;案例展示&lt;/h2&gt;
 &lt;h3 id=&quot;pr工作流程&quot;&gt;PR工作流程&lt;/h3&gt;
