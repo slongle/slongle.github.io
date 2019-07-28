@@ -308,15 +308,29 @@
 </ul>
 
 <h2 id="timeline">Timeline</h2>
-<h3 id="20190715-20190721">2019/07/15-2019/07/21</h3>
+<h3 id="20190722-20190728">2019/07/22-2019/07/28</h3>
+
 <h4 id="2800-3800">2800-3800</h4>
+<p>ABC 134 F Permutation Oddness<br />
+SRM 648 Fragile(Hard) <br />
+SRM 633 GCDLCM(Hard)  <br />
+388E Fox and Meteor Shower(3000)<br />
+528E Triangles 3000(3000)</p>
+<h4 id="2500-2700">2500-2700</h4>
+
+<h4 id="2100-2400">2100-2400</h4>
+<p>牛客4 D triples I</p>
+
+<h3 id="20190715-20190721">2019/07/15-2019/07/21</h3>
+
+<h4 id="2800-3800-1">2800-3800</h4>
 <p>SRM 655 BichromeSky(Hard)<br />
 1146H Satanic Panic(2800)<br />
 1142C U2(2800)</p>
-<h4 id="2500-2700">2500-2700</h4>
+<h4 id="2500-2700-1">2500-2700</h4>
 <p>1195F Geometers Anonymous Club(2700)<br />
 1194F Crossword Expert(2500)</p>
-<h4 id="2100-2400">2100-2400</h4>
+<h4 id="2100-2400-1">2100-2400</h4>
 <p>1190D Tokitsukaze and Strange Rectangle(2200)<br />
 1194E Count The Rectangles(2200)<br />
 1188B Count Pairs(2200)<br />
@@ -352,6 +366,24 @@
 <p>题意 : $n$个红点，$m$个蓝点，没有三点共线，第i个红点以$p_i$的概率出现，求红点的凸包包含所有蓝点的概率。$n, m \le 100$<br />
 题解 : 对于包含所有蓝点的要求，等价于包含所有蓝点形成的凸包。对于一个红点，对蓝点构成的凸包做切线，这两条切线是这个红点的覆盖范围。问题就转化为有$n$个区间，每个区间出现的概率为$p_i$，询问全部覆盖的概率，DP一下即可。<br />
 复杂度$O(n^3)$。</p>
+
+<h3 id="srm-648">SRM 648</h3>
+<h4 id="hard-fragile">Hard Fragile</h4>
+<p>题意 : 询问有$m$个桥的带标号的$n$个点的图的个数，$n\le 50, 0\le m\le n-1$。<br />
+题解 : 首先，我们可以先求出$n$个点$m$个桥的连通图个数，然后背包求答案即可。<br />
+然后，对于一个桥，断开之后就变为了两个联通图，所以我们考虑dp求出$f[i][j][k]$为$i$个点，$1$号点所在边双大小为$j$，桥的个数为$k$的方案数。<br />
+转移的时候还需要$n$个点的连通图个数，再dp一次求一下。<br />
+没有桥的情况拿任意的减去所有有桥的。<br />
+复杂度$O(n^5)$。<br />
+PS : 做的时候感觉好麻烦，翻了一下别人的，tourist就是dp的，petr打表了，50的数据范围真的是…</p>
+
+<h3 id="srm-633g">SRM 633G</h3>
+<h4 id="hard-cdlcm">Hard CDLCM</h4>
+<p>题意 : 给定四个数组$A,B,C,D$，构造一个数组$x$使得，当$D[i]=0$时，$C[i]=Gcd(x[A[i]],x[B[i]])$，否则$C[i]=Lcm(x[A[i]],x[B[i]])$。<br />
+$n\le 200, C[i]\le 10^9$ <br />
+题解 : 这个感觉还不太难。由于$gcd=\Pi p_i^{min(cnt_a,cnt_b)}$，$lcm=\Pi p_i^{max(cnt_a,cnt_b)}$，那么对于$C[i]$，唯一分解得到幂次后，得到了$x[a]$和$x[b]$对于每个质因子的要求，记$x[i]$对质因子$p$的幂次为$cntX[i][p]$，拿gcd举例就是，$min(cntX[a][p],cntX[b][p])=cntD[i][p]$，可以拆成$cntX[a][p]=cntD[i][p]$且$cntX[b][p]\ge cntD[i][p]$或$cntX[a][p]\ge cntD[i][p]$且$cntX[b][p]=cntD[i][p]$。<br />
+2-sat判一下即可。<br />
+PS : 好久没写2-sat了，写完翻题解的时候翻到了姚老板的blog。</p>
 
 <h3 id="tco-2014-round-1b">TCO 2014 Round 1B</h3>
 <h4 id="medium-wolvesandsheep">Medium WolvesAndSheep</h4>
@@ -393,7 +425,22 @@ $a&gt;b&gt;c&gt;d$，考虑一维情况$adbc$比$acbd$更优，因为两个的�
 找到$z$的子树中离$z$最近的，且度数大于等于$3$的节点$z’$，若$cnt\ge z$到$z’$的节点数+$2$，则可到达，否则不可到达。</p>
 
 <h2 id="atcoder">Atcoder</h2>
+<h3 id="abc-134">ABC 134</h3>
+
+<h4 id="f-permutation-oddness">F Permutation Oddness</h4>
+<p>题意 : 对于一个长度为$n$的排列$P$，它的权值为$\sum_{i=1}^{n}|P_i-i|$。现在询问长度为$n$，权值为$m$的排列数。$n\le 50$。<br />
+题解 : 首先把这个权值转换一下。这个权值的构成可以看做是两个$1$-$n$顺序排列的匹配，权值为匹配两点的距离差，再转换一下可以看做在$i$和$i+1$($1\le i\le n-1$)中间画一条横线和匹配的线的交点个数。如图:<br />
+<img src="https://i.postimg.cc/Y9r4QzZB/0061.png" alt="" /><br />
+现在假设我们用左侧的点去匹配右侧的点，每次将左侧的点$i$和比它小的点匹配，和比它大的点匹配由另一侧的点来决定。由另一侧点来决定的点暂且视为闲置点。<br />
+假设我们现在匹配完前$i$位了，有$j$个闲置点(左右两侧各$j$个)，那么与$i$和$i+1$中间的直线相交的点的个数为$j$个。<br />
+根据这个我们就可以DP了。<br />
+$f[i][j][k]$表示前$i$位中有$j$位没有匹配，权值和为$k$的方案数。<br />
+$O(1)$转移，复杂度$O(n^4)$<br />
+PS : 这题放在ABC很大原因是OEIS能直接找到所有答案的表。所有日文题解都标了”箱根DP”，get不到这个点，但可能在日本已经人尽皆知了吧。<br />
+PPS : 有兴趣可以看看这个 https://arxiv.org/pdf/1202.4765.pdf</p>
+
 <h3 id="arc-88">ARC 88</h3>
+
 <h4 id="d-wide-flip">D Wide Flip</h4>
 <p>题意 : 给定一个长度为$n$的$01$序列，可以翻转一段连续的长度大于$k$的区间，询问最大的$k$。<br />
 题解 : 关键 : 假设我们选定了一个$k$，我们能单独修改某些单独位置。<br />
@@ -490,6 +537,19 @@ $O(n^3)$</p>
 注意$x$轴值相同的点不算上凸包的点。  <br />
 $O(n\log{n})$</p>
 
+<h3 id="codeforces-round-296">Codeforces Round #296</h3>
+<h4 id="528e-triangles-3000">528E Triangles 3000</h4>
+<p>题意 : $n$条直线，等概率挑选$3$条，求围成三角形面积的期望。$n\le 3000$<br />
+题解 : 考虑怎么求构成的所有三角形的面积。<br />
+对于三角形的三个顶点逆时针为$A,B,C$，面积可以写为$(OA\times OB+OB\times OC+OC \times OA)/2$，同时这三个点都是交点，那么也就可以转化为，枚举一条直线，直线上的所有交点做叉积即可。<br />
+然后对于$OA\times OB+OA\times OC=OA\times(OB+OC)$，极角排序保证逆序，前缀和来维护即可。</p>
+
+<h3 id="codeforces-round-228">Codeforces Round #228</h3>
+<h4 id="388e-fox-and-meteor-shower">388E Fox and Meteor Shower</h4>
+<p>题意 : 给出$n$颗流星在$t1$秒和$t2$秒的位置，询问能找到最多多少颗流星，使得两两相交。$n\le 1000$<br />
+题解 : 做的时候没感觉到居然是个讨论题。首先可以看做是个三维直线，那么两两相交的集合就是 :  直线交于同一点或者同一平面且不平行 <br />
+存到Map里，注意细节。</p>
+
 <h3 id="educational-codeforces-round-63">Educational Codeforces Round 63</h3>
 <h4 id="f-delivery-oligopoly">F Delivery Oligopoly</h4>
 <p>题意 : 给一张$n(n\le 15)$个点，$m$条边的双连通图。询问删除最多的边使得新图为双连通图的方案。<br />
@@ -497,6 +557,13 @@ $O(n\log{n})$</p>
 预处理出$i$到点集$s(i\not\in s)$的最大/次大距离，预处理出点集为$s$，左右端点为$i$和$j$的链的最小花费。转移记录方案。 <br />
 复杂度$O(3^n\cdot n^2)$。</p>
 
+<h2 id="多校">多校</h2>
+<h3 id="牛客-4">牛客 4</h3>
+<h4 id="d-triples-i">D triples I</h4>
+<p>题意 : 询问$n$由最少几个三的倍数或起来得到，输出方案。<br />
+题解 : 题目保证输入都有解，那么如果不是三的倍数最少就是2个数。<br />
+$f[i][j][k]$为前$i$位，第一个数模3的为$j$，第二个数模3的为$k$的解。<br />
+DP比直接做会多个10的倍数。</p>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-04-10T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
