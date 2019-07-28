@@ -377,8 +377,8 @@ SRM 633 GCDLCM(Hard)  <br />
 复杂度$O(n^5)$。<br />
 PS : 做的时候感觉好麻烦，翻了一下别人的，tourist就是dp的，petr打表了，50的数据范围真的是…</p>
 
-<h3 id="srm-633g">SRM 633G</h3>
-<h4 id="hard-cdlcm">Hard CDLCM</h4>
+<h3 id="srm-633">SRM 633</h3>
+<h4 id="hard-gcdlcm">Hard GCDLCM</h4>
 <p>题意 : 给定四个数组$A,B,C,D$，构造一个数组$x$使得，当$D[i]=0$时，$C[i]=Gcd(x[A[i]],x[B[i]])$，否则$C[i]=Lcm(x[A[i]],x[B[i]])$。<br />
 $n\le 200, C[i]\le 10^9$ <br />
 题解 : 这个感觉还不太难。由于$gcd=\Pi p_i^{min(cnt_a,cnt_b)}$，$lcm=\Pi p_i^{max(cnt_a,cnt_b)}$，那么对于$C[i]$，唯一分解得到幂次后，得到了$x[a]$和$x[b]$对于每个质因子的要求，记$x[i]$对质因子$p$的幂次为$cntX[i][p]$，拿gcd举例就是，$min(cntX[a][p],cntX[b][p])=cntD[i][p]$，可以拆成$cntX[a][p]=cntD[i][p]$且$cntX[b][p]\ge cntD[i][p]$或$cntX[a][p]\ge cntD[i][p]$且$cntX[b][p]=cntD[i][p]$。<br />
