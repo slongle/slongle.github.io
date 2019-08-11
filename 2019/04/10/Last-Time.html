@@ -311,42 +311,53 @@ no 杭电4 D Enveloping Convex</li>
 </ul>
 
 <h2 id="timeline">Timeline</h2>
-<h3 id="20190729-20190804">2019/07/29-2019/08/04</h3>
+<h3 id="20190805-20190811">2019/08/05-2019/08/11</h3>
 <h4 id="2800-3800">2800-3800</h4>
+<p>ICPC 2018 北京 Rikka with Triangles <br />
+ICPC 2018 徐州 Rikka with Illuminations<br />
+SRM 595 Constellation(Hard)<br />
+SRM 573 WolfPack(Hard) <br />
+SRM 750 PurpleSubsequences(Hard)</p>
+
+<h4 id="2500-2700">2500-2700</h4>
+<h4 id="2100-2400">2100-2400</h4>
+
+<h3 id="20190729-20190804">2019/07/29-2019/08/04</h3>
+<h4 id="2800-3800-1">2800-3800</h4>
 <p>杭电4 E Good Numbers <br />
 杭电4 F Horse<br />
 牛客5 F maximum clique 1</p>
-<h4 id="2500-2700">2500-2700</h4>
+<h4 id="2500-2700-1">2500-2700</h4>
 <p>杭电4 C Divide the stones<br />
 牛客6 E Androgynos<br />
 牛客5 C generator 2<br />
 牛客5 E independent set 1  <br />
 牛客5 I three points 1</p>
-<h4 id="2100-2400">2100-2400</h4>
+<h4 id="2100-2400-1">2100-2400</h4>
 
 <h3 id="20190722-20190728">2019/07/22-2019/07/28</h3>
 
-<h4 id="2800-3800-1">2800-3800</h4>
+<h4 id="2800-3800-2">2800-3800</h4>
 <p>ABC 134 F Permutation Oddness<br />
 SRM 648 Fragile(Hard) <br />
 SRM 633 GCDLCM(Hard)  <br />
 388E Fox and Meteor Shower(3000)<br />
 528E Triangles 3000(3000)</p>
-<h4 id="2500-2700-1">2500-2700</h4>
+<h4 id="2500-2700-2">2500-2700</h4>
 
-<h4 id="2100-2400-1">2100-2400</h4>
+<h4 id="2100-2400-2">2100-2400</h4>
 <p>牛客4 D triples I</p>
 
 <h3 id="20190715-20190721">2019/07/15-2019/07/21</h3>
 
-<h4 id="2800-3800-2">2800-3800</h4>
+<h4 id="2800-3800-3">2800-3800</h4>
 <p>SRM 655 BichromeSky(Hard)<br />
 1146H Satanic Panic(2800)<br />
 1142C U2(2800)</p>
-<h4 id="2500-2700-2">2500-2700</h4>
+<h4 id="2500-2700-3">2500-2700</h4>
 <p>1195F Geometers Anonymous Club(2700)<br />
 1194F Crossword Expert(2500)</p>
-<h4 id="2100-2400-2">2100-2400</h4>
+<h4 id="2100-2400-3">2100-2400</h4>
 <p>1190D Tokitsukaze and Strange Rectangle(2200)<br />
 1194E Count The Rectangles(2200)<br />
 1188B Count Pairs(2200)<br />
@@ -377,6 +388,12 @@ SRM 633 GCDLCM(Hard)  <br />
 <p>题意 : 有$n$个硬币在桌子上，有$1$个硬币在手里，每次抛硬币，正面的话桌面上加$1$个硬币，手里留$1$个硬币，如果桌上有$2N$个硬币则游戏结束。反面的话，从桌上硬币拿走手里的硬币数个放到手里，如果桌上拿空则游戏结束。输出期望场数。<br />
 题解 : 转移显然有环，但是由于正面的特殊性，定义$f[i]$表示手里$1$个硬币，桌上$i$个硬币的期望场数。转移方程$f[i]=(f[i+1]+1)*0.5+(f[i]+2)*0.5^2+(f[i-2]+3)*0.5^3+\cdots$。可以发现转移有后效性，但是我们可以将$f[i+1]$去除后效性。</p>
 
+<h3 id="srm-750">SRM 750</h3>
+<h4 id="hard-purplesubsequences">Hard PurpleSubsequences</h4>
+<p>题意 : 给定一个长度为$n$的序列，询问最长上升子序列长度大于等于$L$的本质不同子序列个数。$n\le 60,x_i\le 20,L\le 6$<br />
+题解 : 本质不同先建出序列自动机，然后在上面大力DP。DP的过程中类似我们直接求解LIS的过程，把保存LIS长度为i的最后一个数字的数组保存在每个节点上。<br />
+$O(n^2S)$</p>
+
 <h3 id="srm-655">SRM 655</h3>
 <h4 id="hard-4">Hard</h4>
 <p>题意 : $n$个红点，$m$个蓝点，没有三点共线，第i个红点以$p_i$的概率出现，求红点的凸包包含所有蓝点的概率。$n, m \le 100$<br />
@@ -400,6 +417,20 @@ $n\le 200, C[i]\le 10^9$ <br />
 题解 : 这个感觉还不太难。由于$gcd=\Pi p_i^{min(cnt_a,cnt_b)}$，$lcm=\Pi p_i^{max(cnt_a,cnt_b)}$，那么对于$C[i]$，唯一分解得到幂次后，得到了$x[a]$和$x[b]$对于每个质因子的要求，记$x[i]$对质因子$p$的幂次为$cntX[i][p]$，拿gcd举例就是，$min(cntX[a][p],cntX[b][p])=cntD[i][p]$，可以拆成$cntX[a][p]=cntD[i][p]$且$cntX[b][p]\ge cntD[i][p]$或$cntX[a][p]\ge cntD[i][p]$且$cntX[b][p]=cntD[i][p]$。<br />
 2-sat判一下即可。<br />
 PS : 好久没写2-sat了，写完翻题解的时候翻到了姚老板的blog。</p>
+
+<h3 id="srm-595">SRM 595</h3>
+<h4 id="hard-constellation">Hard Constellation</h4>
+<p>题意 : 给定$n$个点，以及他们出现的概率，询问构成凸包的期望面积。$n\le 50$<br />
+题解 : 考虑一个构成凸包内的点，他们出现不出现对于该凸包面积的概率不影响，那么只要考虑在边界的点即可。那么可以想到求凸包面积的方法，是每次求$OA_{i}A_{i+1}$的有向面积。所以枚举两个点，假设他们是凸包上的一条边，即某一侧没有任何点，计算概率。正反各求一次即可。<br />
+$O(n^3)$</p>
+
+<h3 id="srm-573">SRM 573</h3>
+<h4 id="hard-wolfpack">Hard WolfPack</h4>
+<p>题意 : 给定$n$个点，每秒每个点可以往上下左右移动一步，询问$m$秒后走到同一个点的方案数。$n\le 50,m\le 10^5$<br />
+题解 : 对于一个点，每次可以$x+1/-1$，$y$不变，或者$y+1/-1$，$x$不变。这里$x$和$y$的变化是相关的，会互相影响，为了消除这种影响可以很自然想到欧几里得距离转切比雪夫距离。<br />
+那么我们将其变换后，每次移动变为$x+1/-1$，$y+1/-1$，这样两维就独立了。然后考虑移动到一个点的方案数，问题就是$n$个数轴上的点，每次左右走，询问$m$秒后走到同一位置的方案数。<br />
+随便取一个点，枚举$+1$的个数，然后计算其他点走到这个点的方案数。$x$和$y$分开求完乘起来即可。<br />
+$O(n^2m)$</p>
 
 <h3 id="tco-2014-round-1b">TCO 2014 Round 1B</h3>
 <h4 id="medium-wolvesandsheep">Medium WolvesAndSheep</h4>
@@ -574,7 +605,6 @@ $O(n\log{n})$</p>
 复杂度$O(3^n\cdot n^2)$。</p>
 
 <h2 id="多校">多校</h2>
-
 <h3 id="杭电4">杭电4</h3>
 <h4 id="c-divide-the-stones">C Divide the stones</h4>
 <p>题意 : 给定重量为$1$-$n$的石头，要求分成重量相等，数量相同的$m$组。$n\le 100000,\sum n\le 500000,m|n$<br />
@@ -606,6 +636,10 @@ $n\le10000,m,t\le50,h_i\le10000$<br />
 $n=4m$时，将$n$个点等距放在一个圆上，从$1$开始标号，奇数点每次向接下来的$[1,m]$点连边。偶数点向后面的$[m+1,2m]$点连边。映射为每个点标号后移一位。<br />
 $n=4m+1$时，在$n-1=4m$的连边中，偶数点度数比奇数点度数小$1$，将$n$与偶数点连边即可，$n$映射不动。</p>
 
+<h4 id="f-k-ary-heap">F K-ary Heap</h4>
+<p>题意 : <br />
+题解 :</p>
+
 <h3 id="牛客5">牛客5</h3>
 <h4 id="c-generator-2">C generator 2</h4>
 <p>题意 : $f_i=a\cdot f_{i-1}+b\cdot f_{i-2}$，求$f_n$。$n\le 10^{10^{6}}$<br />
@@ -633,6 +667,19 @@ $n=4m+1$时，在$n-1=4m$的连边中，偶数点度数比奇数点度数小$1$�
 题解 : 题目保证输入都有解，那么如果不是三的倍数最少就是2个数。<br />
 $f[i][j][k]$为前$i$位，第一个数模3的为$j$，第二个数模3的为$k$的解。<br />
 DP比直接做会多个10的倍数。</p>
+
+<h2 id="regional">Regional</h2>
+
+<h3 id="icpc-2018-北京-rikka-with-triangles">ICPC 2018 北京 Rikka with Triangles</h3>
+<p>题意 : 给定$n$个点，询问锐角三角形个数和总面积。$n\le2000$，坐标范围$\le10^{18}$  <br />
+题解 : 首先，锐角三角形不好判断，为什么？比较一下三种三角形，锐角三角形三个角都是锐角，直角三角形和钝角三角形只有一个角是非锐角，所以我们考虑反着求。<br />
+首先，求钝角三角形个数和直角三角形个数。枚举一个点求以这个点为钝角/直角，然后极角排序，满足为大于/等于90度且小于180度的点可以双指针来统计。$O(n^2logn)$ <br />
+其中，$C_{n}^{3}$中会包括三点共线的情况，也要统计。枚举一个点，极角排序，统计$[0,\pi)$的三点共线。$O(n^2logn)$<br />
+面积还是考虑求钝角和直角三角形的面积。和CodeForces 528E Triangles 3000的思路一样，钝角和直角，极角排序，双指针，前缀和优化。总面积和就是528E。$O(n^2logn)$<br />
+这里面极角排序用象限和叉积，使用全整数，__int128。</p>
+<h3 id="icpc-2018-徐州-rikka-with-illuminations">ICPC 2018 徐州 Rikka with Illuminations</h3>
+<p>题意 : 给定$n$个点的凸包，有$m$盏灯，询问最少几盏灯能覆盖整个凸包。$n,m\le1000$<br />
+题解 : 和SRM 655 Hard BichromeSky意外地一样呢，求切线，转换为区间覆盖。这里不需要像那个题统计所有情况，枚举环上断开，每次排序贪心即可。$O(n^2logn)$</p>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-04-10T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
