@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Software Construction之Others - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Camke practice - slongle</title>
 
-<meta name="description" content="正则表达式  $*$:{0,}  $+$:{1,}  $?$:{0,1}                              :或                      ^:取补集  [bc]等价于[b-c]    LSP    子类型可以增加方法，但不可删  子类型需要实现抽象类型中的所有未实现方法 ...">
-<link rel="canonical" href="http://localhost:3798/2019/06/23/Software-Construction-Others.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="Cmake PracticeBasic UsageThird-Party">
+<link rel="canonical" href="http://localhost:3798/2019/09/03/Camke-Practice.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,53 +277,20 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Software Construction之Others</h1></header><span class="split-space">&nbsp;</span>
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Camke practice</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-06-23-Software Construction Others.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Software Construction之Others"><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Software-Construction">Software-Construction</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Jun 23, 2019</span>
-            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-06-23T00:00:00+08:00">
-    <meta itemprop="keywords" content="Software-Construction"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+            href="https://github.com/slongle/slongle.github.io/tree/master/_posts/2019-09-03-Camke Practice.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="Camke practice"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Sep 03, 2019</span>
+            </li></ul></div><meta itemprop="author" content="slongle"/><meta itemprop="datePublished" content="2019-09-03T00:00:00+08:00"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h3 id="正则表达式">正则表达式</h3>
-<ul>
-  <li>$*$:{0,}</li>
-  <li>$+$:{1,}</li>
-  <li>$?$:{0,1}</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>:或</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>^:取补集</li>
-  <li>[bc]等价于[b-c]
-    <h3 id="lsp">LSP</h3>
-  </li>
-  <li>子类型可以增加方法，但不可删</li>
-  <li>子类型需要实现抽象类型中的所有未实现方法</li>
-  <li>子类型中重写的方法必须有相同或子类型的返回值或者符合 co-variance 的参数</li>
-  <li>子类型中重写的方法必须使用同样类型的参数或者符合 contra-variance 的参数</li>
-  <li>子类型中重写的方法不能抛出额外的异常</li>
-  <li>更强的不变量</li>
-  <li>更弱的前置条件</li>
-  <li>更强的后置条件
-    <h3 id="软件构造基础">软件构造基础</h3>
-    <p><img src="https://i.postimg.cc/Y2g37nxw/0060.png" alt="" /></p>
-    <h3 id="版本控制">版本控制</h3>
-    <p>SCM : 软件配置管理<br />
-VCS : 版本控制  <br />
-SCI : 软件配置项(软件中发生改变的基本单元，例如:文件)<br />
-CMDB : 配置管理数据库(存储软件的各配置项随时间发生变化的信息)</p>
-  </li>
-</ul>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-06-23T00:00:00+08:00"><!-- start custom article footer snippet -->
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="cmake-practice">Cmake Practice</h2>
+
+<h3 id="basic-usage">Basic Usage</h3>
+
+<h3 id="third-party">Third-Party</h3>
+
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-09-03T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
     <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
@@ -331,7 +298,7 @@ CMDB : 配置管理数据库(存储软件的各配置项随时间发生变化的
         <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
       </a>
     </p>
-  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/23/Software-Construction-JVM.html">Software Construction之JVM</a></div><div class="next"><span>NEXT</span><a href="/2019/09/03/Camke-Practice.html">Camke practice</a></div></div></div>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/2019/06/23/Software-Construction-Others.html">Software Construction之Others</a></div></div></div>
 
 </div>
 
