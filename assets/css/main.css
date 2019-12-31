@@ -1626,4 +1626,12 @@ body, html, .root, .layout--page { height: 100%; }
 .layout--404 .sign p { font-size: 1.8rem; }
 
 /* start custom scss snippet */
+.pure-button { text-align: center; margin: 20px 0; }
+
+.pure-button { display: inline-block; *display: inline; zoom: 1; line-height: normal; white-space: nowrap; vertical-align: baseline; text-align: center; cursor: pointer; -webkit-user-drag: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.pure-button::-moz-focus-inner { padding: 0; border: 0; }
+
+.pure-button { font-family: inherit; font-size: 100%; *font-size: 90%; *overflow: visible; padding: 0.5em 1em; color: #444; color: rgba(0, 0, 0, 0.8); *color: #444; border: 1px solid #999; border: none rgba(0, 0, 0, 0); background-color: #E6E6E6; text-decoration: none; border-radius: 6px; }
+
 /* end custom scss snippet */
