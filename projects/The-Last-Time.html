@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Jigsaw-Puzzle-Solver - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>The Last Time - slongle</title>
 
 <meta name="description" content="">
-<link rel="canonical" href="http://localhost:3798/projects/Jigsaw-Puzzle-Solver.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="canonical" href="http://localhost:3798/projects/The-Last-Time.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,26 +277,71 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><header style="display:none;"><h1>Jigsaw-Puzzle-Solver</h1></header><meta itemprop="headline" content="Jigsaw-Puzzle-Solver"><meta itemprop="author" content="slongle"/><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><header style="display:none;"><h1>The Last Time</h1></header><meta itemprop="headline" content="The Last Time"><meta itemprop="author" content="slongle"/><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h1 id="jigsaw-puzzle-solver">Jigsaw Puzzle Solver</h1>
-<h2 id="introduction">Introduction</h2>
-<p>This project is for <a href="http://codeforces.com/blog/entry/70047">Huawei Honorcup Marathon 2</a>.<br />
-There are a set of images , each has a size of 512×512 pixels. Divide each image into m×m square fragments of p×p (p=64/32/16) pixels (m=512/p) and rearrange them to restore the original image.</p>
-<h2 id="result">Result</h2>
-<p><img src="/projects/images/1.png" alt="" width="1024" /><br />
-64x64<br />
-<img src="/projects/images/2.png" alt="" width="1024" /><br />
-32x32<br />
-<img src="/projects/images/3.png" alt="" width="1024" /><br />
-16x16</p>
-<h2 id="compile">Compile</h2>
-<p>This project is all .h files except main.cpp, so you can build it easily like this</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> g++ <span class="nt">-O2</span> <span class="nt">-o</span> jigsaw src/main.cpp <span class="nt">-std</span><span class="o">=</span>c++17   
-</code></pre></div></div>
-<h2 id="reference">Reference</h2>
-<p><a href="https://arxiv.org/pdf/1711.06767.pdf">An Automatic Solver for Very Large Jigsaw Puzzles
-Using Genetic Algorithms</a></p>
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h1 id="the-last-time">The Last Time</h1>
+<h3 id="a-physically-based-photorealistic-global-illumination-renderer">A physically-based photorealistic global illumination renderer</h3>
+<p><img src="/projects/images/cover.png" alt="" width="1024" /></p>
+
+<h2 id="overview">Overview</h2>
+<p><a href="https://github.com/slongle/The-Last-time">This Offline Renderer</a> is a physically-based photorealistic 3D renderer I am writing from scratch in C++. Rainbow is built from the ground up as a global illumination renderer supporting global illumination through light transport algorithms, including volumetric unidirectional pathtracing with multiple importance sampling. The renderer is still a work in progress.</p>
+
+<h2 id="features">Features</h2>
+<p><strong>Advanced Global Illumination</strong>: Volumetric Unidirectional Path Tracing (Quasi-Monte Carlo), Stochastic progressive photon mapping, Primary Sample Space Metroplis Light Transport (Kelemen-style MLT), Path Guider (WIP).  <br />
+<strong>Geometry</strong>: Support triangle and quad meshes with instancing. Also can support sphere and box.<br />
+<strong>Lights</strong>: Support point light, spot light, area light(rectangle and sphere).<br />
+<strong>Materials and BSDFs</strong>: Support physically based BSDFs, including multiple microfacet models (Beckmann), smooth and rough versions of Fresnel conductors, specular dielectrics, transparent BSDF, blend BSDF. <br />
+<strong>Media</strong>: Support homogeneous and heterogeneous medium.<br />
+<strong>Acceleration Structure System</strong>: Use SAH-BVH acceleration.<br />
+<strong>Render Mode</strong>: Adaptive, Progressive and Final mode.</p>
+
+<h2 id="select-images">Select Images</h2>
+
+<p><img src="/projects/images/glory_4096spp.png" alt="" width="1024" /></p>
+
+<p><center><font size="2">Crepuscular beam</font></center></p>
+
+<p><img src="/projects/images/envbunny_spp=512_density=10_albedo=1.png" alt="" width="1024" /></p>
+
+<p><center><font size="2">Homogeneous medium with HG phase function (density = 10, albedo = 1, g = 0), multi-scatter</font></center></p>
+
+<p><img src="/projects/images/scene_SPPM_5000.png" alt="" width="1024" /></p>
+
+<p><center><font size="2">Stochastic progressive photon mapping, initial radius = 0.2, $\alpha$ = 0.5, iteration = 5000</font></center></p>
+
+<p><img src="/projects/images/torus_SPPM_10k.png" alt="" width="1024" /></p>
+
+<p><center><font size="2">Stochastic progressive photon mapping, initial radius = 0.05, $\alpha$ = 0.5, iteration = 10000</font></center></p>
+
+<p><img src="/projects/images/globe_64spp.png" alt="" width="1024" /></p>
+
+<p><center><font size="2">Blend BSDF of smooth dielectric and matte, Au conductor BSDF (convert SPD to RGB)</font></center></p>
+
+<p><img src="/projects/images/scene_1024spp.png" alt="" width="1024" /></p>
+
+<p><center><font size="2">Alpha texture for leaf</font></center></p>
+
+<p><img src="/projects/images/pbrt-book_64spp.png" alt="" width="1024" /></p>
+
+<p>The images below are from my old renderer <a href="https://github.com/slongle/Rainbow">Rainbow</a>.</p>
+
+<p><img src="images/cornell-box-heat.jpg" alt="" width="1024" /></p>
+
+<p><img src="images/cornell-box-sphere-heat.png" alt="" width="1024" /></p>
+
+<p><img src="images/veach-mis-heat.jpg" alt="" width="1024" /></p>
+
+<p><center><font size="2">Veach thesis multiple importance sampling test scene. Rendered using pathtracing with multiple importance sampling.</font></center></p>
+
+<p><img src="https://i.postimg.cc/ryHf24pD/0002.png" alt="vol-caustic" width="1024" /></p>
+<p><center><font size="2">Homogeneous medium(volumetric caustic WIP)  </font></center></p>
+<p><img src="https://i.postimg.cc/9MJN7NVb/0001.png" alt="hetvol" width="1024" /></p>
+<p><center><font size="2">Heterogeneous medium </font></center></p>
+<p>Rendered using volumetric unidirectional pathtracing.</p>
+
+<h2 id="resources">Resources</h2>
+<p><a href="http://www.pbr-book.org/">Physically Based Rendering</a>: The go-to reference book for rendering, by Matt Pharr, Wenzel Jakob, and Greg Humphreys.<br />
+<a href="https://cs.dartmouth.edu/~wjarosz/publications/novak18monte-sig.html">Monte Carlo Methods for Physically Based Volume Rendering</a>: A good note for nearly all researches about volume render.</p>
 </div><div class="d-print-none"><footer class="article__footer"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer></div>
