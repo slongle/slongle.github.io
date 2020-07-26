@@ -290,7 +290,7 @@
 <p><strong>Advanced Global Illumination</strong>: Volumetric Unidirectional Path Tracing (Quasi-Monte Carlo), Stochastic progressive photon mapping, Primary Sample Space Metroplis Light Transport (Kelemen-style MLT), Path Guider (WIP).  <br />
 <strong>Geometry</strong>: Support triangle and quad meshes with instancing. Also can support sphere and box.<br />
 <strong>Lights</strong>: Support point light, spot light, area light(rectangle and sphere).<br />
-<strong>Materials and BSDFs</strong>: Support physically based BSDFs, including multiple microfacet models (Beckmann), smooth and rough versions of Fresnel conductors, specular dielectrics, transparent BSDF, blend BSDF. <br />
+<strong>Materials and BSDFs</strong>: Support physically based BSDFs, including multiple microfacet models (GGX), smooth and rough versions of Fresnel conductors, specular dielectrics, transparent BSDF, blend BSDF. <br />
 <strong>Media</strong>: Support homogeneous and heterogeneous medium.<br />
 <strong>Acceleration Structure System</strong>: Use SAH-BVH acceleration.<br />
 <strong>Render Mode</strong>: Adaptive, Progressive and Final mode.</p>
@@ -307,15 +307,15 @@
 
 <p><img src="/projects/images/scene_SPPM_5000.png" alt="" width="1024" /></p>
 
-<p><center><font size="2">Stochastic progressive photon mapping, initial radius = 0.2, $\alpha$ = 0.5, iteration = 5000</font></center></p>
+<p><center><font size="2">Initial radius = 0.2, $\alpha$ = 0.5, iteration = 5000</font></center></p>
 
 <p><img src="/projects/images/torus_SPPM_10k.png" alt="" width="1024" /></p>
 
-<p><center><font size="2">Stochastic progressive photon mapping, initial radius = 0.05, $\alpha$ = 0.5, iteration = 10000</font></center></p>
+<p><center><font size="2">Initial radius = 0.05, $\alpha$ = 0.5, iteration = 10000</font></center></p>
 
 <p><img src="/projects/images/scene_1024_1kiiteration_100kdelta.png" alt="" width="1024" /></p>
 
-<p><center><font size="2">Stochastic progressive photon mapping, initial radius = 0.05, $\alpha$ = 0.3, iteration = 1000, # of delta photon = 100k</font></center></p>
+<p><center><font size="2">Initial radius = 0.05, $\alpha$ = 0.3, iteration = 1000, # of delta photon = 100k</font></center></p>
 
 <p><img src="/projects/images/globe_64spp.png" alt="" width="1024" /></p>
 
@@ -326,6 +326,18 @@
 <p><center><font size="2">Alpha texture for leaf</font></center></p>
 
 <p><img src="/projects/images/pbrt-book_64spp.png" alt="" width="1024" /></p>
+
+<p><img src="/projects/images/scene_RoughConductor_0.1_0.1_512spp.png" alt="" width="1024" /></p>
+<p><center><font size="2">Rough conductor, alpha_u = 0.1, alpha_v = 0.1</font></center></p>
+
+<p><img src="/projects/images/scene_RoughConductor_0.005_0.1_512spp.png" alt="" width="1024" /></p>
+<p><center><font size="2">Rough conductor, alpha_u = 0.005, alpha_v = 0.1</font></center></p>
+
+<p><img src="/projects/images/scene_RoughDielectric_0.1_0.1_512spp.png" alt="" width="1024" /></p>
+<p><center><font size="2">Rough dielectric, alpha_u = 0.1, alpha_v = 0.1</font></center></p>
+
+<p><img src="/projects/images/scene_RoughDielectric_0.005_0.1_512spp.png" alt="" width="1024" /></p>
+<p><center><font size="2">Rough dielectric, alpha_u = 0.005, alpha_v = 0.1</font></center></p>
 
 <p>The images below are from my old renderer <a href="https://github.com/slongle/Rainbow">Rainbow</a>.</p>
 
