@@ -286,16 +286,20 @@
 <h2 id="overview">Overview</h2>
 <p><a href="https://github.com/slongle/The-Last-time">This Offline Renderer</a> is a physically-based photorealistic 3D renderer I am writing from scratch in C++. Rainbow is built from the ground up as a global illumination renderer supporting global illumination through light transport algorithms, including volumetric unidirectional pathtracing with multiple importance sampling. The renderer is still a work in progress.</p>
 
-<h2 id="features">Features</h2>
-<p><strong>Advanced Global Illumination</strong>: Volumetric Unidirectional Path Tracing (Quasi-Monte Carlo), Stochastic progressive photon mapping, Primary Sample Space Metroplis Light Transport (Kelemen-style MLT), Path Guider (WIP).  <br />
+<h3 id="features">Features</h3>
+<p><strong>Advanced Global Illumination</strong>: Volumetric Unidirectional Path Tracing (Quasi-Monte Carlo), Volumetric progressive photon mapping(Point estimation and Beam estimation), Primary Sample Space Metroplis Light Transport (Kelemen-style MLT)(WIP), Path Guider (WIP).  <br />
 <strong>Geometry</strong>: Support triangle and quad meshes with instancing. Also can support sphere and box.<br />
-<strong>Lights</strong>: Support point light, spot light, area light(rectangle and sphere).<br />
-<strong>Materials and BSDFs</strong>: Support physically based BSDFs, including multiple microfacet models (GGX), smooth and rough versions of Fresnel conductors, specular dielectrics, transparent BSDF, blend BSDF. <br />
+<strong>Lights</strong>: Support point light, spot light, directional light, area light(rectangle and sphere).<br />
+<strong>Materials and BSDFs</strong>: Support physically based BSDFs, including thin-film iridescence, microfacet models (GGX), smooth and rough versions of Fresnel conductors, specular dielectrics, transparent BSDF, blend BSDF. <br />
 <strong>Media</strong>: Support homogeneous and heterogeneous medium.<br />
 <strong>Acceleration Structure System</strong>: Use SAH-BVH acceleration.<br />
 <strong>Render Mode</strong>: Adaptive, Progressive and Final mode.</p>
 
-<h2 id="select-images">Select Images</h2>
+<h3 id="select-images">Select Images</h3>
+<p><img src="/projects/images/ir_eta2_1.33_eta3_1_k3_0_d_300-450.png" alt="" /><br />
+<img src="/projects/images/ir_eta2_1.33_eta3_1_k3_0_d_500-650.png" alt="" /><br />
+<img src="/projects/images/ir_eta2_1.33_eta3_1_k3_0_d_700-850.png" alt="" /></p>
+<p><center><font size="2">Iridescence effect, using the method from Belcour and Barla 2017, $\eta_1 = 1.0, \eta_2 = 1.33, \eta_3 = 1.0, k_3 = 0, d = 300-850nm$</font></center></p>
 
 <p><img src="/projects/images/glory_4096spp.png" alt="" width="1024" /></p>
 
