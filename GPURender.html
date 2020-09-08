@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>The Last Time - slongle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>GPU_Remderer - slongle</title>
 
 <meta name="description" content="">
-<link rel="canonical" href="http://localhost:3798/projects/The-Last-Time.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="canonical" href="http://localhost:3798/GPURender.html"><link rel="alternate" type="application/rss+xml" title="slongle" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -277,156 +277,72 @@
 
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><header style="display:none;"><h1>The Last Time</h1></header><meta itemprop="headline" content="The Last Time"><meta itemprop="author" content="slongle"/><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><header style="display:none;"><h1>GPU_Remderer</h1></header><meta itemprop="headline" content="GPU_Remderer"><meta itemprop="author" content="slongle"/><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
-<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h1 id="the-last-time">The Last Time</h1>
-<h3 id="a-physically-based-photorealistic-global-illumination-renderer">A physically-based photorealistic global illumination renderer</h3>
-<p><img src="/projects/images/cover.png" alt="" width="1024" /></p>
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h1 id="gpu-renderer">GPU Renderer</h1>
 
-<h2 id="overview">Overview</h2>
-<p><a href="https://github.com/slongle/The-Last-time">This Offline Renderer</a> is a physically-based photorealistic 3D renderer I am writing from scratch in C++. Rainbow is built from the ground up as a global illumination renderer supporting global illumination through light transport algorithms, including volumetric unidirectional pathtracing with multiple importance sampling. The renderer is still a work in progress.</p>
+<h3 id="a-physically-based-photorealistic-global-illumination-renderer-using-cuda">A physically-based photorealistic global illumination renderer using CUDA</h3>
 
-<h3 id="features">Features</h3>
+<p><img src="/projects/images/dragon_1000spp_denoise.png" alt="" width="1024" /></p>
+
+<h2 id="realtime-progressive">Realtime Progressive</h2>
+
+<p><img src="/projects/images/0003.gif" alt="" /><img src="/projects/images/0004.gif" alt="" /></p>
+
+<h2 id="performance">Performance</h2>
+
+<p>4-13x speedup compared with CPU unidirectional Path Tracing.</p>
+
+<p><img src="/projects/images/Performance.png" alt="" width="1024" /></p>
+
+<h2 id="tips">Tips</h2>
+
 <ul>
-  <li>Advanced Global illumination
-    <ul>
-      <li>Volumetric Unidirectional Path Tracing (Quasi-Monte Carlo)</li>
-      <li>Volumetric progressive photon mapping(Point estimation and Beam estimation)</li>
-      <li>Primary Sample Space Metroplis Light Transport (Kelemen-style MLT)(WIP)</li>
-      <li>Path Guider (WIP)</li>
-    </ul>
+  <li>
+    <p>If you haven’t written OOP program using CUDA and now you want to write a renderer using CUDA, I strongly recommend you learning Fermat’s structure before everything starts.</p>
   </li>
-  <li>Geometry
-    <ul>
-      <li>Triangle and quad meshes</li>
-    </ul>
-  </li>
-  <li>Lights
-    <ul>
-      <li>Point light</li>
-      <li>Spot light</li>
-      <li>Directional light</li>
-      <li>Area light</li>
-    </ul>
-  </li>
-  <li>Materials and BSDFs
-    <ul>
-      <li>Thin-film iridescence</li>
-      <li>Rough conductor and dielectric using microfacet models (GGX)</li>
-      <li>Smooth conductor and dielectric</li>
-      <li>Transparent BSDF</li>
-      <li>Blend BSDF</li>
-      <li>Support alpha texture</li>
-    </ul>
-  </li>
-  <li>Media
-    <ul>
-      <li>Homogeneous medium</li>
-      <li>Heterogeneous medium (OpenVDB file)</li>
-    </ul>
-  </li>
-  <li>Acceleration Structure System
-    <ul>
-      <li>SAH-BVH acceleration</li>
-      <li>Embree3</li>
-    </ul>
-  </li>
-  <li>Render Mode
-    <ul>
-      <li>Adaptive mode</li>
-      <li>Progressive mode</li>
-      <li>Final mode</li>
-    </ul>
-  </li>
+  <li>CUDA doesn’t support class inheritance, so try to define everything (i.e. material, shape) in some unified method as much as possible.</li>
+  <li>Ray query system roadmap : for loop -&gt; recursive build and simple query BVH -&gt; parallel build and simple query BVH -&gt; parallel build and GPU-optimized query BVH.</li>
+  <li>If you don’t really care GUI, you can learning from CUDA’s SDK volumeRender.</li>
+  <li>Wavefront .obj scene (tiny_obj_loader), partly Mitsuba scene (XML) and custom scene format are easy to parse.</li>
 </ul>
 
-<h3 id="select-images">Select Images</h3>
-<p><img src="/projects/images/ir_eta2_1.33_eta3_1_k3_0_d_300-450.png" alt="" /><br />
-<img src="/projects/images/ir_eta2_1.33_eta3_1_k3_0_d_500-650.png" alt="" /><br />
-<img src="/projects/images/ir_eta2_1.33_eta3_1_k3_0_d_700-850.png" alt="" /></p>
-<p><center><font size="2">Iridescence effect, using the method from Belcour and Barla 2017, $\eta_1 = 1.0, \eta_2 = 1.33, \eta_3 = 1.0, k_3 = 0, d = 300-850nm$</font></center></p>
+<h2 id="reference">Reference</h2>
 
-<p><img src="/projects/images/glory_4096spp.png" alt="" width="1024" /></p>
+<h3 id="system">System</h3>
 
-<p><center><font size="2">Crepuscular beam</font></center></p>
+<p><a href="https://nvlabs.github.io/fermat/">Fermat</a> : CUDA renderer system</p>
 
-<p><img src="/projects/images/envbunny_spp=512_density=10_albedo=1.png" alt="" width="1024" /></p>
+<p><a href="https://research.nvidia.com/publication/megakernels-considered-harmful-wavefront-path-tracing-gpus">Megakernels Considered Harmful: Wavefront Path Tracing on GPU</a> : Wavefront path tracer</p>
 
-<p><center><font size="2">Homogeneous medium with HG phase function (density = 10, albedo = 1, g = 0), multi-scatter</font></center></p>
+<h3 id="bvh">BVH</h3>
 
-<p><img src="/projects/images/cloud_depth=100_1024spp_9h1m17s.png" alt="" width="1024" /></p>
+<p><a href="https://research.nvidia.com/publication/maximizing-parallelism-construction-bvhs-octrees-and-k-d-trees">Maximizing Parallelism in the Construction of BVHs, Octrees, and k-d Tree</a> : Parallel ontruct BVH using morton code</p>
 
-<p><center><font size="2">Disney cloud</font></center></p>
+<p><a href="https://research.nvidia.com/publication/understanding-efficiency-ray-traversal-gpus">Understanding the Efficiency of Ray Traversal on GPUs</a> : Some implementation tricks on CUDA</p>
 
-<p><img src="/projects/images/smoke_1024spp_2h31m29s.png" alt="" /></p>
-<p><center><font size="2">Smoke (VDB file from <a href="https://www.openvdb.org/download/">OpenVDB</a>) </font></center></p>
+<p><a href="http://raytracey.blogspot.com/2016/01/gpu-path-tracing-tutorial-3-take-your.html">GPU path tracing tutorial 3</a> : Some implementation tricks on CUDA</p>
 
-<video width="854" hight="480" controls="">  
-    <source src="images/fire_128spp.mp4" type="video/mp4" />
-</video>
-<blockquote>
+<h2 id="selected-images">Selected images</h2>
 
-</blockquote>
+<p><img src="/projects/images/veach-ajar_1494spp.png" alt="" width="1024" /></p>
 
-<p><center><font size="2">Smoke (VDB file from <a href="https://jangafx.com/software/embergen/download/free-vdb-animations/">JangaFX</a>) </font></center></p>
+<p><img src="/projects/images/CornellBox_Box_1000spp.png" alt="" width="1024" /></p>
 
-<p><img src="/projects/images/vppm_0.5Kiteration_10.0M_0.005_0.9.png" alt="" width="1024" /></p>
-<p><center><font size="2">Initial radius = 0.005, alpha = 0.9, # of delta photon = 1M, iteration = 0.5K</font></center></p>
+<p><img src="/projects/images/CornellBox_Sphere_2_1000spp.png" alt="" width="1024" /></p>
 
-<p><img src="/projects/images/scene_SPPM_5000.png" alt="" width="1024" /></p>
+<p><img src="/projects/images/CornellBox_Sphere_20_1000spp.png" alt="" width="1024" /></p>
 
-<p><center><font size="2">Initial radius = 0.2, $\alpha$ = 0.5, iteration = 5000</font></center></p>
+<p><img src="/projects/images/dragon_1000spp_denoise.png" alt="" width="1024" /></p>
 
-<p><img src="/projects/images/torus_PT_1024000spp_11h59m46s720ms.png" alt="" width="1024" /> <br />
-<img src="/projects/images/torus_PM_0.08_0.5_1mX1k_8m48s.png" alt="" width="1024" /></p>
+<p><img src="/projects/images/veach-mis_2410spp.png" alt="" width="1024" /></p>
 
-<p><center><font size="2">The first image is from path tracing, 1024K spp, 11h59m46s <br /> The second image is from SPPM, initial radius = 0.08, $\alpha$ = 0.5, # of delta photon = 1M, iteration = 1K, 8m48s</font></center></p>
+<p><img src="/projects/images/roughconduct_0.01_1268spp.png" alt="" width="1024" /></p>
 
-<p><img src="/projects/images/scene_1024_1kiiteration_100kdelta.png" alt="" width="1024" /></p>
+<p><img src="/projects/images/glass_1143spp.png" alt="" width="1024" /></p>
 
-<p><center><font size="2">Initial radius = 0.05, $\alpha$ = 0.3, iteration = 1000, # of delta photon = 100k</font></center></p>
+<p><img src="/projects/images/gold_1023spp.png" alt="" width="1024" /></p>
 
-<p><img src="/projects/images/globe_64spp.png" alt="" width="1024" /></p>
-
-<p><center><font size="2">Blend BSDF of smooth dielectric and matte, Au conductor BSDF (convert SPD to RGB)</font></center></p>
-
-<p><img src="/projects/images/scene_1024spp.png" alt="" width="1024" /></p>
-
-<p><center><font size="2">Alpha texture for leaf</font></center></p>
-
-<p><img src="/projects/images/pbrt-book_64spp.png" alt="" width="1024" /></p>
-
-<p><img src="/projects/images/scene_RoughConductor_0.1_0.1_512spp.png" alt="" width="1024" /></p>
-<p><center><font size="2">Rough conductor, alpha_u = 0.1, alpha_v = 0.1</font></center></p>
-
-<p><img src="/projects/images/scene_RoughConductor_0.005_0.1_512spp.png" alt="" width="1024" /></p>
-<p><center><font size="2">Rough conductor, alpha_u = 0.005, alpha_v = 0.1</font></center></p>
-
-<p><img src="/projects/images/scene_RoughDielectric_0.1_0.1_512spp.png" alt="" width="1024" /></p>
-<p><center><font size="2">Rough dielectric, alpha_u = 0.1, alpha_v = 0.1</font></center></p>
-
-<p><img src="/projects/images/scene_RoughDielectric_0.005_0.1_512spp.png" alt="" width="1024" /></p>
-<p><center><font size="2">Rough dielectric, alpha_u = 0.005, alpha_v = 0.1</font></center></p>
-
-<p>The images below are from my old renderer <a href="https://github.com/slongle/Rainbow">Rainbow</a>.</p>
-
-<p><img src="/projects/images/cornell-box-heat.jpg" alt="" width="1024" /></p>
-
-<p><img src="/projects/images/cornell-box-sphere-heat.png" alt="" width="1024" /></p>
-
-<p><img src="/projects/images/veach-mis-heat.jpg" alt="" width="1024" /></p>
-
-<p><center><font size="2">Veach thesis multiple importance sampling test scene. Rendered using pathtracing with multiple importance sampling.</font></center></p>
-
-<p><img src="/projects/images/vol-caustic-final.png" alt="" width="1024" /></p>
-<p><center><font size="2">Homogeneous medium(volumetric caustic WIP)  </font></center></p>
-<p><img src="/projects/images/hetvol.jpg" alt="" width="1024" /></p>
-<p><center><font size="2">Heterogeneous medium </font></center></p>
-<p>Rendered using volumetric unidirectional pathtracing.</p>
-
-<h2 id="resources">Resources</h2>
-<p><a href="http://www.pbr-book.org/">Physically Based Rendering</a>: The go-to reference book for rendering, by Matt Pharr, Wenzel Jakob, and Greg Humphreys.<br />
-<a href="https://cs.dartmouth.edu/~wjarosz/publications/novak18monte-sig.html">Monte Carlo Methods for Physically Based Volume Rendering</a>: A good note for nearly all researches about volume render.</p>
 </div><div class="d-print-none"><footer class="article__footer"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer></div>
